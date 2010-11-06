@@ -1,10 +1,12 @@
 *.o
 *.d
+*.t
 Makefile
 configure
 config.log
 config.status
 autom4te.cache/
+glxml.pc
 libglxml.a
 config.h
 config.in~

@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libglxml
+Description: OpenGL XML scene graph
+Version: @PACKAGE_VERSION@
+Requires: edo glawt gloop
+Libs: -L${libdir} -lglxml
+Cflags: -I${includedir}
+

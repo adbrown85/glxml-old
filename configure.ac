@@ -53,7 +53,18 @@ error_no_edo() {
 	echo "-------------------------------------------------------"
 	(exit 1); exit 1;
 }
-AC_CHECK_HEADER([edo/edo_common.h], , [error_no_edo])
+echo -n "checking for edo... "
+PKG_CHECK_EXISTS([edo], [echo "yes"], [error_no_edo])
+
+# Check for GLawt
+error_no_glawt() {
+	echo "-------------------------------------------------------"
+	echo " GLawt is needed to build GLxml tests.                 "
+	echo " Visit 'http://gander.sourceforge.net'                 "
+	echo "-------------------------------------------------------"
+}
+echo -n "checking for glawt... "
+PKG_CHECK_EXISTS([glawt], [echo "yes"], [error_no_glawt])
 
 # Check for GLoop
 error_no_gloop() {
@@ -63,16 +74,8 @@ error_no_gloop() {
 	echo "-------------------------------------------------------"
 	(exit 1); exit 1;
 }
-AC_CHECK_HEADER([gloop/gloop_common.h], , [error_no_gloop])
-
-# Check for GLawt
-warning_no_glawt() {
-	echo "-------------------------------------------------------"
-	echo " GLawt is needed to build GLxml tests.                 "
-	echo " Visit 'http://gander.sourceforge.net'                 "
-	echo "-------------------------------------------------------"
-}
-AC_CHECK_HEADER([glawt/glawt_common.h], , [warning_no_glawt])
+echo -n "checking for gloop... "
+PKG_CHECK_EXISTS([gloop], [echo "yes"], [error_no_gloop])
 
 # OS-specific compiler switches
 if test $build_os = "mingw32"; then
@@ -97,8 +100,8 @@ fi
 htmldir='${docdir}'/html
 
 # Finish
-AC_CONFIG_FILES([Makefile doc/Makefile])
-PKG_CHECK_MODULES([DEPS], [gtkmm-2.4 gtkglextmm-1.2])
+AC_CONFIG_FILES([glxml.pc Makefile doc/Makefile])
+PKG_CHECK_MODULES([DEPS], [edo glawt gloop])
 AC_OUTPUT
 
 echo \
