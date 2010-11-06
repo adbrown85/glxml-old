@@ -6,21 +6,19 @@
  */
 #include "Group.hpp"
 #include "Tester.hpp"
-#include "AdvancedFactory.hpp"
+#include "BasicFactory.hpp"
 
 
-int main(int argc,
-         char *argv[]) {
+int main(int argc, char *argv[]) {
+
+	Toolkit toolkit(argc, argv);
+	Tester tester;
 	
-	// Install tags
-	AdvancedFactory::install();
+	BasicFactory::install();
 	
-	// Start
-	Tester::init(argc, argv);
-	Tester::open("Group.xml");
-	Tester::start();
+	tester.open("test/basic/Group.xml");
+	tester.start();
 	
-	// Finish
 	return 0;
 }
 

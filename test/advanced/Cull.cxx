@@ -9,18 +9,15 @@
 #include "AdvancedFactory.hpp"
 
 
-int main(int argc,
-         char *argv[]) {
+int main(int argc, char *argv[]) {
 	
-	// Install tags
+	Toolkit toolkit(argc, argv);
+	Tester tester;
+	
 	AdvancedFactory::install();
 	
-	// Start
-	Tester::init(argc, argv);
-	Tester::open("Cull.xml");
-	Tester::start();
-	
-	// Finish
+	tester.open("test/advanced/Cull.xml");
+	tester.start();
 	return 0;
 }
 

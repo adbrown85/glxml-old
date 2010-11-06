@@ -9,18 +9,16 @@
 #include "AdvancedFactory.hpp"
 
 
-int main(int argc,
-         char *argv[]) {
+int main(int argc, char *argv[]) {
+
+	Toolkit toolkit(argc, argv);
+	Tester tester;
 	
-	// Install tags
 	AdvancedFactory::install();
 	
-	// Start
-	Tester::init(argc, argv);
-	Tester::open("Outputs.xml");
-	Tester::start();
+	tester.open("test/advanced/Outputs.xml");
+	tester.start();
 	
-	// Finish
 	return 0;
 }
 

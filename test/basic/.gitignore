@@ -3,10 +3,12 @@ Box
 Cone
 Cube
 Disk
+Group
 Line
 Program
 Shader
 Shape
+SimpleDrawable
 Square
 Texture
 Texture2D

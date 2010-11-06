@@ -13,9 +13,11 @@ class FakeDrawable : public Node, public Drawable {
 public:
 	FakeDrawable(const Tag &tag) : Node(tag) {}
 	void draw() const {}
+	virtual bool isExcluded() const {return false;}
 	virtual bool isSelectable() const {return true;}
 	virtual bool isSelected() const {return false;}
 	virtual bool isVisible() const {return true;}
+	virtual void setExcluded(bool excluded) {}
 	virtual void setSelected(bool selected) {}
 	virtual void setVisible(bool visible) {}
 	virtual void toggleSelected() {}

@@ -31,16 +31,15 @@ Program* search(Node *node) {
 
 void testGetUniformsFor(Scene *scene) {
 	
-	map<string,GLenum> uniforms;
-	map<string,GLenum>::iterator it;
+	map<string,UniformInfo> uniforms;
+	map<string,UniformInfo>::iterator it;
 	Program *program;
 	
 	program = search(scene->getRoot());
 	if (program != NULL) {
 		uniforms = Uniform::getUniformsFor(program);
 		for (it=uniforms.begin(); it!=uniforms.end(); ++it) {
-			cout << (it->first) << " "
-			     << Uniform::getTypeNameFor(it->second) << endl;
+			cout << (it->first) << " " << (it->second.type) << endl;
 		}
 	}
 }
@@ -49,25 +48,15 @@ void testGetUniformsFor(Scene *scene) {
 int main(int argc,
          char *argv[]) {
 	
+	Toolkit toolkit(argc, argv);
 	Tester tester;
 	
-	// Initialize
-	Gtk::Main kit(argc, argv);
-	Gtk::GL::init(argc, argv);
-	
-	// Install tags
 	BasicFactory::install();
 	
-	// Open
 	tester.open("Uniform.xml");
-	
-	// Test
 	testGetUniformsFor(tester.getScene());
-	
-	// Start
 	tester.start();
 	
-	// Finish
 	return 0;
 }
 

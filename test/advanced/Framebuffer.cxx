@@ -9,18 +9,16 @@
 #include "AdvancedFactory.hpp"
 
 
-int main(int argc,
-         char *argv[]) {
+int main(int argc, char *argv[]) {
 	
-	// Install tags
+	Toolkit toolkit(argc, argv);
+	Tester tester;
+	
 	AdvancedFactory::install();
 	
-	// Start
-	Tester::init(argc, argv);
-	Tester::open("Framebuffer.xml");
-	Tester::start();
+	tester.open("test/advanced/Framebuffer.xml");
+	tester.start();
 	
-	// Finish
 	return 0;
 }
 

@@ -31,8 +31,7 @@ void NodeExceptionTest::testThrow() {
 }
 
 
-int main(int argc,
-         char *argv[]) {
+int main(int argc, char *argv[]) {
 	
 	NodeExceptionTest test;
 	
@@ -47,8 +46,8 @@ int main(int argc,
 	try {
 		test.setUp();
 		test.testThrow();
-	} catch (Exception &e) {
-		cerr << e << endl;
+	} catch (exception &e) {
+		cerr << e.what() << endl;
 	}
 	
 	// Finish

@@ -11,9 +11,7 @@
 
 class FakeTexture : public Texture {
 public:
-	FakeTexture(const Tag &tag) : Texture(GL_TEXTURE_2D, tag) {}
-protected:
-	void initType() {type = GL_TEXTURE_2D;}
+	FakeTexture(const Tag &tag) : Texture(tag) {}
 };
 
 

@@ -4,9 +4,10 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
+#include "glxml_common.h"
 #include <cassert>
+#include <edo/Text.hpp>
 #include "Node.hpp"
-#include "Text.hpp"
 #define NUMBER_OF_ITEMS 4
 using namespace std;
 
@@ -117,8 +118,8 @@ int main() {
 		test.testFindRoot();
 		test.testIterator();
 		test.tearDown();
-	} catch (Exception &e) {
-		cerr << e << endl;
+	} catch (exception &e) {
+		cerr << e.what() << endl;
 	}
 	
 	// Finish

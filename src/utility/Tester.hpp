@@ -32,8 +32,10 @@ public:
 	virtual void onCanvasButtonEvent(Canvas &canvas) { }
 	virtual void onCanvasDragEvent(Canvas &canvas) { }
 // Getters and setters
-	string getFilename();
-	Scene* getScene();
+	Canvas* getCanvas() const {return canvas;}
+	Camera* getCamera() const {return camera;}
+	string getFilename() const {return scene->getFilename();}
+	Scene* getScene() const {return scene;}
 private:
 	Traverser *traverser;
 	Scene *scene;
@@ -41,9 +43,6 @@ private:
 	Camera *camera;
 	Window *window;
 };
-
-inline Scene* Tester::getScene() {return scene;}
-inline string Tester::getFilename() {return scene->getFilename();}
 
 
 #endif

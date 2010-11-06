@@ -6,8 +6,8 @@
  */
 #include <cassert>
 #include "AdvancedFactory.hpp"
-#include "Parser.hpp"
-#include "Text.hpp"
+#include <edo/Parser.hpp>
+#include <edo/Text.hpp>
 
 
 void testCreate(const string &text) {
@@ -42,8 +42,8 @@ int main(int argc,
 		testCreate("octree name='octree' link='volume'");
 		testCreate("target link='buffer'");
 		testCreate("wireframe");
-	} catch (Exception &e) {
-		cerr << e << endl;
+	} catch (exception &e) {
+		cerr << e.what() << endl;
 	}
 	
 	// Finish

@@ -39,13 +39,6 @@ int main() {
 	FakeShape *shape;
 	Tag tag;
 	
-	// Start
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "Shape" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
-	
 	// Tag
 	try {
 		cout << "Testing tag..." << endl;
@@ -53,16 +46,9 @@ int main() {
 		tag["style"] = "3D";
 		shape = new FakeShape(tag);
 		cout << "  " << *shape << endl;
-	} catch (Exception &e) {
-		cerr << e << endl;
+	} catch (exception &e) {
+		cerr << e.what() << endl;
 		exit(1);
 	}
-	
-	// Finish
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "Shape" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
 }
 

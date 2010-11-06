@@ -9,58 +9,68 @@
 #include "AdvancedFactory.hpp"
 
 
-class BooleanAndTest {
+class BooleanAndTest : public CanvasListener {
 public:
-	BooleanAndTest() {instance = this; shape = NULL;}
-	static void keyboard(unsigned char key, int x, int y);
-	void move(const Vector &movement);
+	BooleanAndTest();
+	virtual void onCanvasInitEvent(Canvas &canvas) { }
+	virtual void onCanvasDisplayEvent(Canvas &canvas) { }
+	virtual void onCanvasKeyEvent(Canvas &canvas);
+	virtual void onCanvasButtonEvent(Canvas &canvas) { }
+	virtual void onCanvasDragEvent(Canvas &canvas) { }
 	void setScene(Scene *scene) {this->scene = scene;}
 protected:
+	void move(const Vec4 &movement);
 	void select(int id);
 private:
-	static BooleanAndTest *instance;
 	Scene *scene;
 	Shape *shape;
 };
-BooleanAndTest *BooleanAndTest::instance;
 
-
-
-void BooleanAndTest::keyboard(unsigned char key, int x, int y) {
+BooleanAndTest::BooleanAndTest() {
 	
-	switch (toupper(key)) {
-	case '1':
-	case '2':
-		instance->select(((int)key-48) - 1); break;
-	case 'A':
-		instance->move(Vector(-0.1,0,0,0)); break;
-	case 'D':
-		instance->move(Vector(+0.1,0,0,0)); break;
-	case 'W':
-		instance->move(Vector(0,+0.1,0,0)); break;
-	case 'S':
-		instance->move(Vector(0,-0.1,0,0)); break;
-	case '<':
-	case ',':
-		instance->move(Vector(0,0,-0.1,0)); break;
-	case '>':
-	case '.':
-		instance->move(Vector(0,0,+0.1,0)); break;
-	case 'P':
-		instance->scene->print(); break;
-	case '-':
-	case '_':
-		Window::translate(Vector(0,0,-2)); break;
-	case '+':
-	case '=':
-		Window::translate(Vector(0,0,+2)); break;
-	case 27:
-		exit(0);
-	}
+	shape = NULL;
 }
 
+void BooleanAndTest::onCanvasKeyEvent(Canvas &canvas) {
+	
+	int trigger;
+	
+	trigger = canvas.getState().combo.trigger;
+	
+	switch (trigger) {
+	case '1':
+	case '2':
+		select((trigger-48) - 1); break;
+	case 'A':
+		move(Vec4(-0.1,0,0,0)); break;
+	case 'D':
+		move(Vec4(+0.1,0,0,0)); break;
+	case 'W':
+		move(Vec4(0,+0.1,0,0)); break;
+	case 'S':
+		move(Vec4(0,-0.1,0,0)); break;
+	case '<':
+	case ',':
+		move(Vec4(0,0,-0.1,0)); break;
+	case '>':
+	case '.':
+		move(Vec4(0,0,+0.1,0)); break;
+	case 'P':
+		scene->print(); break;
+	case '-':
+	case '_':
+		move(Vec4(0,0,-2,0)); break;
+	case '+':
+	case '=':
+		move(Vec4(0,0,+2,0)); break;
+	case TOOLKIT_ESCAPE:
+		exit(0);
+	}
+	
+	canvas.refresh();
+}
 
-void BooleanAndTest::move(const Vector &movement) {
+void BooleanAndTest::move(const Vec4 &movement) {
 	
 	Translate *translate;
 	
@@ -73,9 +83,7 @@ void BooleanAndTest::move(const Vector &movement) {
 	if (translate != NULL) {
 		translate->add(movement);
 	}
-	Window::refresh();
 }
-
 
 void BooleanAndTest::select(int id) {
 	
@@ -104,28 +112,22 @@ void BooleanAndTest::select(int id) {
 			break;
 		}
 	}
-	
-	// Refresh
-	Window::refresh();
 }
 
-
-int main(int argc,
-         char *argv[]) {
+/* Run the test. */
+int main(int argc, char *argv[]) {
 	
+	Toolkit toolkit(argc, argv);
 	BooleanAndTest test;
+	Tester tester;
 	
-	// Initialize
-	Tester::init(argc, argv);
 	AdvancedFactory::install();
-	Tester::open("BooleanAnd.xml");
+	tester.open("test/advanced/BooleanAnd.xml");
 	
-	// Start
-	test.setScene(Tester::getScene());
-	Window::setKeyboard(&BooleanAndTest::keyboard);
-	Tester::start();
+	test.setScene(tester.getScene());
+	tester.getCanvas()->addListener(&test);
+	tester.start();
 	
-	// Finish
 	return 0;
 }
 

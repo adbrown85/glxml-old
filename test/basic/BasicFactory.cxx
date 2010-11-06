@@ -4,10 +4,11 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
+#include "glxml_common.h"
 #include <cassert>
+#include <edo/Parser.hpp>
+#include <edo/Text.hpp>
 #include "BasicFactory.hpp"
-#include "Parser.hpp"
-#include "Text.hpp"
 
 
 void testCreate(const string &text) {
@@ -21,15 +22,7 @@ void testCreate(const string &text) {
 }
 
 
-int main(int argc,
-         char *argv[]) {
-	
-	// Start
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "BasicFactory" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
+int main(int argc, char *argv[]) {
 	
 	// Test
 	try {
@@ -43,16 +36,9 @@ int main(int argc,
 		testCreate("texture file='../../textures/chunk.vlb'");
 		testCreate("translate");
 		testCreate("uniform type='int' name='bar'");
-	} catch (Exception &e) {
-		cerr << e << endl;
+	} catch (exception &e) {
+		cerr << e.what() << endl;
 	}
-	
-	// Finish
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "BasicFactory" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
 	return 0;
 }
 

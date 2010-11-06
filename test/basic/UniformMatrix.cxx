@@ -9,18 +9,16 @@
 #include "BasicFactory.hpp"
 
 
-int main(int argc,
-         char *argv[]) {
+int main(int argc, char *argv[]) {
 	
-	// Install tags
+	Toolkit toolkit(argc, argv);
+	Tester tester;
+	
 	BasicFactory::install();
 	
-	// Start
-	Tester::init(argc, argv);
-	Tester::open("UniformMatrix.xml");
-	Tester::start();
+	tester.open("test/basic/UniformMatrix.xml");
+	tester.start();
 	
-	// Finish
 	return 0;
 }
 

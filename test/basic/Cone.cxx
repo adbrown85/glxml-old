@@ -8,18 +8,16 @@
 #include "Tester.hpp"
 
 
-int main(int argc,
-         char *argv[]) {
+int main(int argc, char *argv[]) {
+
+	Toolkit toolkit(argc, argv);
+	Tester tester;
 	
-	// Install tags
 	BasicFactory::install();
 	
-	// Start
-	Tester::init(argc, argv);
-	Tester::open("Cone.xml");
-	Tester::start();
+	tester.open("test/basic/Cone.xml");
+	tester.start();
 	
-	// Finish
 	return 0;
 }
 

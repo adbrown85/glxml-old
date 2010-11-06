@@ -4,19 +4,22 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
+#include "glxml_common.h"
+#include <edo/Parser.hpp>
+#include <edo/Tag.hpp>
 #include "Traverser.hpp"
 #include "Factory.hpp"
-#include "Parser.hpp"
-#include "Tag.hpp"
 
 
 class FakeDrawable : public Node, public Drawable {
 public: 
 	FakeDrawable(const Tag &tag) : Node(tag) {name = tag.getName();}
 	virtual void draw() const {cout << "  " << name << endl;}
+	virtual bool isExcluded() const {return false;}
 	virtual bool isSelectable() const {return true;}
 	virtual bool isSelected() const {return false;}
 	virtual bool isVisible() const {return true;}
+	virtual void setExcluded(bool excluded) {}
 	virtual void setSelected(bool selected) {}
 	virtual void setVisible(bool visible) {}
 	virtual void toggleSelected() {}
@@ -139,8 +142,8 @@ int main(int argc,
 		test.setUp();
 		test.testStart();
 		test.tearDown();
-	} catch (Exception &e) {
-		cerr << e << endl;
+	} catch (exception &e) {
+		cerr << e.what() << endl;
 	}
 	
 	// Finish

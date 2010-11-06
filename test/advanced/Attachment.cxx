@@ -4,17 +4,39 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
+#include "glxml_common.h"
+#include <glawt/Toolkit.hpp>
+#include <glawt/GLAWTFactory.hpp>
 #include "Attachment.hpp"
-#include "Canvas.hpp"
 
 
 class AttachmentTest {
 public:
+	void setUp();
+	void tearDown();
 	void testColorAttachments();
 	void testMaxColorAttachments();
 	void testMaxDrawBuffers();
+private:
+	Window *window;
+	Canvas *canvas;
 };
 
+void AttachmentTest::setUp() {
+	
+	window = GLAWTFactory::createWindow();
+	canvas = GLAWTFactory::createCanvas();
+	
+	window->setTitle("AttachmentTest");
+	window->add(canvas);
+	window->show();
+}
+
+void AttachmentTest::tearDown() {
+	
+	delete window;
+	delete canvas;
+}
 
 void AttachmentTest::testMaxDrawBuffers() {
 	
@@ -25,7 +47,6 @@ void AttachmentTest::testMaxDrawBuffers() {
 	cout << value << endl;
 }
 
-
 void AttachmentTest::testMaxColorAttachments() {
 	
 	GLint value;
@@ -34,7 +55,6 @@ void AttachmentTest::testMaxColorAttachments() {
 	glGetIntegerv(GL_MAX_COLOR_ATTACHMENTS, &value);
 	cout << value << endl;
 }
-
 
 void AttachmentTest::testColorAttachments() {
 	
@@ -48,34 +68,18 @@ void AttachmentTest::testColorAttachments() {
 	cout << GL_COLOR_ATTACHMENT6 << endl;
 }
 
-
-int main(int argc,
-         char *argv[]) {
+/* Run the test. */
+int main(int argc, char *argv[]) {
 	
+	Toolkit toolkit(argc, argv);
 	AttachmentTest test;
 	
-	// Start
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "Attachment" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
-	
-	// Initialize
-	Window::init(argc, argv);
-	Window::create("Attachment");
-	
-	// Test
+	test.setUp();
 	test.testMaxDrawBuffers();
 	test.testMaxColorAttachments();
 	test.testColorAttachments();
+	test.tearDown();
 	
-	// Finish
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "Attachment" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
 	return 0;
 }
 

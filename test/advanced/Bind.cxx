@@ -4,23 +4,22 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
+#include "glxml_common.h"
 #include "Bind.hpp"
 #include "Tester.hpp"
 #include "AdvancedFactory.hpp"
 
 
-int main(int argc,
-         char *argv[]) {
+int main(int argc, char *argv[]) {
 	
-	// Install tags
+	Toolkit toolkit(argc, argv);
+	Tester tester;
+	
 	AdvancedFactory::install();
 	
-	// Start
-	Tester::init(argc, argv);
-	Tester::open("Bind.xml");
-	Tester::start();
+	tester.open("test/basic/Bind.xml");
+	tester.start();
 	
-	// Finish
 	return 0;
 }
 
