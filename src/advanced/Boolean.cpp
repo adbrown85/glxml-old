@@ -155,8 +155,8 @@ void Boolean::calculateExtents(Node *node) {
 	else if ((shape = dynamic_cast<Shape*>(node))) {
 		Extent extent;
 		mvm = State::getModelViewMatrix();
-		extent.upper = mvm * Vector(+0.5,+0.5,+0.5,1.0);
-		extent.lower = mvm * Vector(-0.5,-0.5,-0.5,1.0);
+		extent.upper = mvm * Vec4(+0.5,+0.5,+0.5,1.0);
+		extent.lower = mvm * Vec4(-0.5,-0.5,-0.5,1.0);
 		extent.diagonal = extent.upper - extent.lower;
 		extent.label = shape->getID();
 		extent.index = extents.size();
@@ -178,8 +178,8 @@ void Boolean::calculateOverlap() {
 	vector<Extent>::iterator it;
 	
 	// Form shape
-	overlap.upper = Vector(+FLT_INF);
-	overlap.lower = Vector(-FLT_INF);
+	overlap.upper = Vec4(+FLT_INF);
+	overlap.lower = Vec4(-FLT_INF);
 	for (it=extents.begin(); it!=extents.end(); ++it) {
 		overlap.upper = min(overlap.upper, it->upper);
 		overlap.lower = max(overlap.lower, it->lower);

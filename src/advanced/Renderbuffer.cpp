@@ -73,10 +73,10 @@ void Renderbuffer::attach() {
 
 
 /** Retrieves a value from the renderbuffer at @e x, @e y.*/
-Vector Renderbuffer::read(int x, int y) const {
+Vec4 Renderbuffer::read(int x, int y) const {
 	
 	GLfloat pixels[4];
-	Vector result;
+	Vec4 result;
 	
 	// Bind
 	glBindFramebuffer(GL_READ_FRAMEBUFFER, getFramebuffer()->getHandle());

@@ -47,17 +47,19 @@ void BooleanXor::calculate() {
 /** Draw the pieces or one of the shapes according to overlap and depth. */
 void BooleanXor::draw() const {
 	
-	Matrix rotation;
+	// FIXME: NEEDS CAMERA ROTATION!!!
 	
-	// Get rotation from the canvas
-	rotation = getCanvas()->getCamera()->getRotation();
-	
-	// Draw depending on overlap
-	if (isOverlapped()) {
-		drawWhenOverlapped(rotation);
-	} else {
-		drawWhenNotOverlapped(rotation);
-	}
+//	Matrix rotation;
+//	
+//	// Get rotation from the canvas
+//	rotation = getCanvas()->getCamera()->getRotation();
+//	
+//	// Draw depending on overlap
+//	if (isOverlapped()) {
+//		drawWhenOverlapped(rotation);
+//	} else {
+//		drawWhenNotOverlapped(rotation);
+//	}
 }
 
 
@@ -259,7 +261,7 @@ void BooleanXor::updateBufferCoords() {
 	
 	int index, offset;
 	list<Extent>::iterator p;
-	Vector lower(0,0,1), upper(1,1,0);
+	Vec4 lower(0,0,1), upper(1,1,0);
 	
 	// Calculate coordinates of each piece based on extent of total shape
 	if (isOverlapped()) {

@@ -12,7 +12,9 @@ void Sort::apply() {
 	
 	list<Translate*>::iterator it;
 	
-	rotation = getCanvas()->getCamera()->getRotation();
+	// FIXME: NEEDS CAMERA ROTATION!!!
+	
+//	rotation = getCanvas()->getCamera()->getRotation();
 	for (it=translates.begin(); it!=translates.end(); ++it) {
 		position = rotation * (*it)->getValue();
 		(*it)->setDepth(position.z);

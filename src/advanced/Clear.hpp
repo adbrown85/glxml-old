@@ -36,7 +36,7 @@ private:
 	GLbitfield mask;
 	bool hasColor, hasDepth;
 	float depth;
-	Vector color;
+	Vec4 color;
 };
 
 

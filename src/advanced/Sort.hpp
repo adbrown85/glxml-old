@@ -26,7 +26,7 @@ public:
 private:
 	list<Translate*> translates;
 	Matrix rotation;
-	Vector position;
+	Vec4 position;
 };
 
 

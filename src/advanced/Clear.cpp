@@ -10,11 +10,15 @@
 /** Initialize the three color components. */
 Clear::Clear(const Tag &tag) : Node(tag) {
 	
+	float arr[4];
+	
 	// Color
-	hasColor = true;
-	if (!tag.get("color", color, false)) {
+	if (tag.get("color", arr, false)) {
+		hasColor = true;
+		color = Vec4(arr[0], arr[1], arr[2], arr[3]);
+	} else {
 		hasColor = false;
-		color = Vector(0.0, 0.0, 0.0, 0.0);
+		color = Vec4(0.0, 0.0, 0.0, 0.0);
 	}
 	
 	// Depth

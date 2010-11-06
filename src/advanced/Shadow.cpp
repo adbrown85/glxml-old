@@ -27,11 +27,11 @@ Shadow::Shadow(const Tag &tag) : Texture(tag) {
 	// Subscene
 	try {
 		openSubscene();
-	} catch (Exception &ex) {
-		glog << ex.getMessage();
-		NodeException e(getTag());
-		e << "[Shadow] Could not open subscene.";
-		throw e;
+	} catch (exception &e) {
+		glog << e.what();
+		NodeException ex(getTag());
+		ex << "[Shadow] Could not open subscene.";
+		throw ex;
 	}
 }
 
@@ -55,11 +55,11 @@ void Shadow::finalize() {
 	// Subscene
 	try {
 		prepareSubscene();
-	} catch (Exception &ex) {
-		glog << ex.getMessage() << endl;
-		NodeException e(getTag());
-		e << "[Shadow] Could not prepare subscene.";
-		throw e;
+	} catch (exception &e) {
+		glog << e.what() << endl;
+		NodeException ex(getTag());
+		ex << "[Shadow] Could not prepare subscene.";
+		throw ex;
 	}
 	
 	// Render

@@ -86,7 +86,7 @@ void BooleanAnd::updateBufferPoints() {
 /** Updates the texture coordinates in the vertex buffer. */
 void BooleanAnd::updateBufferCoords() {
 	
-	Vector upper, lower;
+	Vec4 upper, lower;
 	list<Extent>::iterator it;
 	
 	// Calculate coordinates from overlap
