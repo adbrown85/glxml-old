@@ -29,7 +29,7 @@ DEFS_EXTRA   :=
 DEPS_CFLAGS  := @DEPS_CFLAGS@
 CXXFLAGS     := @CXXFLAGS@ $(DEFS) $(DEFS_EXTRA) $(DEPS_CFLAGS) $(INCLUDES)
 LIBS         := @LIBS@
-LIBS_EXTRA   := -lglawt -lgloop
+LIBS_EXTRA   := -ledo -lglawt -lgloop
 DEPS_LIBS    := @DEPS_LIBS@
 LDFLAGS      := @LDFLAGS@ $(LIBS) $(LIBS_EXTRA) $(DEPS_LIBS)
 ARFLAGS      := -cr
@@ -48,11 +48,6 @@ distdir      := $(tarname)-$(version)
 VPATH        := $(srcdir) $(smoduledirs) $(tmoduledirs)
 depends      := ${subst .cpp,.d,$(sources)}
 tdepends     := ${subst .cxx,.t,$(mains)}
-
-# VPATH
-#~ vpath %.cpp %.hpp %.o %.d $(smoduledirs)
-#~ vpath %.cxx %.t $(tmoduledirs)
-#~ VPATH        := $(tmoduledirs)
 
 # Phony targets
 doc_targets  := html install-html
@@ -98,7 +93,7 @@ ${foreach m,$(modules),${eval ${call module,$(m)}}}
 $(archive): ${notdir $(objects)}
 
 # Tests
-%: %.cxx %.o
+%: %.cxx
 	@echo "  $<"
 	@$(CXX) $(CXXFLAGS) -o ${dir $<}${notdir $@} $< $(archive) $(LDFLAGS)
 tests: ${notdir $(tests)}
@@ -114,7 +109,7 @@ endif
 %.t: %.cxx
 	@echo "  Generating dependencies for $<..."
 	@$(CXX) $(CXXFLAGS) -MM $< -MT ${notdir ${subst .cxx,,$<}} \
-        | sed 's/.hpp/.o/g' >> $@;
+        | sed 's/.hpp/.o/g' > $@;
 ifeq ($(findstring tests,$(MAKECMDGOALS)),tests)
   -include $(tdepends)
 endif
