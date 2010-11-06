@@ -28,7 +28,7 @@ int main(int argc,
 	Factory::install("cube", &createNode);
 	
 	// Start
-	tester.open("Tester.xml");
+	tester.open("test/scene/Tester.xml");
 	tester.start();
 	
 	// Finish
