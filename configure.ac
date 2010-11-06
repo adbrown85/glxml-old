@@ -1,7 +1,7 @@
 # Initialize
 AC_PREREQ([2.65])
 AC_INIT([GLxml], [0.96], [adb1413@rit.edu], , [http://gander.sourceforge.net])
-AC_CONFIG_SRCDIR([src/common.h])
+AC_CONFIG_SRCDIR([src/glxml_common.h])
 AC_CONFIG_HEADERS([config.h:config.in])
 AC_CANONICAL_SYSTEM
 AC_PROG_CXX
@@ -45,14 +45,15 @@ AC_FUNC_MALLOC
 AC_HEADER_STDBOOL
 AC_TYPE_SIZE_T
 
-# Check for GLawt
-warning_no_glawt() {
+# Check for EDO
+error_no_edo() {
 	echo "-------------------------------------------------------"
-	echo " GLawt is needed to build GLoop tests.                 "
+	echo " EDO is needed to build GLxml.                         "
 	echo " Visit 'http://gander.sourceforge.net'                 "
 	echo "-------------------------------------------------------"
+	(exit 1); exit 1;
 }
-AC_CHECK_HEADER([glawt/common.h], , [warning_no_glawt])
+AC_CHECK_HEADER([edo/edo_common.h], , [error_no_edo])
 
 # Check for GLoop
 error_no_gloop() {
@@ -62,7 +63,16 @@ error_no_gloop() {
 	echo "-------------------------------------------------------"
 	(exit 1); exit 1;
 }
-AC_CHECK_HEADER([gloop/common.h], , [error_no_gloop])
+AC_CHECK_HEADER([gloop/gloop_common.h], , [error_no_gloop])
+
+# Check for GLawt
+warning_no_glawt() {
+	echo "-------------------------------------------------------"
+	echo " GLawt is needed to build GLxml tests.                 "
+	echo " Visit 'http://gander.sourceforge.net'                 "
+	echo "-------------------------------------------------------"
+}
+AC_CHECK_HEADER([glawt/glawt_common.h], , [warning_no_glawt])
 
 # OS-specific compiler switches
 if test $build_os = "mingw32"; then
@@ -88,7 +98,6 @@ htmldir='${docdir}'/html
 
 # Finish
 AC_CONFIG_FILES([Makefile doc/Makefile])
-PKG_CHECK_MODULES([DEPS], [gtkmm-2.4 gtkglextmm-1.2])
 AC_OUTPUT
 
 echo \
