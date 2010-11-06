@@ -6,9 +6,9 @@
  */
 #ifndef NODEINTERFACES_HPP
 #define NODEINTERFACES_HPP
-#include "common.h"
+#include "glxml_common.h"
+#include <glawt/Canvas.hpp>
 #include "Node.hpp"
-#include "Canvas.hpp"
 using namespace std;
 
 

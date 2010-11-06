@@ -6,9 +6,9 @@
  */
 #ifndef SCALE_HPP
 #define SCALE_HPP
-#include "common.h"
+#include "glxml_common.h"
+#include <gloop/Vec4.hpp>
 #include "Transform.hpp"
-#include "Vector.hpp"
 using namespace std;
 
 

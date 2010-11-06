@@ -6,8 +6,8 @@
  */
 #ifndef TRAVERSER_HPP
 #define TRAVERSER_HPP
-#include "common.h"
-#include "Exception.hpp"
+#include "glxml_common.h"
+#include <edo/BasicException.hpp>
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"
 #include "Scene.hpp"

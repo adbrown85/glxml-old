@@ -6,15 +6,15 @@
  */
 #ifndef SHAPE_HPP
 #define SHAPE_HPP
-#include "common.h"
+#include "glxml_common.h"
+#include <gloop/Matrix.hpp>
+#include <gloop/VertexAttribute.hpp>
 #include "SimpleDrawable.hpp"
-#include "Matrix.hpp"
 #include "Program.hpp"
 #include "Transform.hpp"
 #include "UniformMatrix.hpp"
 #include "Factory.hpp"
 #include "Scout.hpp"
-#include "VertexAttribute.hpp"
 using namespace std;
 
 

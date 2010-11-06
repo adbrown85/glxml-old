@@ -6,16 +6,16 @@
  */
 #ifndef NODE_HPP
 #define NODE_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include <algorithm>
 #include <typeinfo>
 #include <vector>
+#include <edo/Parser.hpp>
+#include <edo/Tag.hpp>
+#include <edo/Text.hpp>
+#include <edo/Log.hpp>
 #include "NodeException.hpp"
 #include "Identifiable.hpp"
-#include "Tag.hpp"
-#include "Text.hpp"
-#include "Log.hpp"
-#include "Parser.hpp"
 using namespace std;
 
 

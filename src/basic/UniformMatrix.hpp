@@ -7,7 +7,7 @@
 #ifndef UNIFORMMATRIX_HPP
 #define UNIFORMMATRIX_HPP
 #include "Uniform.hpp"
-#include "State.hpp"
+#include <gloop/State.hpp>
 #include "Light.hpp"
 #define DEFAULT_MODEL_MATRIX_NAME "MMatrix"
 #define DEFAULT_MODELVIEW_MATRIX_NAME "MVMatrix"

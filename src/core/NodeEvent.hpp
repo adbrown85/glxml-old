@@ -6,7 +6,7 @@
  */
 #ifndef NODEEVENT_HPP
 #define NODEEVENT_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Node.hpp"
 using namespace std;
 

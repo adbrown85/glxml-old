@@ -6,13 +6,11 @@
  */
 #ifndef PROGRAM_HPP
 #define PROGRAM_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include <cstring>
 #include <vector>
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"
-#include "Error.hpp"
-#include "Code.hpp"
 #include "NodeEvent.hpp"
 #include "Scout.hpp"
 using namespace std;

@@ -6,7 +6,7 @@
  */
 #ifndef FULLSCREEN_HPP
 #define FULLSCREEN_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Shape.hpp"
 
 

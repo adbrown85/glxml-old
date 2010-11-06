@@ -6,7 +6,7 @@
  */
 #ifndef BOX_HPP
 #define BOX_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Hexahedron.hpp"
 using namespace std;
 

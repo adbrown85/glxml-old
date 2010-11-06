@@ -6,7 +6,8 @@
  */
 #ifndef SHADOW_HPP
 #define SHADOW_HPP
-#include "common.h"
+#include "glxml_common.h"
+#include <gloop/State.hpp>
 #include "Texture.hpp"
 #include "SubsceneUser.hpp"
 #include "Group.hpp"
@@ -14,7 +15,6 @@
 #include "Resources.hpp"
 #include "Target.hpp"
 #include "Clone.hpp"
-#include "State.hpp"
 #include "Scout.hpp"
 #define SHADOW_SUBSCENE "ui/shadow-cast.xml"
 using namespace std;

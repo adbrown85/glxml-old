@@ -6,7 +6,7 @@
  */
 #ifndef REPLACEMENT_HPP
 #define REPLACEMENT_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Node.hpp"
 using namespace std;
 

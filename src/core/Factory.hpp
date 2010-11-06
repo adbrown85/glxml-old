@@ -6,13 +6,13 @@
  */
 #ifndef FACTORY_HPP
 #define FACTORY_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include <vector>
-#include "NodeException.hpp"
-#include "Path.hpp"
+#include <edo/Parser.hpp>
+#include <edo/Path.hpp>
+#include <edo/Tag.hpp>
 #include "Node.hpp"
-#include "Parser.hpp"
-#include "Tag.hpp"
+#include "NodeException.hpp"
 using namespace std;
 
 

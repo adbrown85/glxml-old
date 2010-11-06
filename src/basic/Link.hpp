@@ -6,7 +6,7 @@
  */
 #ifndef LINK_HPP
 #define LINK_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Group.hpp"
 #include "Scout.hpp"
 using namespace std;

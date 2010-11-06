@@ -6,10 +6,10 @@
  */
 #ifndef OUTPUTS_HPP
 #define OUTPUTS_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include <algorithm>                    // Finding attachments
+#include <gloop/Configuration.hpp>      // Max draw buffers
 #include "Attachment.hpp"
-#include "Configuration.hpp"            // Max draw buffers
 using namespace std;
 
 

@@ -6,9 +6,9 @@
  */
 #ifndef DISK_HPP
 #define DISK_HPP
-#include "common.h"
+#include "glxml_common.h"
+#include <gloop/Math.hpp>               // Calculating circle
 #include "Shape.hpp"                    // Base class
-#include "Math.hpp"                     // Calculating circle
 using namespace std;
 
 

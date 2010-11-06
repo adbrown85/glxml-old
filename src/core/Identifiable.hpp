@@ -6,7 +6,7 @@
  */
 #ifndef IDENTIFIABLE_HPP
 #define IDENTIFIABLE_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include <vector>
 using namespace std;
 

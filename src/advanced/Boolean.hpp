@@ -6,9 +6,10 @@
  */
 #ifndef BOOLEAN_HPP
 #define BOOLEAN_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include <limits>                       // Calculating result
 #include <vector>                       // Storing shapes and extents
+#include <gloop/State.hpp>
 #include "Group.hpp"
 #include "Shape.hpp"
 #include "Transform.hpp"
@@ -16,7 +17,6 @@
 #include "Factory.hpp"
 #include "Uniform.hpp"
 #include "Suppressor.hpp"
-#include "State.hpp"
 using namespace std;
 
 

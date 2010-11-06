@@ -6,12 +6,11 @@
  */
 #ifndef TESTER_HPP
 #define TESTER_HPP
-#include "common.h"
-#include "Toolkit.hpp"
-#include "WindowFactory.hpp"
-#include "CanvasFactory.hpp"
+#include "glxml_common.h"
+#include <edo/Path.hpp>
+#include <glawt/Toolkit.hpp>
+#include <glawt/GLAWTFactory.hpp>
 #include "Node.hpp"
-#include "Path.hpp"
 #include "Scene.hpp"
 #include "Traverser.hpp"
 using namespace std;

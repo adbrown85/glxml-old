@@ -6,11 +6,11 @@
  */
 #ifndef TEXTURE_HPP
 #define TEXTURE_HPP
-#include "common.h"
+#include "glxml_common.h"
+#include <gloop/TextureFactory.hpp>
 #include "Node.hpp"                     // Base class
 #include "NodeInterfaces.hpp"
 #include "Scout.hpp"
-#include "TextureFactory.hpp"
 using namespace std;
 
 

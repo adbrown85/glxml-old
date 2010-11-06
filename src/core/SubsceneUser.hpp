@@ -6,7 +6,7 @@
  */
 #ifndef SUBSCENEUSER_HPP
 #define SUBSCENEUSER_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Scene.hpp"
 #include "Traverser.hpp"
 #include "Resources.hpp"

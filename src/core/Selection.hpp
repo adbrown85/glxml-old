@@ -6,7 +6,7 @@
  */
 #ifndef SELECTION_HPP
 #define SELECTION_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include <set>
 #include "Identifiable.hpp"
 #include "Node.hpp"

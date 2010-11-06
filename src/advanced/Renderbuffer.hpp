@@ -6,9 +6,9 @@
  */
 #ifndef RENDERBUFFER_HPP
 #define RENDERBUFFER_HPP
-#include "common.h"
+#include "glxml_common.h"
+#include <glawt/Canvas.hpp>
 #include "Attachment.hpp"
-#include "Canvas.hpp"
 using namespace std;
 
 

@@ -6,7 +6,7 @@
  */
 #ifndef ADVANCEDFACTORY_HPP
 #define ADVANCEDFACTORY_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Factory.hpp"
 #include "BasicFactory.hpp"
 #include "Bind.hpp"

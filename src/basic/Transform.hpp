@@ -6,12 +6,12 @@
  */
 #ifndef TRANSFORM_HPP
 #define TRANSFORM_HPP
-#include "common.h"
+#include "glxml_common.h"
+#include <gloop/Matrix.hpp>
+#include <gloop/State.hpp>
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"
 #include "NodeEvent.hpp"
-#include "Matrix.hpp"
-#include "State.hpp"
 
 
 /** @brief Operation that changes size, position, or orientation of objects.

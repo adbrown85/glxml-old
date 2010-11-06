@@ -6,12 +6,12 @@
  */
 #ifndef SHADER_HPP
 #define SHADER_HPP
-#include "common.h"
+#include "glxml_common.h"
+#include <gloop/ShaderFactory.hpp>
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"
 #include "Program.hpp"
 #include "Scout.hpp"
-#include "ShaderFactory.hpp"
 using namespace std;
 
 

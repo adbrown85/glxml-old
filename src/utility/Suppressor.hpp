@@ -6,10 +6,10 @@
  */
 #ifndef SUPPRESSOR_HPP
 #define SUPPRESSOR_HPP
-#include "common.h"
+#include "glxml_common.h"
+#include <edo/Log.hpp>
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"
-#include "Log.hpp"
 using namespace std;
 
 

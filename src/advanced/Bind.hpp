@@ -6,7 +6,7 @@
  */
 #ifndef BIND_HPP
 #define BIND_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Node.hpp"                     // Base class
 #include "Attachment.hpp"               // Look up attachment location
 #include "Outputs.hpp"                  // Add attachment, look up position

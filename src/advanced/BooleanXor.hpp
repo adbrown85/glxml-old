@@ -6,7 +6,7 @@
  */
 #ifndef BOOLEANXOR_HPP
 #define BOOLEANXOR_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include <algorithm>                    // For 'swap'
 #include "Boolean.hpp"
 #define BOOLEAN_XOR_COUNT 336

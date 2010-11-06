@@ -6,7 +6,7 @@
  */
 #ifndef BASICFACTORY_HPP
 #define BASICFACTORY_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Factory.hpp"
 #include "NodeException.hpp"
 #include "Box.hpp"

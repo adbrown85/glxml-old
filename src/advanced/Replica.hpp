@@ -6,7 +6,7 @@
  */
 #ifndef REPLICA_HPP
 #define REPLICA_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Clone.hpp"
 #include "Replacement.hpp"
 #include "Placeholder.hpp"

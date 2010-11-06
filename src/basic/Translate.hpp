@@ -6,11 +6,11 @@
  */
 #ifndef TRANSLATE_HPP
 #define TRANSLATE_HPP
-#include "common.h"
-#include "Matrix.hpp"
-#include "Tag.hpp"
+#include "glxml_common.h"
+#include <edo/Tag.hpp>
+#include <gloop/Matrix.hpp>
+#include <gloop/Vec4.hpp>
 #include "Transform.hpp"
-#include "Vector.hpp"
 using namespace std;
 
 

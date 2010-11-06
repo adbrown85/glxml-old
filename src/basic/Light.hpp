@@ -6,7 +6,7 @@
  */
 #ifndef LIGHT_HPP
 #define LIGHT_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "SimpleDrawable.hpp"
 #include "Scene.hpp"
 #include "Resources.hpp"

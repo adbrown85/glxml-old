@@ -6,7 +6,7 @@
  */
 #ifndef ATTACHMENT_HPP
 #define ATTACHMENT_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Node.hpp"                     // Base class
 #include "NodeInterfaces.hpp"           // Interfaces
 #include "Framebuffer.hpp"              // Attach to framebuffer

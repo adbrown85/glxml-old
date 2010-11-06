@@ -6,10 +6,10 @@
  */
 #ifndef FRAMEBUFFER_HPP
 #define FRAMEBUFFER_HPP
-#include "common.h"
+#include "glxml_common.h"
+#include <gloop/Configuration.hpp>
 #include "Node.hpp"
 #include "Texture.hpp"
-#include "Configuration.hpp"
 
 
 /* Group of similar framebuffer attachments. */

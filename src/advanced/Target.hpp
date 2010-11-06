@@ -6,7 +6,7 @@
  */
 #ifndef TARGET_HPP
 #define TARGET_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Attachment.hpp"               // Base class
 #include "Texture.hpp"                // Backer
 using namespace std;

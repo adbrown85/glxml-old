@@ -6,15 +6,15 @@
  */
 #ifndef UNIFORM_HPP
 #define UNIFORM_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include <iomanip>
 #include <set>
-#include "Matrix.hpp"
+#include <edo/Tag.hpp>
+#include <edo/Text.hpp>
+#include <gloop/Matrix.hpp>
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"
 #include "Program.hpp"
-#include "Tag.hpp"
-#include "Text.hpp"
 #include "Texture.hpp"
 #include "Scout.hpp"
 using namespace std;

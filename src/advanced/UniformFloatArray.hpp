@@ -6,7 +6,7 @@
  */
 #ifndef UNIFORMFLOATARRAY_HPP
 #define UNIFORMFLOATARRAY_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Uniform.hpp"
 #include "Group.hpp"
 #include "Shape.hpp"

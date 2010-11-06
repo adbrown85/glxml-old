@@ -6,7 +6,7 @@
  */
 #ifndef HEXAHEDRON_HPP
 #define HEXAHEDRON_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Shape.hpp"
 using namespace std;
 

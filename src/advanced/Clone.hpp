@@ -6,7 +6,7 @@
  */
 #ifndef CLONE_HPP
 #define CLONE_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Instance.hpp"
 #include "Uniform.hpp"
 #include "Shape.hpp"

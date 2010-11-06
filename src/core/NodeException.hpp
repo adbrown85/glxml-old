@@ -6,9 +6,9 @@
  */
 #ifndef NODEEXCEPTION_HPP
 #define NODEEXCEPTION_HPP
-#include "common.h"
-#include "Exception.hpp"
-#include "Tag.hpp"
+#include "glxml_common.h"
+#include <edo/BasicException.hpp>
+#include <edo/Tag.hpp>
 using namespace std;
 
 
@@ -18,7 +18,7 @@ using namespace std;
  * 
  * @ingroup scene
  */
-class NodeException : public Exception {
+class NodeException : public BasicException {
 public:
 	NodeException(const Tag &tag);
 };

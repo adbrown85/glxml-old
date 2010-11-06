@@ -6,7 +6,7 @@
  */
 #ifndef BOOLEANAND_HPP
 #define BOOLEANAND_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Boolean.hpp"
 #include "UniformSampler.hpp"
 #include "Factory.hpp"

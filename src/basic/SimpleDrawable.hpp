@@ -6,7 +6,7 @@
  */
 #ifndef SIMPLEDRAWABLE_HPP
 #define SIMPLEDRAWABLE_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"
 #include "SimpleTransformable.hpp"

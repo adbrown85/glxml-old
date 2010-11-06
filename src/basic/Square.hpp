@@ -6,7 +6,7 @@
  */
 #ifndef SQUARE_HPP
 #define SQUARE_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Shape.hpp"                    // Base class
 using namespace std;
 

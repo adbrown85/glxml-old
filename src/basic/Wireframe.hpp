@@ -6,7 +6,7 @@
  */
 #ifndef WIREFRAME_HPP
 #define WIREFRAME_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"
 using namespace std;

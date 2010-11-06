@@ -6,7 +6,7 @@
  */
 #ifndef CHOOSE_HPP
 #define CHOOSE_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"
 #include "NodeEvent.hpp"

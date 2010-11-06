@@ -6,12 +6,12 @@
  */
 #ifndef BLEND_HPP
 #define BLEND_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include <algorithm>
+#include <edo/Tag.hpp>
+#include <glawt/Canvas.hpp>
 #include "Node.hpp"
-#include "Tag.hpp"
 #include "Translate.hpp"
-#include "Canvas.hpp"
 using namespace std;
 
 

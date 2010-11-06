@@ -6,7 +6,7 @@
  */
 #ifndef SCREEN_HPP
 #define SCREEN_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Framebuffer.hpp"
 using namespace std;
 

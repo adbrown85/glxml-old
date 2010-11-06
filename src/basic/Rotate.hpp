@@ -6,11 +6,11 @@
  */
 #ifndef ROTATE_HPP
 #define ROTATE_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include <iomanip>
+#include <gloop/Quaternion.hpp>
+#include <gloop/Vec4.hpp>
 #include "Transform.hpp"
-#include "Vector.hpp"
-#include "Quaternion.hpp"
 using namespace std;
 
 

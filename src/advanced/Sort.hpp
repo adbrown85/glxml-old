@@ -6,11 +6,11 @@
  */
 #ifndef SORT_HPP
 #define SORT_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include <algorithm>                    // For sort
+#include <glawt/Canvas.hpp>
 #include "Node.hpp"
 #include "Translate.hpp"
-#include "Canvas.hpp"
 using namespace std;
 
 

@@ -6,7 +6,7 @@
  */
 #ifndef LINE_HPP
 #define LINE_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Shape.hpp"                    // Base class
 using namespace std;
 

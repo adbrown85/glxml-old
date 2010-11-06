@@ -6,18 +6,18 @@
  */
 #ifndef SCENE_HPP
 #define SCENE_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include <stack>
 #include <vector>
-#include "Exception.hpp"
+#include <edo/BasicException.hpp>
+#include <edo/Parser.hpp>
+#include <edo/Path.hpp>
+#include <gloop/Matrix.hpp>
+#include <gloop/Quaternion.hpp>
+#include <gloop/Vec4.hpp>
 #include "Factory.hpp"
-#include "Matrix.hpp"
 #include "Node.hpp"
-#include "Parser.hpp"
-#include "Path.hpp"
-#include "Quaternion.hpp"
 #include "Selection.hpp"
-#include "Vector.hpp"
 using namespace std;
 
 

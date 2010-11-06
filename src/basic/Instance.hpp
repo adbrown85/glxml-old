@@ -6,7 +6,7 @@
  */
 #ifndef INSTANCE_HPP
 #define INSTANCE_HPP
-#include "common.h"
+#include "glxml_common.h"
 #include "Link.hpp"
 #include "Shape.hpp"
 using namespace std;
