@@ -6,71 +6,53 @@
  */
 #include "Tester.hpp"
 
-
-void Tester::onCanvasEvent(const CanvasEvent &event) {
-	
-	switch (event.type) {
-	case CanvasEvent::DISPLAY:
-		onCanvasEventDisplay(event);
-		break;
-	case CanvasEvent::KEY:
-		onCanvasEventKey(event);
-		break;
-	}
-}
-
-
 /** Draws the scene. */
-void Tester::onCanvasEventDisplay(const CanvasEvent &event) {
+void Tester::onCanvasDisplayEvent(Canvas &canvas) {
 	
 	// Clear
-	canvas->clear();
+	glClearColor(0, 1, 1, 1);
+	glClear(GL_COLOR_BUFFER_BIT);
 	
 	// Draw
 	camera->apply();
 	traverser->start();
-	canvas->write(scene->getFilename());
-	
-	// Finish
-	canvas->flush();
+	canvas.write(scene->getFilename());
 }
 
-
 /** Key was pressed. */
-void Tester::onCanvasEventKey(const CanvasEvent &event) {
+void Tester::onCanvasKeyEvent(Canvas &canvas) {
 	
-	switch(event.state.combo.trigger) {
+	switch (canvas.getState().combo.trigger) {
 	case TOOLKIT_KEY_UP:
-		camera->rotate(-CAMERA_ROTATE_AMOUNT, Vector(1.0,0.0,0.0));
+		camera->rotate(-CAMERA_ROTATE_AMOUNT, Vec4(1.0,0.0,0.0));
 		break;
 	case TOOLKIT_KEY_RIGHT:
-		camera->rotate(+CAMERA_ROTATE_AMOUNT, Vector(0.0,1.0,0.0));
+		camera->rotate(+CAMERA_ROTATE_AMOUNT, Vec4(0.0,1.0,0.0));
 		break;
 	case TOOLKIT_KEY_DOWN:
-		camera->rotate(+CAMERA_ROTATE_AMOUNT, Vector(1.0,0.0,0.0));
+		camera->rotate(+CAMERA_ROTATE_AMOUNT, Vec4(1.0,0.0,0.0));
 		break;
 	case TOOLKIT_KEY_LEFT:
-		camera->rotate(-CAMERA_ROTATE_AMOUNT, Vector(0.0,1.0,0.0));
+		camera->rotate(-CAMERA_ROTATE_AMOUNT, Vec4(0.0,1.0,0.0));
 		break;
 	case 'r':
 	case 'R':
 		camera->reset();
 		break;
 	case TOOLKIT_MINUS:
-		camera->move(Vector(0,0,-1));
+		camera->move(Vec4(0,0,-1));
 		break;
 	case TOOLKIT_PLUS:
 	case TOOLKIT_EQUALS:
-		camera->move(Vector(0,0,+1));
+		camera->move(Vec4(0,0,+1));
 		break;
 	case TOOLKIT_ESCAPE:
 	case 'Q':
 	case 'q':
 		exit(0);
 	}
-	canvas->refresh();
+	canvas.refresh();
 }
-
 
 /** Creates a window, opens the scene, and prepares it. */
 void Tester::open(const string &filename) {
@@ -83,15 +65,14 @@ void Tester::open(const string &filename) {
 	cout << endl;
 	
 	// Create the canvas and get camera
-	canvas = CanvasFactory::create();
-	canvas->addListener(this, CanvasEvent::DISPLAY);
-	canvas->addListener(this, CanvasEvent::KEY);
-	camera = canvas->getCamera();
+	canvas = GLAWTFactory::createCanvas();
+	canvas->addListener(this);
+	camera = new Camera();
 	
 	try {
 		
 		// Pack window
-		window = WindowFactory::create();
+		window = GLAWTFactory::createWindow();
 		window->setTitle("Tester");
 		window->add(canvas);
 		window->show();
@@ -109,20 +90,19 @@ void Tester::open(const string &filename) {
 		// End setup
 		canvas->primeFinish();
 	}
-	catch (Exception &e) {
-		cerr << e << endl;
+	catch (exception &e) {
+		cerr << e.what() << endl;
 		exit(1);
 	}
 }
-
 
 /** Starts the window's main loop, catching any exceptions. */
 void Tester::start() {
 	
 	try {
 		window->run();
-	} catch (Exception &e) {
-		cerr << e << endl;
+	} catch (exception &e) {
+		cerr << e.what() << endl;
 		exit(1);
 	}
 }

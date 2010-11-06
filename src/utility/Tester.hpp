@@ -9,7 +9,9 @@
 #include "glxml_common.h"
 #include <edo/Path.hpp>
 #include <glawt/Toolkit.hpp>
+#include <glawt/Canvas.hpp>
 #include <glawt/GLAWTFactory.hpp>
+#include <gloop/Camera.hpp>
 #include "Node.hpp"
 #include "Scene.hpp"
 #include "Traverser.hpp"
@@ -21,13 +23,17 @@ using namespace std;
  */
 class Tester : public CanvasListener {
 public:
-	string getFilename();
-	Scene* getScene();
-	void onCanvasEvent(const CanvasEvent &event);
-	void onCanvasEventDisplay(const CanvasEvent &event);
-	void onCanvasEventKey(const CanvasEvent &event);
 	void open(const string &filename);
 	void start();
+// Event handlers
+	virtual void onCanvasInitEvent(Canvas &canvas) { }
+	virtual void onCanvasDisplayEvent(Canvas &canvas);
+	virtual void onCanvasKeyEvent(Canvas &canvas);
+	virtual void onCanvasButtonEvent(Canvas &canvas) { }
+	virtual void onCanvasDragEvent(Canvas &canvas) { }
+// Getters and setters
+	string getFilename();
+	Scene* getScene();
 private:
 	Traverser *traverser;
 	Scene *scene;
