@@ -8,6 +8,8 @@
 #define NODEINTERFACES_HPP
 #include "glxml_common.h"
 #include <glawt/Canvas.hpp>
+#include <gloop/Matrix.hpp>
+#include <gloop/Vec4.hpp>
 #include "Node.hpp"
 using namespace std;
 
@@ -38,7 +40,7 @@ public:
 
 /* Upper and lower boundaries of an object. */
 struct Extent {
-	Vector upper, lower, diagonal;
+	Vec4 upper, lower, diagonal;
 	int label, index;
 };
 
@@ -50,7 +52,7 @@ struct Extent {
 class Transformable {
 public:
 	virtual Extent getExtent() = 0;
-	virtual Vector getPosition() = 0;
+	virtual Vec4 getPosition() = 0;
 	virtual Matrix getTransformation() = 0;
 	virtual Matrix getTransformationInverse() = 0;
 };
