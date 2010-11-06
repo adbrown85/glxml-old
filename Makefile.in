@@ -25,9 +25,9 @@ modules      := ${patsubst $(srcdir)/%/,%,$(smoduledirs)}
 CXX          := @CXX@
 INCLUDES     := -I./ -I$(srcdir)/ ${addprefix -I,$(smoduledirs)}
 DEFS         := @DEFS@
-DEFS_EXTRA   := 
 DEPS_CFLAGS  := @DEPS_CFLAGS@
 CXXFLAGS     := @CXXFLAGS@ $(DEFS) $(DEFS_EXTRA) $(DEPS_CFLAGS) $(INCLUDES)
+DEFS_EXTRA   := -DGLXML_DATA_DIR='"$(datadir)"'
 LIBS         := @LIBS@
 LIBS_EXTRA   := -ledo -lglawt -lgloop
 DEPS_LIBS    := @DEPS_LIBS@
