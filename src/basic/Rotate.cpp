@@ -13,8 +13,14 @@
  */
 Rotate::Rotate(const Tag &tag) : Transform(tag) {
 	
+	float arr[4];
+	
 	tag.get("angle", angle, true);
-	tag.get("axis", axis, true);
+	tag.get("axis", arr, true);
+	axis.x = arr[0];
+	axis.y = arr[1];
+	axis.z = arr[2];
+	axis.z = arr[3];
 	axis = normalize(axis);
 	quaternion.set(angle, axis);
 }

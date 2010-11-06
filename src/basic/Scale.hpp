@@ -16,10 +16,10 @@ using namespace std;
  * @ingroup basic
  */
 class Scale : public Transform,
-              public Vector {
+              public Vec4 {
 public:
 	Scale(const Tag &tag);
-	virtual void add(const Vector &B);
+	virtual void add(const Vec4 &B);
 	virtual void apply();
 	virtual void applyTo(Matrix &matrix);
 	virtual void remove();

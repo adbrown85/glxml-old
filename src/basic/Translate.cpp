@@ -13,7 +13,13 @@
  */
 Translate::Translate(const Tag &tag) : Transform(tag) {
 	
-	if (!tag.get("value", value, false)) {
+	float arr[4];
+	
+	if (tag.get("value", arr, false)) {
+		value.x = arr[0];
+		value.y = arr[1];
+		value.z = arr[2];
+	} else {
 		tag.get("x", value.x, false);
 		tag.get("y", value.y, false);
 		tag.get("z", value.z, false);
@@ -23,7 +29,7 @@ Translate::Translate(const Tag &tag) : Transform(tag) {
 
 
 /** Adds a vector to this translation. */
-void Translate::add(const Vector &B) {
+void Translate::add(const Vec4 &B) {
 	
 	value.x += B.x;
 	value.y += B.y;

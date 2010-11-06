@@ -32,7 +32,6 @@ Shader::Shader(const Tag &tag) : Node(tag), Fileable(tag) {
 	}
 }
 
-
 /** Loads the shader and attaches it to the program.
  * 
  * @throw NodeException if program cannot be found.
@@ -41,6 +40,7 @@ Shader::Shader(const Tag &tag) : Node(tag), Fileable(tag) {
 void Shader::associate() {
 	
 	Program *program;
+	GLenum typeEnum;
 	
 	// Find program
 	program = Scout<Program>::locate(parent);
@@ -50,11 +50,21 @@ void Shader::associate() {
 		throw e;
 	}
 	
+	// Determine type
+	if (type == "fragment") {
+		typeEnum = GL_FRAGMENT_SHADER;
+	} else if (type == "vertex") {
+		typeEnum = GL_VERTEX_SHADER;
+	} else {
+		NodeException e(getTag());
+		e << "[Shader] Type must be 'vertex' or 'fragment'.";
+		throw e;
+	}
+	
 	// Load and attach
-	handle = ShaderFactory::create(type, getFilename());
+	handle = ShaderFactory::create(typeEnum, getFilename());
 	glAttachShader(program->getHandle(), handle);
 }
-
 
 /** Guesses the shader's type by the file's extension.
  * 
@@ -75,7 +85,6 @@ void Shader::guessType() {
 		throw e;
 	}
 }
-
 
 /** Forms a string from the object's attributes. */
 string Shader::toString() const {

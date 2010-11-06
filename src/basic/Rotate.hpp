@@ -26,7 +26,7 @@ public:
 	virtual string toString() const;
 private:
 	float angle;
-	Vector axis;
+	Vec4 axis;
 	Quaternion quaternion;
 };
 

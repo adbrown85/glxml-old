@@ -44,7 +44,7 @@ public:
 protected:
 	static ShapeTraits getTraits();
 	static void load();
-	static void toArray(float array[24][3], const Vector &l, const Vector &u);
+	static void toArray(float array[24][3], const Vec4 &l, const Vec4 &u);
 	static void toNormals(GLfloat array[24][3]);
 	virtual void updateBuffer();
 	virtual void updateBufferPoints();

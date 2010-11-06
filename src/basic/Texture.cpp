@@ -70,10 +70,10 @@ void Texture::finalize() {
 		} else {
 			invoice = TextureFactory::create(makeOrder());
 		}
-	} catch (Exception &ex) {
-		NodeException e(getTag());
-		e << ex.getMessage();
-		throw e;
+	} catch (exception &e) {
+		NodeException ex(getTag());
+		ex << e.what();
+		throw ex;
 	}
 	
 	// Copy details

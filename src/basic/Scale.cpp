@@ -30,7 +30,7 @@ Scale::Scale(const Tag &tag) : Transform(tag) {
 
 
 /** Adds a vector to this scale. */
-void Scale::add(const Vector &B) {
+void Scale::add(const Vec4 &B) {
 	
 	// Add components
 	x += B.x;

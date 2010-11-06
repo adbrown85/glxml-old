@@ -26,7 +26,7 @@ public:
 	Light(const Tag &tag);
 	virtual ~Light();
 	virtual void draw() const;
-	virtual Vector getPosition();
+	virtual Vec4 getPosition();
 	virtual Matrix getLightMatrix();
 	virtual void getLightMatrix(GLfloat array[16]);
 	virtual string toString() const;

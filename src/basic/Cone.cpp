@@ -31,14 +31,14 @@ void Cone::updateBufferPoints() {
 	
 	GLfloat (*P)[3];
 	int i;
-	list<Vector> points;
-	list<Vector>::iterator curr, next;
-	Vector tip(0,0,-1,1);
+	list<Vec4> points;
+	list<Vec4>::iterator curr, next;
+	Vec4 tip(0,0,-1,1);
 	
 	// Initialize
 	P = new GLfloat[getCount()][3];
 	points = Math::computeCircle(0.5, getCount() / 3);
-	points.push_back(Vector(0.5,0,0,1));
+	points.push_back(Vec4(0.5,0,0,1));
 	
 	// Fill array
 	curr = points.begin();
@@ -64,14 +64,14 @@ void Cone::updateBufferNormals() {
 	
 	GLfloat (*N)[3];
 	int i;
-	list<Vector> points;
-	list<Vector>::iterator curr, next;
-	Vector normal, tip(0,0,-1,1);
+	list<Vec4> points;
+	list<Vec4>::iterator curr, next;
+	Vec4 normal, tip(0,0,-1,1);
 	
 	// Initialize
 	N = new GLfloat[getCount()][3];
 	points = Math::computeCircle(0.5, getCount() / 3);
-	points.push_back(Vector(0.5,0,0,1));
+	points.push_back(Vec4(0.5,0,0,1));
 	
 	// Fill array
 	curr = points.begin();

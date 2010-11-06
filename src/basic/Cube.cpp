@@ -13,7 +13,7 @@ void Cube::updateBufferCoords() {
 	GLfloat coords[24][3];
 	
 	// Fill buffer with coords array
-	toArray(coords, Vector(0.0,0.0,1.0), Vector(1.0,1.0,0.0));
+	toArray(coords, Vec4(0.0,0.0,1.0), Vec4(1.0,1.0,0.0));
 	setBufferData("TexCoord0", coords);
 }
 

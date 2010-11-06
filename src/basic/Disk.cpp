@@ -31,13 +31,13 @@ void Disk::updateBufferPoints() {
 	
 	GLfloat (*P)[3];
 	int i;
-	list<Vector> points;
-	list<Vector>::iterator it;
+	list<Vec4> points;
+	list<Vec4>::iterator it;
 	
 	// Calculate
 	points = Math::computeCircle(0.5, getCount()-2);
-	points.push_front(Vector(0,0,0,1));
-	points.push_back(Vector(0.5,0,0,1));
+	points.push_front(Vec4(0,0,0,1));
+	points.push_back(Vec4(0.5,0,0,1));
 	
 	// Fill array
 	P = new GLfloat[getCount()][3];

@@ -20,20 +20,20 @@ using namespace std;
 class Translate : public Transform {
 public:
 	Translate(const Tag &tag);
-	void add(const Vector &B);
+	void add(const Vec4 &B);
 	virtual void apply();
 	virtual void applyTo(Matrix &matrix);
-	virtual Vector getValue() const;
+	virtual Vec4 getValue() const;
 	virtual void remove();
 	virtual bool setAttribute(pair<string,string> attribute);
 	virtual string toString() const;
 protected:
 	Matrix getMatrix() const;
 private:
-	Vector value;
+	Vec4 value;
 };
 
-inline Vector Translate::getValue() const {return value;}
+inline Vec4 Translate::getValue() const {return value;}
 
 inline Matrix Translate::getMatrix() const {
 	return Matrix(1.0, 0.0, 0.0,  +value.x,

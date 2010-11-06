@@ -41,7 +41,7 @@ void SimpleTransformable::associate() {
  * @note To find the depth of the shape on screen, multiply this value by the 
  * current canvas' rotation matrix and take the <i>z</i> component.
  */
-Vector SimpleTransformable::getPosition() {
+Vec4 SimpleTransformable::getPosition() {
 	
 	if (!valid) {
 		updatePositionExtent();
@@ -84,7 +84,7 @@ Matrix SimpleTransformable::getTransformationInverse() {
 void SimpleTransformable::updatePositionExtent() {
 	
 	list<Transform*>::iterator it;
-	Vector point;
+	Vec4 point;
 	float v[2]={-0.5,+0.5};
 	
 	// Concatenate transformations
@@ -94,12 +94,12 @@ void SimpleTransformable::updatePositionExtent() {
 	}
 	
 	// Calculate extent and position
-	extent.upper = Vector(-FLT_MAX, -FLT_MAX, -FLT_MAX, 1);
-	extent.lower = Vector(+FLT_MAX, +FLT_MAX, +FLT_MAX, 1);
+	extent.upper = Vec4(-FLT_MAX, -FLT_MAX, -FLT_MAX, 1);
+	extent.lower = Vec4(+FLT_MAX, +FLT_MAX, +FLT_MAX, 1);
 	for (int i=0; i<2; ++i) {
 		for (int j=0; j<2; ++j) {
 			for (int k=0; k<2; ++k) {
-				point = transformation * Vector(v[i],v[j],v[k],1);
+				point = transformation * Vec4(v[i],v[j],v[k],1);
 				extent.upper = max(extent.upper, point);
 				extent.lower = min(extent.lower, point);
 			}

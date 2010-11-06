@@ -33,7 +33,7 @@ Light::Light(const Tag &tag) : SimpleDrawable(tag), Nameable(tag) {
 			widget->open(Resources::get("ui/light-widget.xml"));
 			widget->prepare();
 			traverser = new Traverser(widget);
-		} catch (Exception e) {
+		} catch (exception &e) {
 			delete widget;
 			widget = NULL;
 			traverser = NULL;
@@ -91,9 +91,9 @@ void Light::getLightMatrix(GLfloat array[16]) {
 
 
 /** @return Position of the light in view space coordinates. */
-Vector Light::getPosition() {
+Vec4 Light::getPosition() {
 	
-	Vector pos;
+	Vec4 pos;
 	
 	if (getCanvas() == NULL) {
 		NodeException e(getTag());
@@ -102,7 +102,8 @@ Vector Light::getPosition() {
 	}
 	
 	pos = SimpleDrawable::getPosition();
-	return getCanvas()->getCamera()->getViewMatrix() * pos;
+	// FIXME: This needs a camera!!!
+	return /* getCanvas()->getCamera()->getViewMatrix() * */ pos;
 }
 
 

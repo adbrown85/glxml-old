@@ -25,7 +25,7 @@ public:
 	SimpleTransformable(const Tag &tag);
 	virtual void associate();
 	virtual Extent getExtent();
-	virtual Vector getPosition();
+	virtual Vec4 getPosition();
 	virtual Matrix getTransformation();
 	virtual Matrix getTransformationInverse();
 	virtual void onNodeEvent(NodeEvent &event);
@@ -35,7 +35,7 @@ private:
 	bool valid;
 	list<Transform*> transforms;
 	Extent extent;
-	Vector position;
+	Vec4 position;
 	Matrix transformation;
 };
 

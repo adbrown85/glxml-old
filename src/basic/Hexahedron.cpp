@@ -62,8 +62,8 @@ void Hexahedron::load() {
  * @param u Upper corner of the shape
  */
 void Hexahedron::toArray(float array[24][3],
-                         const Vector &l,
-                         const Vector &u) {
+                         const Vec4 &l,
+                         const Vec4 &u) {
 	
 	GLfloat P[8][3];
 	int index;
@@ -139,7 +139,7 @@ void Hexahedron::updateBufferPoints() {
 	GLfloat points[24][3];
 	
 	// Fill buffer with points array
-	toArray(points, Vector(-0.5,-0.5,-0.5),Vector(+0.5,+0.5,+0.5));
+	toArray(points, Vec4(-0.5,-0.5,-0.5),Vec4(+0.5,+0.5,+0.5));
 	setBufferData("MCVertex", points);
 }
 
