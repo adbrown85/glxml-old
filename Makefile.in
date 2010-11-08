@@ -35,7 +35,7 @@ DEFS_EXTRA   := -DGLXML_DATA_DIR='"$(datadir)"'
 DEPS_CFLAGS  := @DEPS_CFLAGS@
 CXXFLAGS     := @CXXFLAGS@ $(DEFS) $(DEFS_EXTRA) $(DEPS_CFLAGS) $(INCLUDES)
 LIBS         := @LIBS@
-LIBS_EXTRA   := -ledo -lglawt -lgloop
+LIBS_EXTRA   :=  
 DEPS_LIBS    := @DEPS_LIBS@
 LDFLAGS      := @LDFLAGS@ $(LIBS) $(LIBS_EXTRA) $(DEPS_LIBS)
 ARFLAGS      := -cr
