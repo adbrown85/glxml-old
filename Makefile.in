@@ -18,13 +18,18 @@ datadir      := @datadir@
 docdir       := @docdir@
 htmldir      := @htmldir@
 pkgcfgdir    := $(libdir)/pkgconfig
-smoduledirs  := ${filter %/,${wildcard $(srcdir)/*/}}
-tmoduledirs  := ${filter %/,${wildcard $(testdir)/*/}}
-modules      := ${patsubst $(srcdir)/%/,%,$(smoduledirs)}
+moddirs      := ${patsubst %/,%,${filter %/,${wildcard $(srcdir)/*/}}}
+mods         := ${notdir $(moddirs)}
+submoddirs   := ${patsubst %/,%,${filter %/,${wildcard $(srcdir)/*/*/}}}
+submods      := ${notdir $(submoddirs)}
+tmoddirs     := ${patsubst %/,%,${filter %/,${wildcard $(testdir)/*/}}}
+tmods        := ${notdir $(tmoddirs)}
+tsubmoddirs  := ${patsubst %/,%,${filter %/,${wildcard $(testdir)/*/*/}}}
+tsubmods     := ${notdir $(tsubmoddirs)}
 
 # Tools
 CXX          := @CXX@
-INCLUDES     := -I./ -I$(srcdir)/ ${addprefix -I,$(smoduledirs)}
+INCLUDES     := -I. -I$(srcdir) ${addprefix -I,$(moddirs) $(submoddirs)}
 DEFS         := @DEFS@
 DEFS_EXTRA   := -DGLXML_DATA_DIR='"$(datadir)"'
 DEPS_CFLAGS  := @DEPS_CFLAGS@
@@ -37,17 +42,17 @@ ARFLAGS      := -cr
 INSTALL      := @INSTALL@
 
 # Files
-sources      := ${foreach m,$(smoduledirs),${wildcard $(m)*.cpp}}
+sources      := ${foreach m,$(moddirs) $(submoddirs),${wildcard $(m)/*.cpp}}
 objects      := ${subst .cpp,.o,$(sources)}
 headers      := ${subst .cpp,.hpp,$(sources)}
-mains        := ${foreach m,$(tmoduledirs),${wildcard $(m)*.cxx}}
+mains        := ${foreach m,$(tmoddirs) $(tsubmoddirs),${wildcard $(m)/*.cxx}}
 archive      := lib$(tarname).a
 pkgcfgfile   := $(tarname).pc
 tests        := ${subst .cxx,,$(mains)}
 tarball      := $(tarname)-$(version)-src.tar.gz
 zipfile      := $(tarname)-$(version)-src.zip
 distdir      := $(tarname)-$(version)
-VPATH        := $(srcdir) $(smoduledirs) $(tmoduledirs)
+VPATH        := $(srcdir) $(moddirs) $(submoddirs) $(tmoddirs) $(tsubmoddirs)
 depends      := ${subst .cpp,.d,$(sources)}
 tdepends     := ${subst .cxx,.t,$(mains)}
 
@@ -67,25 +72,27 @@ mostlyclean:
 	@$(RM) $(archive)
 	@echo "  Removing tests..."
 	@$(RM) $(tests)
-check:
-	@echo "  MODULES  = $(modules)"
 $(doc_targets):
 	@$(MAKE) -C doc $@
 dump:
-	@echo "  modules = $(modules)"
+	@echo "  mods    = $(mods)"
+	@echo "  submods = $(submods)"
+	@echo "  submoddirs = $(submoddirs)"
 	@echo "  sources = $(sources)"
 	@echo "  objects = $(objects)"
 	@echo "  mains   = $(mains)"
 	@echo "  tests   = $(tests)"
-	@echo "  VPATH   = $(VPATH)"
-	@echo "  notdir  = ${notdir $(tests)}"
 
 # Modules
-.PHONY: $(modules)
+.PHONY: $(mods) $(submods)
 define module
 $(1): $${filter $(srcdir)/$(1)/%.o,$(objects)}
 endef
-${foreach m,$(modules),${eval ${call module,$(m)}}}
+${foreach m,$(mods),${eval ${call module,$(m)}}}
+define submodule
+$${notdir $(1)}: $${subst cpp,o,$${wildcard $(1)/*.cpp}}
+endef
+${foreach m,$(submoddirs),${eval ${call submodule,$(m)}}}
 
 # Objects and archive
 %.o: %.cpp %.hpp
