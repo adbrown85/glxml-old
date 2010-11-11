@@ -9,5 +9,7 @@
 <program>
 	<shader file="hello.vert" />
 	<shader file="hello.frag" />
-	<square />
+	<translate>
+		<square />
+	</translate>
 </program>
