@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef TEXTURE_HPP
-#define TEXTURE_HPP
+#ifndef GLXML_TEXTURE_HPP
+#define GLXML_TEXTURE_HPP
 #include "glxml_common.h"
 #include <gloop/TextureFactory.hpp>
 #include "Node.hpp"                     // Base class

@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef UNIFORMINT_HPP
-#define UNIFORMINT_HPP
+#ifndef GLXML_UNIFORMINT_HPP
+#define GLXML_UNIFORMINT_HPP
 #include "Uniform.hpp"
 using namespace std;
 

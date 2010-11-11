@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SCOUT_HPP
-#define SCOUT_HPP
+#ifndef GLXML_SCOUT_HPP
+#define GLXML_SCOUT_HPP
 #include "glxml_common.h"
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"

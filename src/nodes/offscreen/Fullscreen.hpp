@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef FULLSCREEN_HPP
-#define FULLSCREEN_HPP
+#ifndef GLXML_FULLSCREEN_HPP
+#define GLXML_FULLSCREEN_HPP
 #include "glxml_common.h"
 #include "Shape.hpp"
 

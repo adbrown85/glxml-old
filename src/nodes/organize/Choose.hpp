@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef CHOOSE_HPP
-#define CHOOSE_HPP
+#ifndef GLXML_CHOOSE_HPP
+#define GLXML_CHOOSE_HPP
 #include "glxml_common.h"
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"

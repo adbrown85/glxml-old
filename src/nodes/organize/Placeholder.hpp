@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef PLACEHOLDER_HPP
-#define PLACEHOLDER_HPP
+#ifndef GLXML_PLACEHOLDER_HPP
+#define GLXML_PLACEHOLDER_HPP
 #include "glxml_common.h"
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"

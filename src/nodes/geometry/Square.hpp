@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SQUARE_HPP
-#define SQUARE_HPP
+#ifndef GLXML_SQUARE_HPP
+#define GLXML_SQUARE_HPP
 #include "glxml_common.h"
 #include "Shape.hpp"                    // Base class
 using namespace std;

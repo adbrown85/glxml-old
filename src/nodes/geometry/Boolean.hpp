@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef BOOLEAN_HPP
-#define BOOLEAN_HPP
+#ifndef GLXML_BOOLEAN_HPP
+#define GLXML_BOOLEAN_HPP
 #include "glxml_common.h"
 #include <limits>                       // Calculating result
 #include <vector>                       // Storing shapes and extents

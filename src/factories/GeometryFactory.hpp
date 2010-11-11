@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef GEOMETRYFACTORY_HPP
-#define GEOMETRYFACTORY_HPP
+#ifndef GLXML_GEOMETRYFACTORY_HPP
+#define GLXML_GEOMETRYFACTORY_HPP
 #include "glxml_common.h"
 #include "Factory.hpp"
 #include "BooleanAnd.hpp"

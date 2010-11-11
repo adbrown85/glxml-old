@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef CULL_HPP
-#define CULL_HPP
+#ifndef GLXML_CULL_HPP
+#define GLXML_CULL_HPP
 #include "glxml_common.h"
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"

@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef RENDERBUFFER_HPP
-#define RENDERBUFFER_HPP
+#ifndef GLXML_RENDERBUFFER_HPP
+#define GLXML_RENDERBUFFER_HPP
 #include "glxml_common.h"
 #include <glawt/Canvas.hpp>
 #include "Attachment.hpp"

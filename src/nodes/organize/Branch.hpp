@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef BRANCH_HPP
-#define BRANCH_HPP
+#ifndef GLXML_BRANCH_HPP
+#define GLXML_BRANCH_HPP
 #include "glxml_common.h"
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"

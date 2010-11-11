@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef UNIFORMFLOAT_HPP
-#define UNIFORMFLOAT_HPP
+#ifndef GLXML_UNIFORMFLOAT_HPP
+#define GLXML_UNIFORMFLOAT_HPP
 #include "Uniform.hpp"
 using namespace std;
 

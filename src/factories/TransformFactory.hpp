@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef TRANSFORMFACTORY_HPP
-#define TRANSFORMFACTORY_HPP
+#ifndef GLXML_TRANSFORMFACTORY_HPP
+#define GLXML_TRANSFORMFACTORY_HPP
 #include "glxml_common.h"
 #include "Factory.hpp"
 #include "Rotate.hpp"

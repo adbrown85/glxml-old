@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SHADINGFACTORY_HPP
-#define SHADINGFACTORY_HPP
+#ifndef GLXML_SHADINGFACTORY_HPP
+#define GLXML_SHADINGFACTORY_HPP
 #include "glxml_common.h"
 #include "Factory.hpp"
 #include "Light.hpp"

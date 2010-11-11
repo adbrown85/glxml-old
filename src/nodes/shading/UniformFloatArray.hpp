@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef UNIFORMFLOATARRAY_HPP
-#define UNIFORMFLOATARRAY_HPP
+#ifndef GLXML_UNIFORMFLOATARRAY_HPP
+#define GLXML_UNIFORMFLOATARRAY_HPP
 #include "glxml_common.h"
 #include <gloop/ProgramAnalyzer.hpp>
 #include "Uniform.hpp"

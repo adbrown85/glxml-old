@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef GROUP_HPP
-#define GROUP_HPP
+#ifndef GLXML_GROUP_HPP
+#define GLXML_GROUP_HPP
 #include "glxml_common.h"
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"

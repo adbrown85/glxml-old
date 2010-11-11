@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef UNIFORMMATRIX_HPP
-#define UNIFORMMATRIX_HPP
+#ifndef GLXML_UNIFORMMATRIX_HPP
+#define GLXML_UNIFORMMATRIX_HPP
 #include "Uniform.hpp"
 #include <gloop/State.hpp>
 #include "Light.hpp"

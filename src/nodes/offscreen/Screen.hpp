@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SCREEN_HPP
-#define SCREEN_HPP
+#ifndef GLXML_SCREEN_HPP
+#define GLXML_SCREEN_HPP
 #include "glxml_common.h"
 #include "Framebuffer.hpp"
 using namespace std;

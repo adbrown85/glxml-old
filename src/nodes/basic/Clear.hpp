@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef CLEAR_HPP
-#define CLEAR_HPP
+#ifndef GLXML_CLEAR_HPP
+#define GLXML_CLEAR_HPP
 #include "glxml_common.h"
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"

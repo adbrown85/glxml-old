@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SHAPE_HPP
-#define SHAPE_HPP
+#ifndef GLXML_SHAPE_HPP
+#define GLXML_SHAPE_HPP
 #include "glxml_common.h"
 #include <gloop/Matrix.hpp>
 #include <gloop/VertexAttribute.hpp>

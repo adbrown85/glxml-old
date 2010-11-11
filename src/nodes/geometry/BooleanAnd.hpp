@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef BOOLEANAND_HPP
-#define BOOLEANAND_HPP
+#ifndef GLXML_BOOLEANAND_HPP
+#define GLXML_BOOLEANAND_HPP
 #include "glxml_common.h"
 #include "Boolean.hpp"
 #include "UniformSampler.hpp"

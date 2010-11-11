@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef BASICFACTORY_HPP
-#define BASICFACTORY_HPP
+#ifndef GLXML_BASICFACTORY_HPP
+#define GLXML_BASICFACTORY_HPP
 #include "glxml_common.h"
 #include "Factory.hpp"
 #include "Blend.hpp"

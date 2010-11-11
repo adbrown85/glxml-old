@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef LIGHT_HPP
-#define LIGHT_HPP
+#ifndef GLXML_LIGHT_HPP
+#define GLXML_LIGHT_HPP
 #include "glxml_common.h"
 #include "SimpleDrawable.hpp"
 #include "Scene.hpp"

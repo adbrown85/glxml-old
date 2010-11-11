@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef PROGRAM_HPP
-#define PROGRAM_HPP
+#ifndef GLXML_PROGRAM_HPP
+#define GLXML_PROGRAM_HPP
 #include "glxml_common.h"
 #include <cstring>
 #include <vector>

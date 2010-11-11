@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SIMPLEDRAWABLE_HPP
-#define SIMPLEDRAWABLE_HPP
+#ifndef GLXML_SIMPLEDRAWABLE_HPP
+#define GLXML_SIMPLEDRAWABLE_HPP
 #include "glxml_common.h"
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"

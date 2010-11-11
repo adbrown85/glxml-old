@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef IDENTIFIABLE_HPP
-#define IDENTIFIABLE_HPP
+#ifndef GLXML_IDENTIFIABLE_HPP
+#define GLXML_IDENTIFIABLE_HPP
 #include "glxml_common.h"
 #include <vector>
 using namespace std;

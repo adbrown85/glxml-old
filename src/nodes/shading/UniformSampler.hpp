@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef UNIFORMSAMPLER_HPP
-#define UNIFORMSAMPLER_HPP
+#ifndef GLXML_UNIFORMSAMPLER_HPP
+#define GLXML_UNIFORMSAMPLER_HPP
 #include "Uniform.hpp"
 using namespace std;
 

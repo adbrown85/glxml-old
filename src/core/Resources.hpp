@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef RESOURCES_HPP
-#define RESOURCES_HPP
+#ifndef GLXML_RESOURCES_HPP
+#define GLXML_RESOURCES_HPP
 #include "glxml_common.h"
 using namespace std;
 

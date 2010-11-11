@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef CALCULATOR_HPP
-#define CALCULATOR_HPP
+#ifndef GLXML_CALCULATOR_HPP
+#define GLXML_CALCULATOR_HPP
 #include "glxml_common.h"
 #include "Shape.hpp"
 #define HALF_BOUNDING_BOX_DIAGONAL 0.866025404

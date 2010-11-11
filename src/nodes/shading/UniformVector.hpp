@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef UNIFORMVECTOR_HPP
-#define UNIFORMVECTOR_HPP
+#ifndef GLXML_UNIFORMVECTOR_HPP
+#define GLXML_UNIFORMVECTOR_HPP
 #include "Uniform.hpp"
 using namespace std;
 

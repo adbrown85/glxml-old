@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef HEXAHEDRON_HPP
-#define HEXAHEDRON_HPP
+#ifndef GLXML_HEXAHEDRON_HPP
+#define GLXML_HEXAHEDRON_HPP
 #include "glxml_common.h"
 #include "Shape.hpp"
 using namespace std;

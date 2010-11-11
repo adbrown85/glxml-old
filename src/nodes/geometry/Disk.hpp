@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef DISK_HPP
-#define DISK_HPP
+#ifndef GLXML_DISK_HPP
+#define GLXML_DISK_HPP
 #include "glxml_common.h"
 #include <gloop/Math.hpp>               // Calculating circle
 #include "Shape.hpp"                    // Base class

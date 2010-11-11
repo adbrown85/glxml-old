@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef TRANSFORM_HPP
-#define TRANSFORM_HPP
+#ifndef GLXML_TRANSFORM_HPP
+#define GLXML_TRANSFORM_HPP
 #include "glxml_common.h"
 #include <gloop/Matrix.hpp>
 #include <gloop/State.hpp>

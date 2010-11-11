@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef OFFSCREENFACTORY_HPP
-#define OFFSCREENFACTORY_HPP
+#ifndef GLXML_OFFSCREENFACTORY_HPP
+#define GLXML_OFFSCREENFACTORY_HPP
 #include "glxml_common.h"
 #include "Factory.hpp"
 #include "Bind.hpp"

@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef FACTORY_HPP
-#define FACTORY_HPP
+#ifndef GLXML_FACTORY_HPP
+#define GLXML_FACTORY_HPP
 #include "glxml_common.h"
 #include <vector>
 #include <edo/Parser.hpp>

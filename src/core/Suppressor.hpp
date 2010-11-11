@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SUPPRESSOR_HPP
-#define SUPPRESSOR_HPP
+#ifndef GLXML_SUPPRESSOR_HPP
+#define GLXML_SUPPRESSOR_HPP
 #include "glxml_common.h"
 #include <edo/Log.hpp>
 #include "Node.hpp"

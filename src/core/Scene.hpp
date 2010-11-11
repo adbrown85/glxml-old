@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SCENE_HPP
-#define SCENE_HPP
+#ifndef GLXML_SCENE_HPP
+#define GLXML_SCENE_HPP
 #include "glxml_common.h"
 #include <stack>
 #include <vector>

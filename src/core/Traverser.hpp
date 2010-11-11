@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef TRAVERSER_HPP
-#define TRAVERSER_HPP
+#ifndef GLXML_TRAVERSER_HPP
+#define GLXML_TRAVERSER_HPP
 #include "glxml_common.h"
 #include <edo/BasicException.hpp>
 #include "Node.hpp"

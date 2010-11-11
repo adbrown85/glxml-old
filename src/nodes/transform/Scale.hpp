@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SCALE_HPP
-#define SCALE_HPP
+#ifndef GLXML_SCALE_HPP
+#define GLXML_SCALE_HPP
 #include "glxml_common.h"
 #include <gloop/Vec4.hpp>
 #include "Transform.hpp"

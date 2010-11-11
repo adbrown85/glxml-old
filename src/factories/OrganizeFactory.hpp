@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef ORGANIZEFACTORY_HPP
-#define ORGANIZEFACTORY_HPP
+#ifndef GLXML_ORGANIZEFACTORY_HPP
+#define GLXML_ORGANIZEFACTORY_HPP
 #include "glxml_common.h"
 #include "Factory.hpp"
 #include "Branch.hpp"

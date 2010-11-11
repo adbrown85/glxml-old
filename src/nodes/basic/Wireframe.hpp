@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef WIREFRAME_HPP
-#define WIREFRAME_HPP
+#ifndef GLXML_WIREFRAME_HPP
+#define GLXML_WIREFRAME_HPP
 #include "glxml_common.h"
 #include "Node.hpp"
 #include "NodeInterfaces.hpp"

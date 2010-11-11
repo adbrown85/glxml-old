@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef TRANSLATE_HPP
-#define TRANSLATE_HPP
+#ifndef GLXML_TRANSLATE_HPP
+#define GLXML_TRANSLATE_HPP
 #include "glxml_common.h"
 #include <edo/Tag.hpp>
 #include <gloop/Matrix.hpp>

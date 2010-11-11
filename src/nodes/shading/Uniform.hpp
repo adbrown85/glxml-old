@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef UNIFORM_HPP
-#define UNIFORM_HPP
+#ifndef GLXML_UNIFORM_HPP
+#define GLXML_UNIFORM_HPP
 #include "glxml_common.h"
 #include <iomanip>
 #include <set>

@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef BOX_HPP
-#define BOX_HPP
+#ifndef GLXML_BOX_HPP
+#define GLXML_BOX_HPP
 #include "glxml_common.h"
 #include "Hexahedron.hpp"
 using namespace std;

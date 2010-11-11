@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef CONE_HPP
-#define CONE_HPP
+#ifndef GLXML_CONE_HPP
+#define GLXML_CONE_HPP
 #include "glxml_common.h"
 #include <gloop/Math.hpp>               // Calculating circle
 #include "Shape.hpp"                    // Base class

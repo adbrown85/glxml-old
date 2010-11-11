@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef OUTPUTS_HPP
-#define OUTPUTS_HPP
+#ifndef GLXML_OUTPUTS_HPP
+#define GLXML_OUTPUTS_HPP
 #include "glxml_common.h"
 #include <algorithm>                    // Finding attachments
 #include <gloop/Configuration.hpp>      // Max draw buffers

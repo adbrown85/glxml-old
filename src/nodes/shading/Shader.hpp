@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SHADER_HPP
-#define SHADER_HPP
+#ifndef GLXML_SHADER_HPP
+#define GLXML_SHADER_HPP
 #include "glxml_common.h"
 #include <gloop/ShaderFactory.hpp>
 #include "Node.hpp"

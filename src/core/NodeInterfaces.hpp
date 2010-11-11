@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef NODEINTERFACES_HPP
-#define NODEINTERFACES_HPP
+#ifndef GLXML_NODEINTERFACES_HPP
+#define GLXML_NODEINTERFACES_HPP
 #include "glxml_common.h"
 #include <glawt/Canvas.hpp>
 #include <gloop/Matrix.hpp>

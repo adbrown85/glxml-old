@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SELECTION_HPP
-#define SELECTION_HPP
+#ifndef GLXML_SELECTION_HPP
+#define GLXML_SELECTION_HPP
 #include "glxml_common.h"
 #include <set>
 #include "Identifiable.hpp"

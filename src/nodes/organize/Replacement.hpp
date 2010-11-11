@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef REPLACEMENT_HPP
-#define REPLACEMENT_HPP
+#ifndef GLXML_REPLACEMENT_HPP
+#define GLXML_REPLACEMENT_HPP
 #include "glxml_common.h"
 #include "Node.hpp"
 using namespace std;

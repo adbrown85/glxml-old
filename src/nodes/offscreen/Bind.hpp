@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef BIND_HPP
-#define BIND_HPP
+#ifndef GLXML_BIND_HPP
+#define GLXML_BIND_HPP
 #include "glxml_common.h"
 #include "Node.hpp"                     // Base class
 #include "Attachment.hpp"               // Look up attachment location

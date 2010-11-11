@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef BOOLEANXOR_HPP
-#define BOOLEANXOR_HPP
+#ifndef GLXML_BOOLEANXOR_HPP
+#define GLXML_BOOLEANXOR_HPP
 #include "glxml_common.h"
 #include <algorithm>                    // For 'swap'
 #include "Boolean.hpp"

@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef FRAMEBUFFER_HPP
-#define FRAMEBUFFER_HPP
+#ifndef GLXML_FRAMEBUFFER_HPP
+#define GLXML_FRAMEBUFFER_HPP
 #include "glxml_common.h"
 #include <gloop/Configuration.hpp>
 #include "Node.hpp"

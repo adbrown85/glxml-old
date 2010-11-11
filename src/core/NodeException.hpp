@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef NODEEXCEPTION_HPP
-#define NODEEXCEPTION_HPP
+#ifndef GLXML_NODEEXCEPTION_HPP
+#define GLXML_NODEEXCEPTION_HPP
 #include "glxml_common.h"
 #include <edo/BasicException.hpp>
 #include <edo/Tag.hpp>

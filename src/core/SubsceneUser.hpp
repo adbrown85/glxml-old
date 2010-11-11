@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SUBSCENEUSER_HPP
-#define SUBSCENEUSER_HPP
+#ifndef GLXML_SUBSCENEUSER_HPP
+#define GLXML_SUBSCENEUSER_HPP
 #include "glxml_common.h"
 #include "Scene.hpp"
 #include "Traverser.hpp"

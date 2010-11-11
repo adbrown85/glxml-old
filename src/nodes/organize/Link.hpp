@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef LINK_HPP
-#define LINK_HPP
+#ifndef GLXML_LINK_HPP
+#define GLXML_LINK_HPP
 #include "glxml_common.h"
 #include "Group.hpp"
 #include "Scout.hpp"

@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef NODEEVENT_HPP
-#define NODEEVENT_HPP
+#ifndef GLXML_NODEEVENT_HPP
+#define GLXML_NODEEVENT_HPP
 #include "glxml_common.h"
 #include "Node.hpp"
 using namespace std;

@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SORT_HPP
-#define SORT_HPP
+#ifndef GLXML_SORT_HPP
+#define GLXML_SORT_HPP
 #include "glxml_common.h"
 #include <algorithm>                    // For sort
 #include <glawt/Canvas.hpp>

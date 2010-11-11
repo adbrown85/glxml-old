@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef REPLICA_HPP
-#define REPLICA_HPP
+#ifndef GLXML_REPLICA_HPP
+#define GLXML_REPLICA_HPP
 #include "glxml_common.h"
 #include "Clone.hpp"
 #include "Replacement.hpp"

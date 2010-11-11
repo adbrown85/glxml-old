@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef ROTATE_HPP
-#define ROTATE_HPP
+#ifndef GLXML_ROTATE_HPP
+#define GLXML_ROTATE_HPP
 #include "glxml_common.h"
 #include <iomanip>
 #include <gloop/Quaternion.hpp>

@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef ATTACHMENT_HPP
-#define ATTACHMENT_HPP
+#ifndef GLXML_ATTACHMENT_HPP
+#define GLXML_ATTACHMENT_HPP
 #include "glxml_common.h"
 #include "Node.hpp"                     // Base class
 #include "NodeInterfaces.hpp"           // Interfaces

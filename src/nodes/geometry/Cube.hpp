@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef CUBE_HPP
-#define CUBE_HPP
+#ifndef GLXML_CUBE_HPP
+#define GLXML_CUBE_HPP
 #include "glxml_common.h"
 #include "Hexahedron.hpp"
 using namespace std;

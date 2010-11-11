@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef CLONE_HPP
-#define CLONE_HPP
+#ifndef GLXML_CLONE_HPP
+#define GLXML_CLONE_HPP
 #include "glxml_common.h"
 #include "Instance.hpp"
 #include "Uniform.hpp"

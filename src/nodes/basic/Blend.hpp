@@ -4,8 +4,8 @@
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef BLEND_HPP
-#define BLEND_HPP
+#ifndef GLXML_BLEND_HPP
+#define GLXML_BLEND_HPP
 #include "glxml_common.h"
 #include <algorithm>
 #include <edo/Tag.hpp>
