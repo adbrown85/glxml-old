@@ -13,6 +13,12 @@
 #include "Node.hpp"
 #include "Scene.hpp"
 #include "Traverser.hpp"
+#include "BasicFactory.hpp"
+#include "GeometryFactory.hpp"
+#include "OffscreenFactory.hpp"
+#include "OrganizeFactory.hpp"
+#include "ShadingFactory.hpp"
+#include "TransformFactory.hpp"
 using namespace std;
 
 
@@ -21,8 +27,8 @@ using namespace std;
  */
 class Tester : public CanvasListener {
 public:
+	Tester();
 	void open(const string &filename);
-	void start();
 // Event handlers
 	virtual void onCanvasInitEvent(Canvas &canvas) { }
 	virtual void onCanvasDisplayEvent(Canvas &canvas);
@@ -34,13 +40,30 @@ public:
 	Camera* getCamera() const {return camera;}
 	string getFilename() const {return scene->getFilename();}
 	Scene* getScene() const {return scene;}
+protected:
+	void select(int id);
+	void move(const Vec4 &movement);
 private:
 	Traverser *traverser;
 	Scene *scene;
 	Canvas *canvas;
 	Camera *camera;
 	Window *window;
+	Shape *shape;
+	Translate *translate;
 };
+
+/** Initializes all the pointers. */
+Tester::Tester() {
+	
+	traverser = NULL;
+	scene = NULL;
+	canvas = NULL;
+	camera = NULL;
+	window = NULL;
+	shape = NULL;
+	translate = NULL;
+}
 
 /** Draws the scene. */
 void Tester::onCanvasDisplayEvent(Canvas &canvas) {
@@ -58,7 +81,10 @@ void Tester::onCanvasDisplayEvent(Canvas &canvas) {
 /** Key was pressed. */
 void Tester::onCanvasKeyEvent(Canvas &canvas) {
 	
-	switch (canvas.getState().combo.trigger) {
+	int trigger;
+	
+	trigger = canvas.getState().combo.trigger; 
+	switch (trigger) {
 	case TOOLKIT_KEY_UP:
 		camera->rotate(-CAMERA_ROTATE_AMOUNT, Vec4(1.0,0.0,0.0));
 		break;
@@ -86,11 +112,59 @@ void Tester::onCanvasKeyEvent(Canvas &canvas) {
 	case 'Q':
 	case 'q':
 		exit(0);
+		break;
+	case '1':
+	case '2':
+	case '3':
+	case '4':
+	case '5':
+	case '6':
+	case '7':
+	case '8':
+	case '9':
+		select(trigger - 48);
+		break;
+	case 'a':
+	case 'A':
+		move(Vec4(-0.1, 0, 0, 0));
+		break;
+	case 'd':
+	case 'D':
+		move(Vec4(+0.1, 0, 0, 0));
+		break;
+	case 'W':
+	case 'w':
+		move(Vec4(0, +0.1, 0, 0));
+		break;
+	case 'S':
+	case 's':
+		move(Vec4(0, -0.1, 0, 0));
+		break;
 	}
 	canvas.refresh();
 }
 
-/** Creates a window, opens the scene, and prepares it. */
+/** Moves the currently selected shape. */
+void Tester::move(const Vec4 &movement) {
+	
+	if (translate != NULL) {
+		translate->add(movement);
+	} else {
+		cerr << "Translate is NULL!" << endl;
+	}
+}
+
+/** Selects a shape. */
+void Tester::select(int id) {
+	
+	shape = dynamic_cast<Shape*>(Identifiable::findByID(id));
+	if (shape != NULL) {
+		cout << "Selected " << id << endl;
+		translate = Scout<Translate>::locate(shape);
+	}
+}
+
+/** Creates a window, opens the scene, prepares it, and runs it. */
 void Tester::open(const string &filename) {
 	
 	// Print
@@ -149,7 +223,6 @@ int main(int argc, char *argv[]) {
 
 	try {
 		tester.open(filename);
-		tester.start();
 	} catch (exception &e) {
 		cerr << e.what() << endl;
 		exit(1);
