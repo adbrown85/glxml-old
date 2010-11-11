@@ -7,8 +7,7 @@
 
 
 <program>
-	<shader file="../../glsl/basic.vert" />
-	<shader file="../../glsl/basic.frag" />
-	<uniform type="vec3" name="LightPosition" value="5.0 5.0 5.0" />
+	<shader file="../../../glsl/coordinates.vert" />
+	<shader file="../../../glsl/coordinates.frag" />
 	<disk />
 </program>

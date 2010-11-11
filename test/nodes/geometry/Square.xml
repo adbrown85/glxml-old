@@ -7,8 +7,8 @@
 
 
 <program>
-	<shader file="hello.vert" />
-	<shader file="hello.frag" />
+	<shader file="../../../glsl/coordinates.vert" />
+	<shader file="../../../glsl/coordinates.frag" />
 	<translate>
 		<square />
 	</translate>
