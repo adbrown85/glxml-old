@@ -7,6 +7,7 @@
 #ifndef UNIFORMFLOATARRAY_HPP
 #define UNIFORMFLOATARRAY_HPP
 #include "glxml_common.h"
+#include <gloop/ProgramAnalyzer.hpp>
 #include "Uniform.hpp"
 #include "Group.hpp"
 #include "Shape.hpp"

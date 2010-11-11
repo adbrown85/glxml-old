@@ -127,7 +127,7 @@ void UniformFloatArray::finalize() {
 		return;
 	
 	// Find out how big the array is
-	catalog = Uniform::getUniformsFor(getProgram());
+	catalog = ProgramAnalyzer::listUniforms(getProgram()->getHandle());
 	it = catalog.find(getName());
 	if (it != catalog.end()) {
 		count = it->second.count;

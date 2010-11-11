@@ -19,12 +19,6 @@
 #include "Scout.hpp"
 using namespace std;
 
-/* Information about a uniform. */
-struct UniformInfo {
-	GLenum type;
-	GLint count;
-};
-
 /** @brief Abstract base class for GLSL uniform variables.
  * @ingroup basic
  */

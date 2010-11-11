@@ -9,6 +9,7 @@
 #include "glxml_common.h"
 #include <gloop/Matrix.hpp>
 #include <gloop/VertexAttribute.hpp>
+#include <gloop/ProgramAnalyzer.hpp>
 #include "SimpleDrawable.hpp"
 #include "Program.hpp"
 #include "Transform.hpp"

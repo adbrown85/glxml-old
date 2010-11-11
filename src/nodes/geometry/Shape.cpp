@@ -73,7 +73,7 @@ void Shape::checkForDefaultUniforms() {
 	
 	// Try to add missing default uniforms
 	tally = 0;
-	uniforms = Uniform::getUniformsFor(program);
+	uniforms = ProgramAnalyzer::listUniforms(program->getHandle());
 	for (it=uniforms.begin(); it!=uniforms.end(); ++it) {
 		if (UniformMatrix::isDefault(it->first, it->second.type)) {
 			if (!UniformMatrix::hasChild(this, it->first)) {
