@@ -49,8 +49,6 @@ public: // Accessors and mutators
 	void setLocation(GLint location);
 	void setProgram(Program *program);
 public: // Utilities
-	static map<string,UniformInfo> getUniformsFor(Program *program);
-	static string getTypeNameFor(GLenum type);
 	static bool isMatrixType(GLenum type);
 private:
 	GLint location;
