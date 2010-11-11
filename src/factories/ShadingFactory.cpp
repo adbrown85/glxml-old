@@ -67,7 +67,7 @@ Node* ShadingFactory::createUniform(const Tag &tag) {
 	tag.get("type", type);
 	it = kinds.find(type);
 	if (it == kinds.end()) {
-		BasicException e(tag);
+		BasicException e;
 		e << "[ShadingFactory] Uniform type '" << type << "' not supported.";
 		throw e;
 	}
