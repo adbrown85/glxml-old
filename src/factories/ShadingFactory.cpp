@@ -16,8 +16,11 @@ void ShadingFactory::install() {
 	installed = true;
 	
 	// Tags
+	Factory::install("light", &createLight);
 	Factory::install("program", &createProgram);
 	Factory::install("shader", &createShader);
+	Factory::install("shadow", &createShadow);
+	Factory::install("texture", &createTexture);
 	Factory::install("uniform", &createUniform);
 	
 	// Map uniform types back to kinds
