@@ -15,29 +15,10 @@ void AppearanceFactory::install() {
 	installed = true;
 	
 	// Tags
-	Factory::install("blend", &createBlend);
-	Factory::install("clear", &createClear);
-	Factory::install("cull", &createCull);
-	Factory::install("depth", &createDepth);
 	Factory::install("light", &createLight);
 	Factory::install("shadow", &createShadow);
+	Factory::install("texture", &createTexture);
 	Factory::install("wireframe", &createWireframe);
-}
-
-Node* AppearanceFactory::createBlend(const Tag &t) {
-	return new Blend(t);
-}
-
-Node* AppearanceFactory::createClear(const Tag &t) {
-	return new Clear(t);
-}
-
-Node* AppearanceFactory::createCull(const Tag &tag) {
-	return new Cull(tag);
-}
-
-Node* AppearanceFactory::createDepth(const Tag &t) {
-	return new Depth(t);
 }
 
 Node* AppearanceFactory::createLight(const Tag &t) {
