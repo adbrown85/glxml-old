@@ -1,13 +1,13 @@
 /*
- * AppearanceFactory.cpp
+ * BasicFactory.cpp
  * 
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#include "AppearanceFactory.hpp"
-bool AppearanceFactory::installed=false;
+#include "BasicFactory.hpp"
+bool BasicFactory::installed=false;
 
-void AppearanceFactory::install() {
+void BasicFactory::install() {
 	
 	// Check if already called
 	if (installed)
@@ -19,20 +19,25 @@ void AppearanceFactory::install() {
 	Factory::install("clear", &createClear);
 	Factory::install("cull", &createCull);
 	Factory::install("depth", &createDepth);
+	Factory::install("wireframe", &createWireframe);
 }
 
-Node* AppearanceFactory::createBlend(const Tag &t) {
+Node* BasicFactory::createBlend(const Tag &t) {
 	return new Blend(t);
 }
 
-Node* AppearanceFactory::createClear(const Tag &t) {
+Node* BasicFactory::createClear(const Tag &t) {
 	return new Clear(t);
 }
 
-Node* AppearanceFactory::createCull(const Tag &tag) {
+Node* BasicFactory::createCull(const Tag &tag) {
 	return new Cull(tag);
 }
 
-Node* AppearanceFactory::createDepth(const Tag &t) {
+Node* BasicFactory::createDepth(const Tag &t) {
 	return new Depth(t);
+}
+
+Node* BasicFactory::createWireframe(const Tag &t) {
+	return new Wireframe(t);
 }

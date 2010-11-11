@@ -1,15 +1,18 @@
 /*
- * ShaderFactory.hpp
+ * ShadingFactory.hpp
  * 
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#ifndef SHADERFACTORY_HPP
-#define SHADERFACTORY_HPP
+#ifndef SHADINGFACTORY_HPP
+#define SHADINGFACTORY_HPP
 #include "glxml_common.h"
 #include "Factory.hpp"
+#include "Light.hpp"
 #include "Program.hpp"
 #include "Shader.hpp"
+#include "Shadow.hpp"
+#include "Texture.hpp"
 #include "UniformInt.hpp"
 #include "UniformFloat.hpp"
 #include "UniformFloatArray.hpp"
@@ -19,15 +22,18 @@
 using namespace std;
 
 
-/** @brief %Factory for creating nodes related to shaders.
+/** @brief %Factory for creating nodes related to shading.
  * 
  * @ingroup factories
  */
-class ShaderFactory {
+class ShadingFactory {
 public:
 	static void install();
+	static Node* createLight(const Tag &tag);
 	static Node* createProgram(const Tag &tag);
 	static Node* createShader(const Tag &tag);
+	static Node* createShadow(const Tag &tag);
+	static Node* createTexture(const Tag &tag);
 	static Node* createUniform(const Tag &tag);
 private:
 	enum kind_t {INT, FLOAT, FLOAT_ARRAY, MATRIX, SAMPLER, VECTOR};

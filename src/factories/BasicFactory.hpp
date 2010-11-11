@@ -12,6 +12,7 @@
 #include "Clear.hpp"
 #include "Cull.hpp"
 #include "Depth.hpp"
+#include "Wireframe.hpp"
 using namespace std;
 
 
@@ -26,6 +27,7 @@ public:
 	static Node* createClear(const Tag &tag);
 	static Node* createCull(const Tag &tag);
 	static Node* createDepth(const Tag &tag);
+	static Node* createWireframe(const Tag &tag);
 private:
 	static bool installed;
 };

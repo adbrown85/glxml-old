@@ -1,15 +1,14 @@
 /*
- * ShaderFactory.cpp
+ * ShadingFactory.cpp
  * 
  * Author
  *     Andrew Brown <adb1413@rit.edu>
  */
-#include "ShaderFactory.hpp"
-bool ShaderFactory::installed=false;
-map<string,ShaderFactory::kind_t> ShaderFactory::kinds;
+#include "ShadingFactory.hpp"
+bool ShadingFactory::installed=false;
+map<string,ShadingFactory::kind_t> ShadingFactory::kinds;
 
-
-void ShaderFactory::install() {
+void ShadingFactory::install() {
 	
 	// Check if already called
 	if (installed)
@@ -38,11 +37,27 @@ void ShaderFactory::install() {
 	kinds["vec4"] = VECTOR;
 }
 
-Node* ShaderFactory::createProgram(const Tag &tag) {return new Program(tag);}
+Node* ShadingFactory::createLight(const Tag &t) {
+	return new Light(t);
+}
 
-Node* ShaderFactory::createShader(const Tag &tag) {return new Shader(tag);}
+Node* ShadingFactory::createProgram(const Tag &tag) {
+	return new Program(tag);
+}
 
-Node* ShaderFactory::createUniform(const Tag &tag) {
+Node* ShadingFactory::createShader(const Tag &tag) {
+	return new Shader(tag);
+}
+
+Node* ShadingFactory::createShadow(const Tag &t) {
+	return new Shadow(t);
+}
+
+Node* ShadingFactory::createTexture(const Tag &tag) {
+	return new Texture(tag);
+}
+
+Node* ShadingFactory::createUniform(const Tag &tag) {
 	
 	kind_t kind;
 	map<string,kind_t>::iterator it;
@@ -53,7 +68,7 @@ Node* ShaderFactory::createUniform(const Tag &tag) {
 	it = kinds.find(type);
 	if (it == kinds.end()) {
 		BasicException e(tag);
-		e << "[ShaderFactory] Uniform type '" << type << "' not supported.";
+		e << "[ShadingFactory] Uniform type '" << type << "' not supported.";
 		throw e;
 	}
 	
@@ -74,7 +89,7 @@ Node* ShaderFactory::createUniform(const Tag &tag) {
 		return new UniformVector(tag);
 	default:
 		NodeException e(tag);
-		e << "[BasicFactory] Unexpected error making uniform.";
+		e << "[ShadingFactory] Unexpected error making uniform.";
 		throw e;
 	}
 }
