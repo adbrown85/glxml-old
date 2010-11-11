@@ -6,11 +6,14 @@
 -->
 
 
-<texture name="crate1" file="../../input/crate.jpg" >
-	<texture name="crate2" file="../../input/crate.jpg" >
-		<texture name="crate3" file="../../input/crate.jpg" >
-			<texture name="crate4" file="../../input/crate.jpg" >
-			</texture>
-		</texture>
-	</texture>
+<texture name="crate" file="../../../textures/crate.jpg" >
+<texture name="stone" file="../../../textures/stone.jpg" >
+
+<program>
+	<shader file="../../../glsl/texture.vert" />
+	<shader file="../../../glsl/texture.frag" />
+	<box />
+</program>
+
+</texture>
 </texture>

@@ -23,8 +23,8 @@
 
 
 <program>
-	<shader file="../../glsl/color.vert" />
-	<shader file="../../glsl/color.frag" />
+	<shader file="../../../glsl/color.vert" />
+	<shader file="../../../glsl/color.frag" />
 	<translate y="-2.0">
 		<clone of="cubes" />
 	</translate>
@@ -32,8 +32,8 @@
 
 
 <program>
-	<shader file="../../glsl/coordinates.vert" />
-	<shader file="../../glsl/coordinates.frag" />
+	<shader file="../../../glsl/coordinates.vert" />
+	<shader file="../../../glsl/coordinates.frag" />
 	<translate y="+2.0">
 		<clone of="cubes" only="right"/>
 	</translate>
