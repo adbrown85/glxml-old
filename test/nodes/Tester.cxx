@@ -174,10 +174,9 @@ void Tester::open(const string &filename) {
 	cout << "****************************************" << endl;
 	cout << endl;
 	
-	// Create the canvas and get camera
+	// Create the canvas
 	canvas = GLAWTFactory::createCanvas();
 	canvas->addListener(this);
-	camera = new Camera();
 	
 	// Pack window
 	window = GLAWTFactory::createWindow();
@@ -187,6 +186,10 @@ void Tester::open(const string &filename) {
 	
 	// Start setup
 	canvas->primeStart();
+	
+	// Set up camera
+	camera = new Camera();
+	camera->load(canvas->getWidth(), canvas->getHeight());
 	
 	// Open and prepare scene
 	scene = new Scene();
