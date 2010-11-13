@@ -95,15 +95,14 @@ Vec4 Light::getPosition() {
 	
 	Vec4 pos;
 	
-	if (getCanvas() == NULL) {
+	if (getCamera() == NULL) {
 		NodeException e(getTag());
-		e << "[Light] Canvas is NULL!";
+		e << "[Light] Camera is NULL!";
 		throw e;
 	}
 	
 	pos = SimpleDrawable::getPosition();
-	// FIXME: This needs a camera!!!
-	return /* getCanvas()->getCamera()->getViewMatrix() * */ pos;
+	return getCamera()->getViewMatrix() * pos;
 }
 
 

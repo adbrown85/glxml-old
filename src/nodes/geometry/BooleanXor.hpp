@@ -22,7 +22,7 @@ using namespace std;
  * 
  * @ingroup advanced
  */
-class BooleanXor : public Boolean, public Dependent {
+class BooleanXor : public Boolean, public CameraUser {
 public:
 	BooleanXor(const Tag &tag);
 	virtual void draw() const;

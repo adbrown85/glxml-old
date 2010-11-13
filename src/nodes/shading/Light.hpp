@@ -21,7 +21,7 @@ using namespace std;
  * @ingroup basic
  */
 class Light : public SimpleDrawable,
-              public Nameable, public Dependent {
+              public Nameable, public CameraUser {
 public:
 	Light(const Tag &tag);
 	virtual ~Light();

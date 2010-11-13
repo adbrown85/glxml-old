@@ -10,25 +10,25 @@
 Traverser::Traverser(Scene *scene) {
 	
 	this->scene = scene;
-	this->canvas = NULL;
-	findDependents();
+	this->camera = NULL;
+	findCameraUsers();
 }
 
 
-/** Finds nodes that are dependent on the canvas. */
-void Traverser::findDependents() {
+/** Finds nodes that are dependent on the camera. */
+void Traverser::findCameraUsers() {
 	
 	Node *node;
 	Node::iterator it;
 	queue<Node*> Q;
-	Dependent *d;
+	CameraUser *cu;
 	
 	Q.push(scene->getRoot());
 	while (!Q.empty()) {
 		node = Q.front();
-		d = dynamic_cast<Dependent*>(node);
-		if (d != NULL)
-			dependents.push_back(d);
+		cu = dynamic_cast<CameraUser*>(node);
+		if (cu != NULL)
+			cameraUsers.push_back(cu);
 		for (it=node->begin(); it!=node->end(); ++it)
 			Q.push(*it);
 		Q.pop();
@@ -61,11 +61,13 @@ void Traverser::onDrawable(Node *node, Drawable *drawable) {
 
 void Traverser::start() {
 	
-	list<Dependent*>::iterator it;
+	list<CameraUser*>::iterator it;
 	
 	// Set canvas
-	for (it=dependents.begin(); it!=dependents.end(); ++it) {
-		(*it)->setCanvas(canvas);
+	if (camera != NULL) {
+		for (it=cameraUsers.begin(); it!=cameraUsers.end(); ++it) {
+			(*it)->setCamera(camera);
+		}
 	}
 	
 	// Traverse

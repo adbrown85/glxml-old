@@ -8,6 +8,7 @@
 #define GLXML_NODEINTERFACES_HPP
 #include "glxml_common.h"
 #include <glawt/Canvas.hpp>
+#include <gloop/Camera.hpp>
 #include <gloop/Matrix.hpp>
 #include <gloop/Vec4.hpp>
 #include "Node.hpp"
@@ -94,6 +95,21 @@ inline Dependent::Dependent() {canvas = NULL;}
 inline Canvas* Dependent::getCanvas() const {return canvas;}
 inline void Dependent::setCanvas(Canvas *c) {canvas = c;}
 
+/** @brief %Node that depends on the camera to perform its operation.
+ * @ingroup core
+ */
+class CameraUser {
+public:
+	CameraUser();
+	virtual void setCamera(Camera *camera);
+protected:
+	Camera* getCamera() const;
+private:
+	Camera *camera;
+};
+inline CameraUser::CameraUser() {camera = NULL;}
+inline Camera* CameraUser::getCamera() const {return camera;}
+inline void CameraUser::setCamera(Camera *camera) {this->camera = camera;}
 
 /** @brief %Node that can have its exceptions suppressed.
  * @interface Suppressable

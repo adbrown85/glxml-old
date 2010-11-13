@@ -17,7 +17,7 @@ using namespace std;
 /** @brief Sorts translate children based on their depth.
  * @ingroup advanced
  */
-class Sort : public Node, public Applicable, public Dependent {
+class Sort : public Node, public Applicable, public CameraUser {
 public:
 	Sort(const Tag &tag) : Node(tag) {}
 	virtual void apply();

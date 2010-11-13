@@ -197,6 +197,7 @@ void Tester::open(const string &filename) {
 	scene->prepare();
 	scene->print();
 	traverser = new Traverser(scene);
+	traverser->setCamera(camera);
 	
 	// End setup
 	canvas->primeFinish();

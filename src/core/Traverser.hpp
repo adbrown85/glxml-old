@@ -22,25 +22,26 @@ public:
 	Traverser(Scene *scene);
 	virtual ~Traverser() {}
 	virtual void start();
+// Getters and setters
+	Camera* getCamera() const;
+	void setCamera(Camera *camera);
 protected:
-	void findDependents();
-	Canvas* getCanvas() const;
+	void findCameraUsers();
 	virtual void onApplicable(Node *node, Applicable *applicable);
 	virtual void onDrawable(Node *node, Drawable *drawable);
 	void traverseChildren(Node *node);
 	void traverseNode(Node *node);
-	void setCanvas(Canvas *canvas);
 private:
-	list<Dependent*> dependents;
+	list<CameraUser*> cameraUsers;
 	Scene *scene;
-	Canvas *canvas;
+	Camera *camera;
 };
 
-/** Sets the canvas that will be used for dependent nodes. */
-inline void Traverser::setCanvas(Canvas *c) {canvas = c;}
+/** Sets the camera that will be passed to CameraUser nodes. */
+inline void Traverser::setCamera(Camera *c) {camera = c;}
 
-/** @return %Canvas used for dependent nodes. */
-inline Canvas* Traverser::getCanvas() const {return canvas;}
+/** @return %Camera used for CameraUser nodes. */
+inline Camera* Traverser::getCamera() const {return camera;}
 
 
 #endif
