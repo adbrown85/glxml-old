@@ -12,6 +12,7 @@
 <program>
 	<shader file="../../../glsl/texture.vert" />
 	<shader file="../../../glsl/texture.frag" />
+	<uniform type="sampler2D" name="unit" link="stone" />
 	<box />
 </program>
 

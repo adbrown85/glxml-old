@@ -7,8 +7,8 @@
 
 
 <program>
-	<shader file="../../glsl/halfmoon.vert" />
-	<shader file="../../glsl/halfmoon.frag" />
+	<shader file="../../../glsl/halfmoon.vert" />
+	<shader file="../../../glsl/halfmoon.frag" />
 	<blend>
 		<depth mode="always">
 			<sort>

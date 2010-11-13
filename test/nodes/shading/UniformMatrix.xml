@@ -7,11 +7,11 @@
 
 
 
-<texture name="crate" file="../../textures/crate.jpg">
-<texture name="stone" file="../../textures/stone.jpg">
+<texture name="crate" file="../../../textures/crate.jpg">
+<texture name="stone" file="../../../textures/stone.jpg">
 	<program>
-		<shader type="vertex" file="../../glsl/basic.vert" />
-		<shader type="fragment" file="../../glsl/basic.frag" />
+		<shader type="vertex" file="../../../glsl/basic.vert" />
+		<shader type="fragment" file="../../../glsl/basic.frag" />
 		<uniform type="vec3" name="LightPosition" value="10.0 10.0 10.0" />
 		<cube />
 	</program>

@@ -12,8 +12,8 @@
 		<target link="back_coords" />
 		<target link="front_coords" />
 		<program>
-			<shader file="../../glsl/coordinates.vert" />
-			<shader file="../../glsl/coordinates.frag" />
+			<shader file="../../../glsl/coordinates.vert" />
+			<shader file="../../../glsl/coordinates.frag" />
 			<outputs>
 			</outputs>
 			<uniform type="mat4" name="MVPMatrix" as="modelviewprojection" />
@@ -22,8 +22,8 @@
 			</cull>
 		</program>
 		<program>
-			<shader file="../../glsl/coordinates.vert" />
-			<shader file="../../glsl/coordinates.frag" />
+			<shader file="../../../glsl/coordinates.vert" />
+			<shader file="../../../glsl/coordinates.frag" />
 			<outputs>
 			</outputs>
 			<uniform type="mat4" name="MVPMatrix" as="modelviewprojection" />
@@ -33,8 +33,8 @@
 		</program>
 	</framebuffer>
 	<program>
-		<shader file="../../glsl/multitexture.vert" />
-		<shader file="../../glsl/multitexture.frag" />
+		<shader file="../../../glsl/multitexture.vert" />
+		<shader file="../../../glsl/multitexture.frag" />
 		<uniform type="mat4" name="MVPMatrix" as="modelviewprojection" />
 		<uniform type="sampler2D" name="left" link="back_coords" />
 		<uniform type="sampler2D" name="right" link="front_coords" />

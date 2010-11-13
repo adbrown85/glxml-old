@@ -7,7 +7,7 @@
 
 
 <program>
-	<shader file="../../glsl/color.vert" />
-	<shader file="../../glsl/color.frag" />
+	<shader file="../../../glsl/color.vert" />
+	<shader file="../../../glsl/color.frag" />
 	<fullscreen />
 </program>

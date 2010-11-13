@@ -7,8 +7,8 @@
 
 
 <program>
-	<shader file="../../glsl/color.vert" />
-	<shader file="../../glsl/color.frag" />
+	<shader file="../../../glsl/color.vert" />
+	<shader file="../../../glsl/color.frag" />
 	<choose choice="cube">
 		<branch name="clear">
 			<clear />

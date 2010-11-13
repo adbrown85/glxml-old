@@ -10,14 +10,14 @@
 	<framebuffer>
 		<target link="mytexture" />
 		<program>
-			<shader file="../../glsl/coordinates.vert" />
-			<shader file="../../glsl/coordinates.frag" />
+			<shader file="../../../glsl/coordinates.vert" />
+			<shader file="../../../glsl/coordinates.frag" />
 			<cube />
 		</program>
 	</framebuffer>
 	<program>
-		<shader file="../../glsl/texture.vert" />
-		<shader file="../../glsl/texture.frag" />
+		<shader file="../../../glsl/texture.vert" />
+		<shader file="../../../glsl/texture.frag" />
 		<uniform type="sampler2D" name="unit" link="mytexture" />
 		<box />
 	</program>

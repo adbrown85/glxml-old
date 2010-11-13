@@ -12,8 +12,8 @@
 		<target link="back_coords" />
 		<target link="front_coords" />
 		<program>
-			<shader file="../../glsl/coordinates.vert" />
-			<shader file="../../glsl/coordinates.frag" />
+			<shader file="../../../glsl/coordinates.vert" />
+			<shader file="../../../glsl/coordinates.frag" />
 			<outputs>
 				<bind name="FragColor" to="back_coords" />
 			</outputs>
@@ -23,8 +23,8 @@
 			</cull>
 		</program>
 		<program>
-			<shader file="../../glsl/coordinates.vert" />
-			<shader file="../../glsl/coordinates.frag" />
+			<shader file="../../../glsl/coordinates.vert" />
+			<shader file="../../../glsl/coordinates.frag" />
 			<outputs>
 				<bind name="FragColor" to="front_coords" />
 			</outputs>
@@ -36,8 +36,8 @@
 	</framebuffer>
 	<clear />
 	<program>
-		<shader file="../../glsl/multitexture.vert" />
-		<shader file="../../glsl/multitexture.frag" />
+		<shader file="../../../glsl/multitexture.vert" />
+		<shader file="../../../glsl/multitexture.frag" />
 		<uniform type="sampler2D" name="left" link="back_coords" />
 		<uniform type="sampler2D" name="right" link="front_coords" />
 		<box />

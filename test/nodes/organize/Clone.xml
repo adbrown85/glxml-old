@@ -16,7 +16,7 @@
 	<translate x="+2.0">
 		<cube name="right">
 			<uniform type="mat4" name="MVPMatrix" />
-			<uniform type="vec4" name="Color" value="0 1 1 1" />
+			<uniform type="vec4" name="Color" value="1 1 0 1" />
 		</cube>
 	</translate>
 </group>

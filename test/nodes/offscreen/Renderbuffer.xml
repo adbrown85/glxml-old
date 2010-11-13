@@ -29,8 +29,8 @@
 		<target link="mytexture" />
 		<clear />
 		<program>
-			<shader file="../../glsl/coordinates.vert" />
-			<shader file="../../glsl/coordinates.frag" />
+			<shader file="../../../glsl/coordinates.vert" />
+			<shader file="../../../glsl/coordinates.frag" />
 			<instance of="cubes" />
 		</program>
 	</framebuffer>
@@ -38,8 +38,8 @@
 	
 	<!-- Draw texture onto box -->
 	<program>
-		<shader file="../../glsl/texture.vert" />
-		<shader file="../../glsl/texture.frag" />
+		<shader file="../../../glsl/texture.vert" />
+		<shader file="../../../glsl/texture.frag" />
 		<translate>
 			<uniform type="sampler2D" name="unit" link="mytexture" />
 			<box />
