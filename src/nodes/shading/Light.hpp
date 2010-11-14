@@ -20,8 +20,7 @@ using namespace std;
 /** @brief %Light that has intensities and can be transformed.
  * @ingroup basic
  */
-class Light : public SimpleDrawable,
-              public Nameable, public CameraUser {
+class Light : public SimpleDrawable, public Nameable {
 public:
 	Light(const Tag &tag);
 	virtual ~Light();

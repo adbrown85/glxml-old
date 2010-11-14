@@ -93,16 +93,7 @@ void Light::getLightMatrix(GLfloat array[16]) {
 /** @return Position of the light in view space coordinates. */
 Vec4 Light::getPosition() {
 	
-	Vec4 pos;
-	
-	if (getCamera() == NULL) {
-		NodeException e(getTag());
-		e << "[Light] Camera is NULL!";
-		throw e;
-	}
-	
-	pos = SimpleDrawable::getPosition();
-	return getCamera()->getViewMatrix() * pos;
+	return State::getViewMatrix() * SimpleDrawable::getPosition();
 }
 
 
