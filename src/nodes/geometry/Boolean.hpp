@@ -62,7 +62,7 @@ protected:
 	vector<Shape*> shapes;
 	vector<Extent> extents;
 	list<Uniform*> uniforms[2];
-	Matrix mvm;
+	Matrix modelMatrix;
 	string of, operation;
 	Suppressor suppressor;
 protected:

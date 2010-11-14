@@ -123,16 +123,16 @@ void Boolean::calculate() {
 void Boolean::calculateExtents() {
 	
 	// Load identity matrix
-	glMatrixMode(GL_MODELVIEW);
-	glPushMatrix();
-	glLoadIdentity();
+	State::setMode(MODEL_MODE);
+	State::push();
+	State::loadIdentity();
 	
 	// Collect all the extents in the group
 	extents.clear();
 	calculateExtents(group);
 	
 	// Restore original matrix
-	glPopMatrix();
+	State::pop();
 }
 
 
@@ -154,9 +154,9 @@ void Boolean::calculateExtents(Node *node) {
 	// Store extents of shapes
 	else if ((shape = dynamic_cast<Shape*>(node))) {
 		Extent extent;
-		mvm = State::getModelViewMatrix();
-		extent.upper = mvm * Vec4(+0.5,+0.5,+0.5,1.0);
-		extent.lower = mvm * Vec4(-0.5,-0.5,-0.5,1.0);
+		modelMatrix = State::getModelMatrix();
+		extent.upper = modelMatrix * Vec4(+0.5,+0.5,+0.5,1.0);
+		extent.lower = modelMatrix * Vec4(-0.5,-0.5,-0.5,1.0);
 		extent.diagonal = extent.upper - extent.lower;
 		extent.label = shape->getID();
 		extent.index = extents.size();
