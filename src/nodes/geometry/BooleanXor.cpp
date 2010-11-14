@@ -47,19 +47,20 @@ void BooleanXor::calculate() {
 /** Draw the pieces or one of the shapes according to overlap and depth. */
 void BooleanXor::draw() const {
 	
-	Matrix rotation = getCamera()->getRotation();
+	Matrix view;
 	
 	// Draw depending on overlap
+	view = State::getViewMatrix();
 	if (isOverlapped()) {
-		drawWhenOverlapped(rotation);
+		drawWhenOverlapped(view);
 	} else {
-		drawWhenNotOverlapped(rotation);
+		drawWhenNotOverlapped(view);
 	}
 }
 
 
 /** Draws one of the shapes according to depth. */
-void BooleanXor::drawWhenNotOverlapped(Matrix &rotation) const {
+void BooleanXor::drawWhenNotOverlapped(Matrix &view) const {
 	
 	float depths[2];
 	int i;
@@ -68,7 +69,7 @@ void BooleanXor::drawWhenNotOverlapped(Matrix &rotation) const {
 	// Find which shape is farthest back
 	for (it=extents.begin(); it!=extents.end(); ++it) {
 		i = distance(extents.begin(), it);
-		depths[i] = (rotation * ((it->upper+it->lower)*0.5)).z;
+		depths[i] = (view * ((it->upper+it->lower)*0.5)).z;
 	}
 	i = isDrawn(depths[1],depths[0]) ? 1 : 0;
 	
@@ -79,7 +80,7 @@ void BooleanXor::drawWhenNotOverlapped(Matrix &rotation) const {
 
 
 /** Draw some of the pieces according to depth. */
-void BooleanXor::drawWhenOverlapped(Matrix &rotation) const {
+void BooleanXor::drawWhenOverlapped(Matrix &view) const {
 	
 	float oDepth, pDepth;
 	int offset;
@@ -88,11 +89,11 @@ void BooleanXor::drawWhenOverlapped(Matrix &rotation) const {
 	multimap<float,int>::iterator mi;
 	
 	// Calculate depth of overlap
-	oDepth = (rotation * ((overlap.upper+overlap.lower)*0.5)).z; 
+	oDepth = (view * ((overlap.upper+overlap.lower)*0.5)).z;
 	
 	// Calculate depths of pieces and sort using map
 	for (li=pieces.begin(); li!=pieces.end(); ++li) {
-		pDepth = (rotation * ((li->upper+li->lower)*0.5)).z;
+		pDepth = (view * ((li->upper+li->lower)*0.5)).z;
 		if (isDrawn(pDepth, oDepth)) {
 			offset = distance(pieces.begin(),li) * 24;
 			sorted[li->index].insert(pair<float,int>(pDepth, offset));
