@@ -18,7 +18,6 @@
 #define DEFAULT_LIGHT_MATRIX_NAME "MCtoLightMatrix"
 using namespace std;
 
-
 /* Enumeration of matrix types. */
 enum MatrixType{MODEL,
                 MODELVIEW,
@@ -83,12 +82,15 @@ enum MatrixType{MODEL,
 class UniformMatrix : public Uniform {
 public:
 	UniformMatrix(const Tag &tag);
-	virtual void apply();
+	virtual string toString() const;
+// Preparation
 	virtual void associate();
+// Traversal
+	virtual void apply();
+// Utilities
 	static bool hasChild(Node *node, const string &name);
 	static bool isDefault(const string &name, GLenum type);
 	static bool isDefaultName(const string &name);
-	virtual string toString() const;
 protected:
 	void findLight();
 	void setTypeFromAs();
@@ -99,6 +101,5 @@ private:
 	string as, of;
 	Light *light;
 };
-
 
 #endif

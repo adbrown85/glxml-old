@@ -14,7 +14,6 @@
 #include "Calculator.hpp"
 using namespace std;
 
-
 /** @brief Array of uniforms capable of calculating values.
  * @ingroup basic
  */
@@ -22,11 +21,13 @@ class UniformFloatArray : public Uniform, public NodeNotifier {
 public:
 	UniformFloatArray(const Tag &tag);
 	virtual ~UniformFloatArray();
-	virtual void apply();
+	virtual string toString() const;
+// Preparation
 	virtual void associate();
 	virtual void finalize();
-	virtual string toString() const;
-public:
+// Traversal
+	virtual void apply();
+// Getters and setters
 	virtual GLsizei getCount() const;
 	virtual GLfloat* getValues() const;
 	static set<UniformFloatArray*> search(Node *node);
@@ -45,6 +46,5 @@ private:
 
 inline GLsizei UniformFloatArray::getCount() const {return count;}
 inline GLfloat* UniformFloatArray::getValues() const {return values;}
-
 
 #endif

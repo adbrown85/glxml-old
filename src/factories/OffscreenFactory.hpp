@@ -17,7 +17,6 @@
 #include "Target.hpp"
 using namespace std;
 
-
 /** @brief %Factory for creating framebuffer-related objects.
  * 
  * @ingroup factories
@@ -35,6 +34,5 @@ public:
 private:
 	static bool installed;
 };
-
 
 #endif

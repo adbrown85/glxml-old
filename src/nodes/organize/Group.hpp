@@ -11,21 +11,21 @@
 #include "NodeInterfaces.hpp"
 using namespace std;
 
-
 /** @brief Collection of nodes.
  * @ingroup basic
  */
 class Group : public Node, public Nameable {
 public:
 	Group(const Tag &tag);
+	virtual string toString() const;
+// Preparation
 	virtual void verify();
+// Traversal
 	virtual bool areChildrenTraversable() const;
 	virtual bool areChildrenPreparable() const;
-	virtual string toString() const;
 };
 
 inline bool Group::areChildrenTraversable() const {return false;}
 inline bool Group::areChildrenPreparable() const {return false;}
-
 
 #endif

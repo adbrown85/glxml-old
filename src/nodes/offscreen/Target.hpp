@@ -11,7 +11,6 @@
 #include "Texture.hpp"                // Backer
 using namespace std;
 
-
 /** @brief Offscreen render location backed by a texture.
  * 
  * Attaches itself to a color attachment of a Framebuffer.  When the 
@@ -63,13 +62,14 @@ using namespace std;
 class Target : public Attachment {
 public:
 	Target(const Tag &tag);
-	virtual void attach();
-	virtual string getLink() const;
-	virtual int getSize() const;
-	virtual void setLink(const string &link);
 	virtual string toString() const;
-protected:
+	virtual void attach();
+// Preparation
 	void associate();
+// Getters and setters
+	virtual string getLink() const;
+	virtual void setLink(const string &link);
+	virtual int getSize() const;
 private:
 	Texture *texture;
 	string link;
@@ -83,6 +83,5 @@ inline string Target::getLink() const {return link;}
 
 /** Sets the name of the texture to render to. */
 inline void Target::setLink(const string &link) {this->link = link;}
-
 
 #endif

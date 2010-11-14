@@ -15,22 +15,24 @@
 #include "Scout.hpp"
 using namespace std;
 
-
 /** @brief GLSL program that %Shaders and %Uniform variables are connected to.
  * @ingroup basic
  */
 class Program : public Node, public Applicable {
 public:
 	Program(const Tag& tag);
+	virtual string toString() const;
 	virtual void addListener(NodeListener *listener, int type);
-	virtual void apply();
+// Preparation
 	virtual void associate();
 	virtual void finalize();
+// Traversal 
+	virtual void apply();
+	virtual void remove();
+// Getters and setters
+	virtual void log() const;
 	static Program* getCurrent();
 	virtual GLuint getHandle() const;
-	virtual void log() const;
-	virtual void remove();
-	virtual string toString() const;
 private:
 	GLint linked;
 	GLuint handle;
@@ -44,6 +46,5 @@ inline GLuint Program::getHandle() const {return handle;}
 
 /** @return Pointer to the active program */
 inline Program* Program::getCurrent() {return current;}
-
 
 #endif

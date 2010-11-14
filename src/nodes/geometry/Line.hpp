@@ -10,7 +10,6 @@
 #include "Shape.hpp"                    // Base class
 using namespace std;
 
-
 /** @brief %Line between two points.
  * @ingroup basic
  */
@@ -24,6 +23,5 @@ protected:
 private:
 	float from[4], to[4];
 };
-
 
 #endif

@@ -25,10 +25,11 @@ using namespace std;
 class BooleanXor : public Boolean {
 public:
 	BooleanXor(const Tag &tag);
-	virtual void draw() const;
-	static ShapeTraits getTraits();
 	virtual string toString() const;
+// Traversal
+	virtual void draw() const;
 protected:
+	static ShapeTraits getTraits();
 	void addPiece(list<Extent> &pieces, const Extent &piece);
 	virtual void calculate();
 	virtual void calculateTangible();

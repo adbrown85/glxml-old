@@ -16,7 +16,6 @@
 #define LIGHT_DEFAULT_SPECULAR 1.0
 using namespace std;
 
-
 /** @brief %Light that has intensities and can be transformed.
  * @ingroup basic
  */
@@ -24,12 +23,14 @@ class Light : public SimpleDrawable, public Nameable {
 public:
 	Light(const Tag &tag);
 	virtual ~Light();
+	virtual string toString() const;
+// Traversal
 	virtual void draw() const;
+// Getters and setters
 	virtual Vec4 getPosition();
 	virtual Matrix getLightMatrix();
 	virtual void getLightMatrix(GLfloat array[16]);
-	virtual string toString() const;
-public:    // Utilities
+// Utilities
 	static Light* search(Node *node, const string &name);
 private:
 	float ambient, diffuse, specular;
@@ -37,6 +38,5 @@ private:
 	static Scene *widget;
 	static bool tried;
 };
-
 
 #endif

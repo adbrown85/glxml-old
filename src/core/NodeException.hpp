@@ -11,7 +11,6 @@
 #include <edo/Tag.hpp>
 using namespace std;
 
-
 /** @brief %Exception thrown from a node.
  * 
  * Automatically initializes the exception's message to the tag's location.
@@ -22,6 +21,5 @@ class NodeException : public BasicException {
 public:
 	NodeException(const Tag &tag);
 };
-
 
 #endif

@@ -13,13 +13,14 @@ using namespace std;
 /** @brief Container for GLSL vector uniform variables.
  * @ingroup basic
  */
-class UniformVector : public Uniform,
-                      public NodeNotifier {
+class UniformVector : public Uniform, public NodeNotifier {
 public:
 	UniformVector(const Tag &tag);
-	virtual void associate();
-	virtual void apply();
 	virtual string toString() const;
+// Preparation
+	virtual void associate();
+// Traversal
+	virtual void apply();
 private:
 	GLfloat value[4];
 	GLint size;

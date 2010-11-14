@@ -14,7 +14,6 @@
 #include "Node.hpp"
 using namespace std;
 
-
 /** @brief %Node that can be applied, and then removed.
  * @interface Applicable
  * @ingroup scene
@@ -24,7 +23,6 @@ public:
 	virtual void apply() = 0;
 	virtual void remove() = 0;
 };
-
 
 /** @brief %Node that can be attached to another node.
  * @interface Attachable
@@ -38,13 +36,11 @@ public:
 	virtual void setLocation(GLuint location) = 0;
 };
 
-
 /* Upper and lower boundaries of an object. */
 struct Extent {
 	Vec4 upper, lower, diagonal;
 	int label, index;
 };
-
 
 /** @brief %Node that can be positioned and sized.
  * @interface Transformable
@@ -57,7 +53,6 @@ public:
 	virtual Matrix getTransformation() = 0;
 	virtual Matrix getTransformationInverse() = 0;
 };
-
 
 /** @brief %Node that can be drawn and identified on screen.
  * @interface Drawable
@@ -94,7 +89,6 @@ inline Suppressable::Suppressable() {suppress = false;}
 inline bool Suppressable::isSuppressed() const {return suppress;}
 inline void Suppressable::setSuppress(bool s) {suppress = true;}
 
-
 /** @brief %Node with a name.
  * @interface Nameable
  * @ingroup scene
@@ -114,7 +108,6 @@ inline string Nameable::getName() const {return name;}
 inline bool Nameable::hasName() const {return !name.empty();}
 inline void Nameable::setName(const string &n) {name = n;}
 
-
 /** @brief %Node loaded from a file.
  * @interface Fileable
  * @ingroup scene
@@ -133,6 +126,5 @@ private:
 inline string Fileable::getFilename() const {return filename;}
 inline bool Fileable::hasFilename() const {return !filename.empty();}
 inline void Fileable::setFilename(const string &f) {filename = f;}
-
 
 #endif

@@ -10,7 +10,6 @@
 #include "Framebuffer.hpp"
 using namespace std;
 
-
 /** @brief Temporarily disables a framebuffer in order to render to the screen.
  * 
  * <b>XML name</b>
@@ -25,12 +24,13 @@ using namespace std;
 class Screen : public Node, public Applicable {
 public:
 	Screen(const Tag &tag);
-	virtual void apply();
+// Preparation
 	virtual void associate();
+// Traversal
+	virtual void apply();
 	virtual void remove();
 private:
 	Framebuffer *framebuffer;
 };
-
 
 #endif

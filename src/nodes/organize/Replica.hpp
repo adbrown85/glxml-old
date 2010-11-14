@@ -12,20 +12,21 @@
 #include "Placeholder.hpp"
 using namespace std;
 
-
 /** @brief Smart instance of a group capable of making replacements.
  * @ingroup advanced
  */
 class Replica : public Clone {
 public:
 	Replica(const Tag &tag);
-	virtual void apply();
+	virtual string toString() const;
+// Preparation
 	virtual void associate();
 	virtual void associateAfter();
 	virtual void finalize();
 	virtual void finalizeAfter();
+// Traversal
+	virtual void apply();
 	virtual void remove();
-	virtual string toString() const;
 protected:
 	void findReplacements();
 	void applyReplacements();
@@ -33,6 +34,5 @@ protected:
 private:
 	map<Placeholder*,Replacement*> replacements;
 };
-
 
 #endif

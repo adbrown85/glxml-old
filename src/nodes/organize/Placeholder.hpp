@@ -12,21 +12,21 @@
 #include "Group.hpp"
 using namespace std;
 
-
 /** @brief %Node that can be replaced in groups.
  * @ingroup advanced
  */
 class Placeholder : public Node, public Nameable {
 public:
 	Placeholder(const Tag &tag);
-	virtual bool areChildrenDestroyable() const;
+	virtual string toString() const;
 	virtual void check();
 	virtual void clear();
 	virtual void mimic(Node *node);
-	virtual string toString() const;
+// Traversal
+	virtual bool areChildrenDestroyable() const;
 };
 
-/** Makes sure any leftover children aren't destoyed twice. */
+/** Makes sure any leftover children aren't destroyed twice. */
 inline bool Placeholder::areChildrenDestroyable() const {return false;}
 
 /** Clears the placeholder's children. */

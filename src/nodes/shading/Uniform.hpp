@@ -24,25 +24,27 @@ using namespace std;
  */
 class Uniform : public Node,
                 public Applicable, public Suppressable, public Nameable {
-public: // Core
+public:
 	Uniform(const Tag &tag);
-	virtual void associate();
-	virtual void apply() = 0;
-	virtual void finalize();
-	virtual void remove() {};
 	virtual string toString() const;
+// Preparation
 	virtual void verify();
+	virtual void associate();
+	virtual void finalize();
 	virtual bool wasSuppressed() const;
-public: // Accessors and mutators
+// Traversal
+	virtual void apply() = 0;
+	virtual void remove() {};
+// Getters and setters
 	string getLink() const;
-	GLint getLocation() const;
-	Program* getProgram() const;
-	string getType() const;
 	bool hasLink() const;
+	GLint getLocation() const;
 	bool hasLocation() const;
 	void setLocation(GLint location);
+	Program* getProgram() const;
 	void setProgram(Program *program);
-public: // Utilities
+	string getType() const;
+// Utilities
 	static bool isMatrixType(GLenum type);
 private:
 	GLint location;
@@ -51,13 +53,12 @@ private:
 };
 
 inline string Uniform::getLink() const {return link;}
-inline GLint Uniform::getLocation() const {return location;}
-inline Program* Uniform::getProgram() const {return program;}
-inline string Uniform::getType() const {return type;}
 inline bool Uniform::hasLink() const {return !link.empty();}
+inline GLint Uniform::getLocation() const {return location;}
 inline bool Uniform::hasLocation() const {return location != -1;}
 inline void Uniform::setLocation(GLint location) {this->location = location;}
+inline Program* Uniform::getProgram() const {return program;}
 inline void Uniform::setProgram(Program *program) {this->program = program;}
-
+inline string Uniform::getType() const {return type;}
 
 #endif

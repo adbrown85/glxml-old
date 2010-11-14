@@ -14,7 +14,6 @@
 #include "Scout.hpp"
 using namespace std;
 
-
 /** @brief GLSL shader with loading and compiling capabilities.
  * 
  * <b>XML Name</b>
@@ -45,12 +44,13 @@ using namespace std;
 class Shader : public Node, public Fileable {
 public:
 	Shader(const Tag &tag);
-	virtual void associate();
 	virtual string toString() const;
-public:    // Accessors
+// Preparation
+	virtual void associate();
+// Getters and setters
 	GLuint getHandle() const;
 	string getType() const;
-protected: // Helpers
+protected:
 	void guessType();
 private:
 	GLuint handle;
@@ -62,6 +62,5 @@ inline GLuint Shader::getHandle() const {return handle;}
 
 /** @return Either "fragment" or "vertex". */
 inline string Shader::getType() const {return type;}
-
 
 #endif

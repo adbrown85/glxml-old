@@ -15,7 +15,6 @@
 #include "Wireframe.hpp"
 using namespace std;
 
-
 /** @brief %Factory for creating nodes of basic OpenGL functions.
  * 
  * @ingroup factories
@@ -31,6 +30,5 @@ public:
 private:
 	static bool installed;
 };
-
 
 #endif

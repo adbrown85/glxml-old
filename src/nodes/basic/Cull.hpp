@@ -11,21 +11,20 @@
 #include "NodeInterfaces.hpp"
 using namespace std;
 
-
 /** @brief Removes back or front-facing polygons.
  * @ingroup advanced
  */
 class Cull : public Node, public Applicable {
 public:
 	Cull(const Tag &tag);
+	string toString() const;
+// Traversal
 	void apply();
 	void remove();
-	string toString() const;
 private:
 	bool enabled;
 	GLenum faces;
 	string facesString;
 };
-
 
 #endif

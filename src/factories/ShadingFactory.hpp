@@ -21,7 +21,6 @@
 #include "UniformVector.hpp"
 using namespace std;
 
-
 /** @brief %Factory for creating nodes related to shading.
  * 
  * @ingroup factories
@@ -40,6 +39,5 @@ private:
 	static bool installed;
 	static map<string,kind_t> kinds;
 };
-
 
 #endif

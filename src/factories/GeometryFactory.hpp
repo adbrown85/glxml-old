@@ -18,7 +18,6 @@
 #include "Square.hpp"
 using namespace std;
 
-
 /** @brief %Factory for creating geometry-related objects.
  * 
  * @ingroup factories
@@ -36,6 +35,5 @@ public:
 private:
 	static bool installed;
 };
-
 
 #endif

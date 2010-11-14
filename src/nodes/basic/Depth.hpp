@@ -11,7 +11,6 @@
 #include "NodeInterfaces.hpp"
 using namespace std;
 
-
 /** @brief Modifies the depth function.
  * 
  * <b>XML Name</b>
@@ -50,12 +49,12 @@ using namespace std;
 class Depth : public Node, public Applicable {
 public:
 	Depth(const Tag &tag);
+	virtual string toString() const;
+// Traversal
 	virtual void apply();
 	virtual void remove();
-	virtual string toString() const;
 private:
 	GLenum mode;
 };
-
 
 #endif

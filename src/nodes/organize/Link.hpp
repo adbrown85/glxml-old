@@ -11,19 +11,20 @@
 #include "Scout.hpp"
 using namespace std;
 
-
 /** @brief Simple connection to a %Group.
  * @ingroup basic
  */
 class Link : public Node {
 public:
 	Link(const Tag &tag);
-	virtual bool areChildrenDestroyable() const;
-	virtual bool areChildrenPrintable() const;
+	virtual string toString() const;
 	virtual void establish();
 	virtual void relink();
+// Traversal
+	virtual bool areChildrenDestroyable() const;
+	virtual bool areChildrenPrintable() const;
+// Getters and setters
 	virtual void setTo(const string &to);
-	virtual string toString() const;
 private:
 	Group *group;
 	string to;
@@ -32,6 +33,5 @@ private:
 inline bool Link::areChildrenDestroyable() const {return false;}
 inline bool Link::areChildrenPrintable() const {return false;}
 inline void Link::setTo(const string &to) {this->to = to;}
-
 
 #endif

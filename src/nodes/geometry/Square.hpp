@@ -10,7 +10,6 @@
 #include "Shape.hpp"                    // Base class
 using namespace std;
 
-
 /** @brief Four-sided, 2D shape with equal width and height.
  * @ingroup basic
  */
@@ -24,6 +23,5 @@ protected:
 	virtual void updateBufferNormals();
 	virtual void updateBufferCoords();
 };
-
 
 #endif

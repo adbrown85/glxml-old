@@ -11,7 +11,6 @@
 #include "Attachment.hpp"
 using namespace std;
 
-
 /** @brief Offscreen render location that can be attached to a %Framebuffer.
  * 
  * Convenient if the Framebuffer object needs a depth buffer, or if the user 
@@ -62,11 +61,13 @@ class Renderbuffer : public Attachment {
 public:
 	Renderbuffer(const Tag &tag);
 	~Renderbuffer();
-	virtual void associate();
-	virtual void attach();
-	virtual GLuint getHandle() const;
-	virtual Vec4 read(int x, int y) const;
 	virtual string toString() const;
+	virtual void attach();
+	virtual Vec4 read(int x, int y) const;
+// Preparation
+	virtual void associate();
+// Getters and setters
+	virtual GLuint getHandle() const;
 protected:
 	void setFormat(GLenum format);
 private:
@@ -79,6 +80,5 @@ private:
 inline GLuint Renderbuffer::getHandle() const {return handle;}
 
 inline void Renderbuffer::setFormat(GLenum format) {this->format = format;}
-
 
 #endif

@@ -13,17 +13,17 @@
 #include "Transform.hpp"
 using namespace std;
 
-
 /** @brief %Node that reorients items in the scene.
  * @ingroup basic
  */
 class Rotate : public Transform {
 public:
 	Rotate(const Tag &tag);
+	virtual string toString() const;
+// Traversal
 	virtual void apply();
 	virtual void applyTo(Matrix &matrix);
 	virtual void remove();
-	virtual string toString() const;
 private:
 	float angle;
 	Vec4 axis;

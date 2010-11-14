@@ -75,10 +75,12 @@ using namespace std;
 class BooleanAnd : public Boolean {
 public:
 	BooleanAnd(const Tag &tag) : Boolean(tag,getTraits()) {}
+// Preparation
 	virtual void associate();
+// Traversal
 	virtual void draw() const;
-	static ShapeTraits getTraits();
 protected:
+	static ShapeTraits getTraits();
 	virtual void calculateTangible();
 	virtual void renameUniforms();
 	virtual void updateBufferPoints();

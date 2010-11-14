@@ -12,7 +12,6 @@
 #include "Resources.hpp"
 using namespace std;
 
-
 /** @brief Base class for an object that opens and runs a separate scene.
  * 
  * %SubsceneUser is great when a node requires already-existing functionality 
@@ -30,14 +29,14 @@ class SubsceneUser {
 public:
 	SubsceneUser();
 	virtual ~SubsceneUser();
-public:    // Accessors and mutators
+// Getters and setters
 	virtual bool isSubsceneOpened() const;
 	virtual Node* getSubsceneRoot() const;
-protected: // Helpers
+protected:
 	virtual void openSubscene(const string &filename);
 	virtual void prepareSubscene();
 	virtual void traverseSubscene() const;
-private:   // Data
+private:
 	bool opened;
 	Scene subscene;
 	Traverser *traverser;
@@ -54,6 +53,5 @@ inline void SubsceneUser::prepareSubscene() {subscene.prepare();}
 
 /** Traverse the subscene. */
 inline void SubsceneUser::traverseSubscene() const {traverser->start();}
-
 
 #endif

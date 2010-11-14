@@ -22,11 +22,13 @@ class Transform : public Node,
                   public Applicable, public NodeNotifier {
 public:
 	Transform(const Tag &tag) : Node(tag) {}
-	static void findAll(Node *node, list<Transform*> &L);
+// Traversal
 	virtual void apply() = 0;
-	virtual void applyTo(Matrix &matrix) = 0;
 	virtual void remove() = 0;
+	virtual void applyTo(Matrix &matrix) = 0;
+// Utilities
 	static void search(Node *node, list<Transform*> &L);
+	static void findAll(Node *node, list<Transform*> &L);
 };
 
 

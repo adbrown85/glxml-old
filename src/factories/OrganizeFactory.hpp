@@ -19,7 +19,6 @@
 #include "Sort.hpp"
 using namespace std;
 
-
 /** @brief %Factory for creating nodes that alter the structure of the scene.
  * 
  * @ingroup advanced
@@ -39,6 +38,5 @@ public:
 private:
 	static bool installed;
 };
-
 
 #endif

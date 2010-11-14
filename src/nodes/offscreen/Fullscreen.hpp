@@ -9,7 +9,6 @@
 #include "glxml_common.h"
 #include "Shape.hpp"
 
-
 /** @brief Rectangle that takes up the entire window.
  * 
  * Automatically adds a uniform that sets the modelviewprojection matrix in 
@@ -20,6 +19,7 @@
 class Fullscreen : public Shape {
 public:
 	Fullscreen(const Tag &tag);
+// Getters and setters
 	virtual bool isSelectable() const;
 protected:
 	static ShapeTraits getTraits();
@@ -31,6 +31,4 @@ protected:
 
 inline bool Fullscreen::isSelectable() const {return false;}
 
-
 #endif
-

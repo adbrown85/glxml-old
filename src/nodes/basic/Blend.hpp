@@ -14,7 +14,6 @@
 #include "Translate.hpp"
 using namespace std;
 
-
 /** @brief Mixes colors together based on their alpha value.
  * 
  * To achieve transparency, also use a Depth node with its mode set to
@@ -26,9 +25,9 @@ using namespace std;
 class Blend : public Node, public Applicable {
 public:
 	Blend(const Tag &tag) : Node(tag) {}
+// Traversal
 	virtual void apply();
 	virtual void remove();
 };
-
 
 #endif

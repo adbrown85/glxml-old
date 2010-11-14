@@ -11,14 +11,12 @@
 #include "Node.hpp"
 #include "Texture.hpp"
 
-
 /* Group of similar framebuffer attachments. */
 struct Chain {
 	GLenum base;                        // GL_COLOR_ATTACHMENT0, etc.
 	GLuint max;                         // Maximum amount of items
 	list<Attachable*> attachables;      // Attached items
 };
-
 
 /** @brief Container for offscreen rendering targets.
  * 
@@ -65,16 +63,19 @@ class Framebuffer : public Node, public Applicable {
 public:
 	Framebuffer(const Tag &tag);
 	virtual ~Framebuffer();
-	virtual bool areChildrenSelectable() const;
-	virtual void apply();
-	virtual void enqueue(const string &type, Attachable *item);
-	virtual GLuint getHandle() const;
-	virtual void remove();
 	virtual string toString() const;
-protected:
+	virtual void enqueue(const string &type, Attachable *item);
+// Preparation
 	virtual void associate();
-	virtual void attach(Chain &chain);
 	virtual void finalize();
+// Traversal
+	virtual void apply();
+	virtual void remove();
+	virtual bool areChildrenSelectable() const;
+// Getters and setters
+	virtual GLuint getHandle() const;
+protected:
+	virtual void attach(Chain &chain);
 	virtual Chain* getChain(const string &name);
 private:
 	GLuint handle, capacity;
@@ -86,6 +87,5 @@ inline bool Framebuffer::areChildrenSelectable() const {return false;}
 
 /** @return Integer identifying the underlying OpenGL framebuffer object. */
 inline GLuint Framebuffer::getHandle() const {return handle;}
-
 
 #endif

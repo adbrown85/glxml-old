@@ -14,7 +14,6 @@
 #include "Scout.hpp"
 using namespace std;
 
-
 /** @brief Binds a fragment shader output variable to location in a framebuffer.
  * 
  * Although the built-in <i>gl_FragData</i> array can be used to render to 
@@ -73,10 +72,11 @@ using namespace std;
 class Bind : public Node {
 public:
 	Bind(const Tag &tag);
+	virtual string toString() const;
+// Preparation
 	virtual void associate();
 	virtual void finalize();
-	virtual string toString() const;
-public: // Accessors and mutators
+// Getters and setters
 	virtual GLint getIndex() const;
 protected:
 	void findAttachment();
@@ -92,6 +92,5 @@ private:
 
 /** @return Index of the target in the outputs list. */
 inline GLint Bind::getIndex() const {return index;}
-
 
 #endif

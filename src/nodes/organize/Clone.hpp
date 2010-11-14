@@ -13,7 +13,6 @@
 #include "Suppressor.hpp"
 using namespace std;
 
-
 /* State of a shape. */
 struct ShapeSnapshot {
 	Program *program;
@@ -38,13 +37,15 @@ struct UniformSnapshot {
 class Clone : public Instance {
 public:
 	Clone(const Tag &tag);
-	virtual void apply();
+	virtual string toString() const;
+// Preparation
 	virtual void associate();
 	virtual void associateAfter();
 	virtual void finalize();
 	virtual void finalizeAfter();
-	virtual string toString() const;
-public:
+// Traversal
+	virtual void apply();
+// Utilities
 	static Clone* search(Node *node);
 protected:
 	void findShapes();
@@ -59,6 +60,5 @@ private:
 	bool suppress;
 	Suppressor suppressor;
 };
-
 
 #endif

@@ -13,7 +13,6 @@
 #include "Translate.hpp"
 using namespace std;
 
-
 /** @brief %Factory for creating nodes that perform transformations.
  * 
  * @ingroup factories
@@ -27,6 +26,5 @@ public:
 private:
 	static bool installed;
 };
-
 
 #endif

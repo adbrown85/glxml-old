@@ -10,7 +10,6 @@
 #include "Node.hpp"
 using namespace std;
 
-
 /** @brief Substitute for a placeholder in a group instance.
  * 
  * @see Replica
@@ -19,10 +18,12 @@ using namespace std;
 class Replacement : public Node {
 public:
 	Replacement(const Tag &tag);
+	virtual string toString() const;
+// Traversal
 	virtual bool areChildrenPreparable() const;
 	virtual bool areChildrenTraversable() const;
+// Getters and setters
 	virtual string getOf() const;
-	virtual string toString() const;
 private:
 	string of;
 };

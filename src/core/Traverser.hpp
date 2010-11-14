@@ -13,7 +13,6 @@
 #include "Scene.hpp"
 using namespace std;
 
-
 /** @brief Utility to walk through nodes.
  * @ingroup scene
  */
@@ -30,6 +29,5 @@ protected:
 private:
 	Scene *scene;
 };
-
 
 #endif

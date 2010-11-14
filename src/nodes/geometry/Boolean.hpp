@@ -19,7 +19,6 @@
 #include "Suppressor.hpp"
 using namespace std;
 
-
 /** @brief Combines shapes in different ways to create a new one.
  * 
  * To create a concrete operation, subclass %Boolean and implement 
@@ -32,11 +31,14 @@ class Boolean : public Hexahedron {
 public:
 	Boolean(const Tag &tag, ShapeTraits traits);
 	virtual ~Boolean();
-	virtual void associate();
-	virtual void draw() const;
-	virtual void finalize();
-	virtual void onNodeEvent(NodeEvent &event);
 	virtual string toString() const;
+// Preparation
+	virtual void associate();
+	virtual void finalize();
+// Traversal
+	virtual void draw() const;
+// Event handling
+	virtual void onNodeEvent(NodeEvent &event);
 protected:
 	void applyUniforms() const;
 	void applyUniforms(int i) const;
@@ -52,10 +54,10 @@ protected:
 	void findTransforms();
 	void findUniforms();
 	bool isOverlapped() const;
+	static bool isSubstantial(const Extent &extent);
 	virtual void updateBuffer();
 protected:
-	static bool isSubstantial(const Extent &extent);
-protected:
+	static float FLT_INF;
 	bool tangible;
 	Extent overlap;
 	Group *group;
@@ -65,8 +67,6 @@ protected:
 	Matrix modelMatrix;
 	string of, operation;
 	Suppressor suppressor;
-protected:
-	static float FLT_INF;
 };
 
 

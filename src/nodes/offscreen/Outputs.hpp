@@ -12,7 +12,6 @@
 #include "Attachment.hpp"
 using namespace std;
 
-
 /** @brief Activates framebuffer attachments.
  * @ingroup advanced
  */
@@ -20,19 +19,19 @@ class Outputs : public Node, public Applicable {
 public:
 	Outputs(const Tag &tag);
 	virtual ~Outputs();
-	virtual GLint addAttachment(Attachment *attachment);
-	virtual void apply();
-	virtual void remove() {}
 	virtual string toString() const;
-protected:
+	virtual GLint addAttachment(Attachment *attachment);
+// Preparation
 	virtual void associate();
 	virtual void finalize();
+// Traversal
+	virtual void apply();
+	virtual void remove() {}
 private:
 	list<Attachment*> attachments;
 	Framebuffer *framebuffer;
 	GLenum *locations;
 	GLsizei n;
 };
-
 
 #endif

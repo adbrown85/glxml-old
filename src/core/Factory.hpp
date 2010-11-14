@@ -15,10 +15,8 @@
 #include "NodeException.hpp"
 using namespace std;
 
-
 /* Creator function. */
 typedef Node* (*creator_t)(const Tag &tag);
-
 
 /** @brief Creates nodes from XML tags.
  * @ingroup scene
@@ -37,6 +35,5 @@ protected:
 private:
 	static map<string,creator_t> creators;
 };
-
 
 #endif

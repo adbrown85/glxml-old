@@ -13,21 +13,21 @@
 #include "Translate.hpp"
 using namespace std;
 
-
 /** @brief Sorts translate children based on their depth.
  * @ingroup advanced
  */
 class Sort : public Node, public Applicable {
 public:
 	Sort(const Tag &tag) : Node(tag) {}
-	virtual void apply();
+// Preparation
 	virtual void associate();
+// Traversal
+	virtual void apply();
 	virtual void remove() {}
 private:
 	list<Translate*> translates;
 	Matrix view;
 	Vec4 position;
 };
-
 
 #endif

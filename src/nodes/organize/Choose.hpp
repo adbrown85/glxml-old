@@ -13,18 +13,18 @@
 #include "Branch.hpp"
 using namespace std;
 
-
 /** @brief Selects a branch to follow.
  * @ingroup advanced
  */
 class Choose : public Node, public NodeNotifier {
 public:
 	Choose(const Tag &tag);
+	virtual string toString() const;
+// Preparation
 	virtual void associate();
 	virtual void finalize();
+// Getters and setters
 	virtual bool setAttribute(pair<string,string> attribute);
-	virtual string toString() const;
-public: // Accessors and mutators
 	virtual string getChoice() const;
 	virtual bool hasChoice() const;
 	virtual void setChoice(const string &choice);
@@ -38,6 +38,5 @@ inline string Choose::getChoice() const {return choice;}
 
 /** @return True if @e choice is not empty. */
 inline bool Choose::hasChoice() const {return !choice.empty();}
-
 
 #endif

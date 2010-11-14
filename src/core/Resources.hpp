@@ -9,7 +9,6 @@
 #include "glxml_common.h"
 using namespace std;
 
-
 /** @brief Utility for retrieving resources.
  * @ingroup gui
  */
@@ -17,6 +16,5 @@ class Resources {
 public:
 	static string get(const string &filename);
 };
-
 
 #endif

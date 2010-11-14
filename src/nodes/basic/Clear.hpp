@@ -11,7 +11,6 @@
 #include "NodeInterfaces.hpp"
 using namespace std;
 
-
 /** @brief %Clear a framebuffer.
  * 
  * Although actually one of the most mundane operations, most of the time clear 
@@ -29,15 +28,15 @@ using namespace std;
 class Clear : public Node, public Applicable {
 public:
 	Clear(const Tag &tag);
+	virtual string toString() const;
+// Traversal
 	virtual void apply();
 	virtual void remove() {}
-	virtual string toString() const;
 private:
 	GLbitfield mask;
 	bool hasColor, hasDepth;
 	float depth;
 	Vec4 color;
 };
-
 
 #endif

@@ -12,7 +12,6 @@
 #include "NodeInterfaces.hpp"
 using namespace std;
 
-
 /** @brief Utility for suppressing exceptions of other nodes.
  * @ingroup scene
  */
@@ -32,7 +31,5 @@ private:
 };
 inline bool Suppressor::isEnabled() const {return enabled;}
 inline void Suppressor::setEnabled(bool e) {enabled = e;}
-
-
 
 #endif

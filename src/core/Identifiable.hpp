@@ -10,7 +10,6 @@
 #include <vector>
 using namespace std;
 
-
 /** @brief Interface for an object that has a unique ID number.
  * @interface Identifiable
  * @ingroup scene
@@ -35,10 +34,8 @@ private:
 	static vector<Identifiable*> ids;
 };
 
-
 /** Returns a unique identifier to the object. */
 inline unsigned int Identifiable::getID() const {return id;}
-
 
 inline bool Identifiable::Comparator::operator()(const Identifiable &a,
                                                  const Identifiable &b) {
@@ -50,6 +47,5 @@ inline bool Identifiable::Comparator::operator()(const Identifiable *a,
 	
 	return a->getID() < b->getID();
 }
-
 
 #endif

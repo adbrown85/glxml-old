@@ -14,7 +14,6 @@
 #include "Transform.hpp"
 using namespace std;
 
-
 /** @brief Simple implementation of %Transformable.
  * @ingroup basic
  */
@@ -23,11 +22,14 @@ class SimpleTransformable : public Node,
                             public NodeListener {
 public:
 	SimpleTransformable(const Tag &tag);
+// Preparation
 	virtual void associate();
+// Getters and setters
 	virtual Extent getExtent();
 	virtual Vec4 getPosition();
 	virtual Matrix getTransformation();
 	virtual Matrix getTransformationInverse();
+// Event handling
 	virtual void onNodeEvent(NodeEvent &event);
 protected:
 	void updatePositionExtent();
@@ -41,6 +43,5 @@ private:
 
 /** Invalidates the position when a transform changes. */
 inline void SimpleTransformable::onNodeEvent(NodeEvent &event) {valid = false;}
-
 
 #endif

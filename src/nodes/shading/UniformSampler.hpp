@@ -9,25 +9,25 @@
 #include "Uniform.hpp"
 using namespace std;
 
-
 /** @brief Container for GLSL sampler uniform variables.
  * @ingroup basic
  */
 class UniformSampler : public Uniform {
 public:
 	UniformSampler(const Tag &tag);
-	virtual void associate();
-	virtual void apply();
 	virtual string toString() const;
+// Preparation
 	virtual void verify();
-public:    // Accessors
+	virtual void associate();
+// Traversal
+	virtual void apply();
+// Getters and setters
 	virtual GLint getValue() const;
-private:   // Data
+private:
 	GLint value;
 };
 
 /** @return texture unit the sampler points to. */
 inline GLint UniformSampler::getValue() const {return value;}
-
 
 #endif

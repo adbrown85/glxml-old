@@ -19,14 +19,15 @@ class Scale : public Transform,
               public Vec4 {
 public:
 	Scale(const Tag &tag);
+	virtual string toString() const;
 	virtual void add(const Vec4 &B);
+// Traversal
 	virtual void apply();
 	virtual void applyTo(Matrix &matrix);
 	virtual void remove();
-	virtual bool setAttribute(pair<string,string> attribute);
-	virtual string toString() const;
-protected:
+// Getters and setters
 	Matrix getMatrix() const;
+	virtual bool setAttribute(pair<string,string> attribute);
 private:
 	float value;
 };

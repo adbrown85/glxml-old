@@ -18,7 +18,6 @@
 #include "Scout.hpp"
 using namespace std;
 
-
 /* Shape parameters. */
 struct ShapeTraits {
 	GLuint count;
@@ -53,18 +52,21 @@ struct ShapeTraits {
 class Shape : public SimpleDrawable {
 public:
 	Shape(const Tag &tag, ShapeTraits traits);
+	virtual string toString() const;
+// Preparation
 	virtual void associate();
+	virtual void finalize();
+// Traversal
 	virtual void draw() const;
 	void draw(int first, int number) const;
-	virtual void finalize();
+// Getters and setters
 	virtual list<VertexAttribute> getAttributes() const;
+	virtual void setAttributes(list<VertexAttribute> &attributes);
 	virtual GLuint getCount() const;
 	virtual GLuint getLimit() const;
 	virtual string getName() const;
 	virtual Program* getProgram() const;
-	virtual void setAttributes(list<VertexAttribute> &attributes);
 	virtual void setProgram(Program *program);
-	virtual string toString() const;
 protected:
 	void checkForDefaultUniforms();
 	void generate();
@@ -113,4 +115,3 @@ inline void Shape::setLimit(GLuint l) {limit = l;}
 inline void Shape::setProgram(Program *p) {program = p;}
 
 #endif
-

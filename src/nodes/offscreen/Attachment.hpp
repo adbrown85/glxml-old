@@ -12,25 +12,25 @@
 #include "Framebuffer.hpp"              // Attach to framebuffer
 using namespace std;
 
-
 /** @brief Abstract base class for an item attached to the framebuffer.
  * @ingroup advanced
  */
 class Attachment : public Attachable, public Nameable {
 public:
 	Attachment(const Tag &tag);
-	virtual void associate();
 	virtual void attach() = 0;
 	virtual string toString() const;
-public: // Accessors and mutators
+// Preparation
+	virtual void associate();
+// Getters and setters
 	Framebuffer* getFramebuffer() const;
 	GLint getIndex() const;
-	GLuint getLocation() const;
-	virtual string getType() const;
 	virtual void setIndex(GLint index);
+	GLuint getLocation() const;
 	virtual void setLocation(GLuint location);
+	virtual string getType() const;
 	virtual void setType(const string &type);
-public: // Utilities
+public:
 	static Attachment* find(Node *node, const string &name);
 private:
 	Framebuffer *framebuffer;
@@ -59,6 +59,5 @@ inline void Attachment::setIndex(GLint index) {this->index = index;}
 
 /** Sets the whether the attachment is "color" or "depth". */
 inline void Attachment::setType(const string &t) {type = t;}
-
 
 #endif

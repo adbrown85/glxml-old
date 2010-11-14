@@ -20,7 +20,6 @@
 #include "Selection.hpp"
 using namespace std;
 
-
 /** @brief Collection of nodes opened from a file.
  * @ingroup scene
  */
@@ -28,17 +27,19 @@ class Scene {
 public:
 	Scene();
 	~Scene();
-	void addAllToSelection();
-	void addToSelection(Node *node);
-	string getFilename() const;
-	Node* getRoot() const;
-	Selection& getSelection();
 	void open(string filename);
 	void prepare();
+	void print();
+// Selection
+	void addAllToSelection();
+	void addToSelection(Node *node);
 	void removeAllFromSelection();
 	void removeFromSelection(Node *node);
-	void print();
+// Getters and setters
+	string getFilename() const;
+	Node* getRoot() const;
 	void setRoot(Node *node);
+	Selection& getSelection();
 protected:
 	void verify(Node *node);
 	void associate(Node *node);

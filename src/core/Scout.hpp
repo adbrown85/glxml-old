@@ -11,7 +11,6 @@
 #include "NodeInterfaces.hpp"
 using namespace std;
 
-
 /** @brief Utility for finding nodes in a scene.
  * @ingroup scene
  */
@@ -24,7 +23,6 @@ public:
 	static T* search(Node *node, const string &name);
 	static void search(Node *root, list<T*> &items);
 };
-
 
 /** Finds a node above @e node of correct type. */
 template <typename T>
@@ -41,7 +39,6 @@ T* Scout<T>::locate(Node* node) {
 	}
 	return NULL;
 }
-
 
 /** Finds a node above @e node of correct type named @e name. */
 template <typename T>
@@ -62,7 +59,6 @@ T* Scout<T>::locate(Node* node, const string &name) {
 	}
 	return NULL;
 }
-
 
 /** Finds a node under @e root of correct type. */
 template <typename T>
@@ -86,7 +82,6 @@ T* Scout<T>::search(Node *root) {
 	}
 	return NULL;
 }
-
 
 /** Finds a node under @e root of correct type. */
 template <typename T>
@@ -115,7 +110,6 @@ T* Scout<T>::search(Node *root, const string &name) {
 	return NULL;
 }
 
-
 /** Finds all the nodes under @e root of a certain type. */
 template <typename T>
 void Scout<T>::search(Node *root, list<T*> &items) {
@@ -136,6 +130,5 @@ void Scout<T>::search(Node *root, list<T*> &items) {
 		Q.pop();
 	}
 }
-
 
 #endif

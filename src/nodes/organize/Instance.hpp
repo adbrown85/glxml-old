@@ -11,7 +11,6 @@
 #include "Shape.hpp"
 using namespace std;
 
-
 /** @brief Simple reuse of a group.
  * 
  * @warning Should only be used when the group itself includes the only program 
@@ -26,13 +25,15 @@ using namespace std;
 class Instance : public Node, public Applicable {
 public:
 	Instance(const Tag &tag);
+	virtual string toString() const;
+// Traversal
 	virtual void apply();
+	virtual void remove();
 	virtual bool areChildrenSelectable() const;
+// Preparation
 	virtual void associate();
 	virtual void finalize();
-	virtual void remove();
-	virtual string toString() const;
-public:  // Accessors and mutators
+// Getters and setters
 	virtual string getOf() const;
 	virtual void setOf(const string &of);
 protected:
@@ -49,6 +50,5 @@ inline bool Instance::areChildrenSelectable() const {return selectable;}
 inline Link* Instance::getLink() {return link;}
 inline string Instance::getOf() const {return of;}
 inline void Instance::setOf(const string &of) {this->of = of; link->setTo(of);}
-
 
 #endif

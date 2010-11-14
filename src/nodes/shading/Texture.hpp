@@ -13,7 +13,6 @@
 #include "Scout.hpp"
 using namespace std;
 
-
 /** @brief OpenGL texture node.
  * 
  * Provides basic texture capability, including finding an open texture unit 
@@ -25,19 +24,21 @@ class Texture : public Node,
                 public Applicable, public Nameable, public Fileable {
 public:
 	Texture(const Tag &tag);
+	virtual string toString() const;
+// Preparation
 	virtual void verify();
 	virtual void associate();
 	virtual void finalize();
+// Traversal
 	virtual void apply();
 	virtual void remove() {}
-	virtual string toString() const;
-public:    // Accessors
+// Getters and setters
 	virtual GLuint getFootprint() const;
 	virtual GLuint getHandle() const;
 	virtual GLint getSize() const;
 	virtual GLenum getType() const;
 	virtual GLuint getUnit() const;
-protected: // Helpers
+protected:
 	void activate() const;
 	void bind() const;
 	TextureOrder makeOrder() const;
@@ -69,6 +70,5 @@ inline GLenum Texture::getType() const {return type;}
 
 /** @return %Texture unit holding the data. */
 inline GLuint Texture::getUnit() const {return unit;}
-
 
 #endif

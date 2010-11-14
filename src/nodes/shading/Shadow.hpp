@@ -19,7 +19,6 @@
 #define SHADOW_SUBSCENE "ui/shadow-cast.xml"
 using namespace std;
 
-
 /** @brief Shadow map generated from a light and a group.
  * @ingroup advanced
  */
@@ -27,10 +26,12 @@ class Shadow : public Texture, public SubsceneUser,
                public NodeListener {
 public:
 	Shadow(const Tag &tag);
+	virtual string toString() const;
+// Preparation
 	virtual void associate();
 	virtual void finalize();
+// Event handling
 	virtual void onNodeEvent(NodeEvent &event);
-	virtual string toString() const;
 protected:
 	void findGroup();
 	void findLight();
@@ -44,9 +45,7 @@ private:
 	Light *light;
 };
 
-
 /** Renders the scene from the light's point of view into the shadow map. */
 inline void Shadow::onNodeEvent(NodeEvent &event) {render();}
-
 
 #endif
