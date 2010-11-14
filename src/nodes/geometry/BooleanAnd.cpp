@@ -95,4 +95,3 @@ void BooleanAnd::updateBufferCoords() {
 	setBufferData("TexCoord0", coords[0]);
 	setBufferData("TexCoord1", coords[1]);
 }
-

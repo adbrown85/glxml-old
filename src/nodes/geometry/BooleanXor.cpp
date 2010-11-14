@@ -268,4 +268,3 @@ void BooleanXor::updateBufferCoords() {
 	// Send to buffer
 	setBufferData("TexCoord0", coords);
 }
-

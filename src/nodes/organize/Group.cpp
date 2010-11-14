@@ -33,4 +33,3 @@ string Group::toString() const {
 	stream << Nameable::toString();
 	return stream.str();
 }
-

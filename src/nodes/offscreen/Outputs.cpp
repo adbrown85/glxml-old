@@ -111,4 +111,3 @@ string Outputs::toString() const {
 	stream << "'";
 	return stream.str();
 }
-

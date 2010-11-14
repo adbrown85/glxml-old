@@ -55,4 +55,3 @@ void Square::updateBufferCoords() {
 	
 	setBufferData("TexCoord0", coords);
 }
-

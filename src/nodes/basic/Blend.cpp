@@ -18,4 +18,3 @@ void Blend::remove() {
 	
 	glDisable(GL_BLEND);
 }
-

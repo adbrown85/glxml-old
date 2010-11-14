@@ -92,4 +92,3 @@ void Box::updateBufferCoords() {
 	// Send to buffer
 	setBufferData("TexCoord0", coords);
 }
-

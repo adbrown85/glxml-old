@@ -15,4 +15,3 @@ void Cube::updateBufferCoords() {
 	toArray(coords, Vec4(0.0,0.0,1.0), Vec4(1.0,1.0,0.0));
 	setBufferData("TexCoord0", coords);
 }
-

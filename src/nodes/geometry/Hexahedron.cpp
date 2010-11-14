@@ -146,4 +146,3 @@ void Hexahedron::updateBufferNormals() {
 	toNormals(normals);
 	setBufferData("MCNormal", normals);
 }
-

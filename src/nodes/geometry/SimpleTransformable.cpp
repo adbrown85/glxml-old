@@ -71,7 +71,6 @@ Matrix SimpleTransformable::getTransformationInverse() {
 	return getTransformation().getInverse();
 }
 
-
 /** Updates the position and extent, then validates the position. */
 void SimpleTransformable::updatePositionExtent() {
 	
@@ -103,4 +102,3 @@ void SimpleTransformable::updatePositionExtent() {
 	// Extent and position are valid until a transform changes
 	valid = true;
 }
-

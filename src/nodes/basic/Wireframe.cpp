@@ -49,4 +49,3 @@ string Wireframe::toString() const {
 	stream << " faces='" << faces << "'";
 	return stream.str();
 }
-

@@ -88,4 +88,3 @@ void Cone::updateBufferNormals() {
 	setBufferData("MCNormal", N);
 	delete[] N;
 }
-

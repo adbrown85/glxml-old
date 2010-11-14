@@ -79,4 +79,3 @@ string Attachment::toString() const {
 	       << " type='" << type << "'";
 	return stream.str();
 }
-

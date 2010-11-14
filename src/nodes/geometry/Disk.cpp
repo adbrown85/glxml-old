@@ -66,4 +66,3 @@ void Disk::updateBufferNormals() {
 	setBufferData("MCNormal", N);
 	delete[] N;
 }
-

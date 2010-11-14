@@ -60,4 +60,3 @@ string Cull::toString() const {
 	stream << " faces='" << facesString << "'";
 	return stream.str();
 }
-

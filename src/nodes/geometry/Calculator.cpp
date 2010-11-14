@@ -62,4 +62,3 @@ void Calculator::runDistributionZ(GLsizei count, float *values) {
 		values[i] = values[i-1] + increment;
 	}
 }
-

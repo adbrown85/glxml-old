@@ -35,4 +35,3 @@ void Line::updateBufferPoints() {
 	
 	setBufferData("MCVertex", points);
 }
-

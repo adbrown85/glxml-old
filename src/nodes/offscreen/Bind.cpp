@@ -96,4 +96,3 @@ string Bind::toString() const {
 	       << " index='" << index << "'";
 	return stream.str();
 }
-

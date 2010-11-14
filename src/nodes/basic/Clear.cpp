@@ -64,4 +64,3 @@ string Clear::toString() const {
 	}
 	return stream.str();
 }
-

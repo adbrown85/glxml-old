@@ -142,4 +142,3 @@ string Framebuffer::toString() const {
 	       << " capacity='" << capacity << "'";
 	return stream.str();
 }
-

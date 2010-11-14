@@ -340,4 +340,3 @@ void Boolean::updateBuffer() {
 		Hexahedron::updateBuffer();
 	}
 }
-

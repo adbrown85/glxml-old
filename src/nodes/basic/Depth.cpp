@@ -59,4 +59,3 @@ string Depth::toString() const {
 	stream << " mode='" << Text::toLower(tag["mode"]) << "'";
 	return stream.str();
 }
-

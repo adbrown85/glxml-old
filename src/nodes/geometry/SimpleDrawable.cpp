@@ -31,4 +31,3 @@ string SimpleDrawable::toString() const {
 	       << " excluded='" << (excluded?'T':'F') << "'";
 	return stream.str();
 }
-
