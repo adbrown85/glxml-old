@@ -54,7 +54,3 @@ void Suppressor::start() {
 		(*it)->setSuppress(enabled);
 	}
 }
-
-
-
-

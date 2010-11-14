@@ -42,4 +42,3 @@ string Identifiable::toString() const {
 	stream << "id='" << id << "'";
 	return stream.str();
 }
-

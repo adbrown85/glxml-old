@@ -13,4 +13,3 @@ string Resources::get(const string &filename) {
 	stream << GLXML_DATA_DIR << '/' << filename;
 	return stream.str();
 }
-

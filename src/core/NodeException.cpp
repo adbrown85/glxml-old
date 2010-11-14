@@ -10,4 +10,3 @@ NodeException::NodeException(const Tag &tag) {
 	
 	(*this) << tag.getLocation();
 }
-

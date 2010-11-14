@@ -84,4 +84,3 @@ bool Factory::isInstalled(const string &name) {
 	it = creators.find(name);
 	return (it != creators.end());
 }
-

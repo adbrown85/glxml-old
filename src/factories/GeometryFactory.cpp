@@ -52,4 +52,3 @@ Node* GeometryFactory::createDisk(const Tag &tag) {return new Disk(tag);}
 Node* GeometryFactory::createLine(const Tag &tag) {return new Line(tag);}
 
 Node* GeometryFactory::createSquare(const Tag &tag) {return new Square(tag);}
-

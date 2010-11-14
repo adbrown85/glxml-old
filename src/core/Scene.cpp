@@ -173,5 +173,3 @@ void Scene::setRoot(Node *node) {
 	delete root;
 	root = node;
 }
-
-

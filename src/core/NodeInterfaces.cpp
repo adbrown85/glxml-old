@@ -37,4 +37,3 @@ string Fileable::toString() const {
 		stream << " file='" << filename << "'";
 	return stream.str();
 }
-

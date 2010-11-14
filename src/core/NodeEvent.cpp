@@ -66,4 +66,3 @@ set<NodeNotifier*> NodeNotifier::search(Node *node) {
 	}
 	return notifiers;
 }
-

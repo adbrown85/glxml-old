@@ -51,4 +51,3 @@ Node* OffscreenFactory::createScreen(const Tag &t) {
 Node* OffscreenFactory::createTarget(const Tag &t) {
 	return new Target(t);
 }
-

@@ -83,4 +83,3 @@ void Selection::remove(Node *node) {
 		items.erase(it);
 	}
 }
-

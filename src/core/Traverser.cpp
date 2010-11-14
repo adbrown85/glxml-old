@@ -80,4 +80,3 @@ void Traverser::traverseNode(Node *node) {
 		traverseChildren(node);
 	}
 }
-

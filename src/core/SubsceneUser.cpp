@@ -38,4 +38,3 @@ void SubsceneUser::openSubscene(const string &filename) {
 	traverser = new Traverser(&subscene);
 	opened = true;
 }
-

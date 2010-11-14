@@ -31,4 +31,3 @@ Node* TransformFactory::createScale(const Tag &tag) {
 Node* TransformFactory::createTranslate(const Tag &t) {
 	return new Translate(t);
 }
-

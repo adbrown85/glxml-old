@@ -96,4 +96,3 @@ Node* ShadingFactory::createUniform(const Tag &tag) {
 		throw e;
 	}
 }
-

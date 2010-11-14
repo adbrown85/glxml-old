@@ -99,4 +99,3 @@ string Node::toString() const {
 	stream << getClassName();
 	return stream.str();
 }
-
