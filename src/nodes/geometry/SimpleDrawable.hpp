@@ -13,7 +13,8 @@
 using namespace std;
 
 /** @brief Base class for a node that can be drawn on screen.
- * @ingroup basic
+ * 
+ * @ingroup geometry
  */
 class SimpleDrawable : public SimpleTransformable,
                        public Drawable {

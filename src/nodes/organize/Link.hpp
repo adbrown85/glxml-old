@@ -12,7 +12,8 @@
 using namespace std;
 
 /** @brief Simple connection to a %Group.
- * @ingroup basic
+ * 
+ * @ingroup organize
  */
 class Link : public Node {
 public:

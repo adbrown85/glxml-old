@@ -14,7 +14,8 @@
 using namespace std;
 
 /** @brief Sorts translate children based on their depth.
- * @ingroup advanced
+ * 
+ * @ingroup organize
  */
 class Sort : public Node, public Applicable {
 public:

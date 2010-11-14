@@ -18,7 +18,7 @@ using namespace std;
  * <b>OpenGL functions</b>
  *   - <i>glBindFramebuffer</i>
  * 
- * @ingroup advanced
+ * @ingroup offscreen
  * @see Framebuffer
  */
 class Screen : public Node, public Applicable {

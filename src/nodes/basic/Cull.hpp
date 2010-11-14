@@ -12,7 +12,8 @@
 using namespace std;
 
 /** @brief Removes back or front-facing polygons.
- * @ingroup advanced
+ * 
+ * @ingroup basic
  */
 class Cull : public Node, public Applicable {
 public:

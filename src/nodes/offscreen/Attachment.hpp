@@ -13,7 +13,8 @@
 using namespace std;
 
 /** @brief Abstract base class for an item attached to the framebuffer.
- * @ingroup advanced
+ * 
+ * @ingroup offscreen
  */
 class Attachment : public Attachable, public Nameable {
 public:

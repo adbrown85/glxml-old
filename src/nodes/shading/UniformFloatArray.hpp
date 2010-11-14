@@ -15,7 +15,8 @@
 using namespace std;
 
 /** @brief Array of uniforms capable of calculating values.
- * @ingroup basic
+ * 
+ * @ingroup shading
  */
 class UniformFloatArray : public Uniform, public NodeNotifier {
 public:

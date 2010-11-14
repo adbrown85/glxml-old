@@ -39,7 +39,7 @@ using namespace std;
  *   &lt;/program>
  * </pre>
  * 
- * @ingroup basic
+ * @ingroup shading
  */
 class Shader : public Node, public Fileable {
 public:

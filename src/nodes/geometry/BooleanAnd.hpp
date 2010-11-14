@@ -12,7 +12,6 @@
 #include "Factory.hpp"
 using namespace std;
 
-
 /** @brief %Boolean AND operation of two shapes.
  * 
  * <b>XML Name</b>
@@ -70,7 +69,7 @@ using namespace std;
  * space.  The user should be sure to provide a uniform specifying the 
  * modelview projection matrix however.
  * 
- * @ingroup advanced
+ * @ingroup geometry
  */
 class BooleanAnd : public Boolean {
 public:

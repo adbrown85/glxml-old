@@ -23,7 +23,7 @@ using namespace std;
  *   - glClearColor
  *   - glClearDepth
  * 
- * @ingroup advanced
+ * @ingroup basic
  */
 class Clear : public Node, public Applicable {
 public:

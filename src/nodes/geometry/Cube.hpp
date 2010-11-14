@@ -10,9 +10,9 @@
 #include "Hexahedron.hpp"
 using namespace std;
 
-
 /** @brief Six-sided shape with 3D texture coordinates.
- * @ingroup basic
+ * 
+ * @ingroup geometry
  */
 class Cube : public Hexahedron {
 public:

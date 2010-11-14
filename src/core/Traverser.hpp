@@ -14,7 +14,8 @@
 using namespace std;
 
 /** @brief Utility to walk through nodes.
- * @ingroup scene
+ * 
+ * @ingroup core
  */
 class Traverser {
 public:

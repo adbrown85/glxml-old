@@ -18,7 +18,7 @@ using namespace std;
  * Provides basic texture capability, including finding an open texture unit 
  * and binding the texture to that unit.
  * 
- * @ingroup basic
+ * @ingroup shading
  */
 class Texture : public Node,
                 public Applicable, public Nameable, public Fileable {

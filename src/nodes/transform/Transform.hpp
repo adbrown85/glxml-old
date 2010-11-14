@@ -15,8 +15,8 @@
 
 
 /** @brief Operation that changes size, position, or orientation of objects.
- * @interface Transform
- * @ingroup basic
+ * 
+ * @ingroup transform
  */
 class Transform : public Node,
                   public Applicable, public NodeNotifier {

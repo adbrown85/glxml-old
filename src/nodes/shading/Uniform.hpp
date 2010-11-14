@@ -20,7 +20,8 @@
 using namespace std;
 
 /** @brief Abstract base class for GLSL uniform variables.
- * @ingroup basic
+ * 
+ * @ingroup shading
  */
 class Uniform : public Node,
                 public Applicable, public Suppressable, public Nameable {

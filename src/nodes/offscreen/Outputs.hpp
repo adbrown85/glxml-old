@@ -13,7 +13,8 @@
 using namespace std;
 
 /** @brief Activates framebuffer attachments.
- * @ingroup advanced
+ * 
+ * @ingroup offscreen
  */
 class Outputs : public Node, public Applicable {
 public:

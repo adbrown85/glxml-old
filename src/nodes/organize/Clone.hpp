@@ -32,7 +32,7 @@ struct UniformSnapshot {
  * @see Instance
  * @see Replica
  * 
- * @ingroup advanced
+ * @ingroup organize
  */
 class Clone : public Instance {
 public:

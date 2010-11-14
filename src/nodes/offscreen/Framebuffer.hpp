@@ -51,7 +51,7 @@ struct Chain {
  * @note Clear is usually needed directly after the ending framebuffer tag
  * @note Screen can be used to temporarily disable the framebuffer
  * 
- * @ingroup advanced
+ * @ingroup offscreen
  * @see Attachment
  * @see Target
  * @see Outputs

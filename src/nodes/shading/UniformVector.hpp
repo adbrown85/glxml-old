@@ -11,7 +11,8 @@ using namespace std;
 
 
 /** @brief Container for GLSL vector uniform variables.
- * @ingroup basic
+ * 
+ * @ingroup shading
  */
 class UniformVector : public Uniform, public NodeNotifier {
 public:

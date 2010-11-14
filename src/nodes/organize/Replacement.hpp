@@ -13,7 +13,7 @@ using namespace std;
 /** @brief Substitute for a placeholder in a group instance.
  * 
  * @see Replica
- * @ingroup advanced
+ * @ingroup organize
  */
 class Replacement : public Node {
 public:

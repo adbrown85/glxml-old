@@ -13,7 +13,8 @@
 using namespace std;
 
 /** @brief %Node that can be replaced in groups.
- * @ingroup advanced
+ * 
+ * @ingroup organize
  */
 class Placeholder : public Node, public Nameable {
 public:

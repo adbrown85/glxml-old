@@ -14,7 +14,8 @@
 using namespace std;
 
 /** @brief Selects a branch to follow.
- * @ingroup advanced
+ * 
+ * @ingroup organize
  */
 class Choose : public Node, public NodeNotifier {
 public:

@@ -12,6 +12,7 @@
 using namespace std;
 
 /** @brief Causes only the edges of shapes to be drawn.
+ * 
  * @ingroup basic
  */
 class Wireframe : public Node, public Applicable {

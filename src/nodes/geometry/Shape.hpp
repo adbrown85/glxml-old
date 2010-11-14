@@ -47,7 +47,7 @@ struct ShapeTraits {
  * </tr>
  * </table>
  * 
- * @ingroup basic
+ * @ingroup geometry
  */
 class Shape : public SimpleDrawable {
 public:

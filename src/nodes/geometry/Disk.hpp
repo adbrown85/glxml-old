@@ -13,7 +13,8 @@ using namespace std;
 
 
 /** @brief Circular disk made from a triangle fan.
- * @ingroup basic
+ * 
+ * @ingroup geometry
  */
 class Disk : public Shape {
 public:

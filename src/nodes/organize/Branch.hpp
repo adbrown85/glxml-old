@@ -12,7 +12,8 @@
 using namespace std;
 
 /** @brief One possible result of a conditional.
- * @ingroup advanced
+ * 
+ * @ingroup organize
  */
 class Branch : public Node, public Nameable {
 public:

@@ -77,7 +77,7 @@ enum MatrixType{MODEL,
  *   - NormalMatrix
  *   - IdentityMatrix
  * 
- * @ingroup basic
+ * @ingroup shading
  */
 class UniformMatrix : public Uniform {
 public:

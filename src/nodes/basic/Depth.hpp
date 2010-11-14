@@ -44,7 +44,7 @@ using namespace std;
  *   &lt;/depth>
  * </pre>
  * 
- * @ingroup advanced
+ * @ingroup basic
  */
 class Depth : public Node, public Applicable {
 public:

@@ -52,9 +52,9 @@ using namespace std;
  * </pre>
  * 
  * <b>Notes</b>
- *   - If <i>name</i> is not set explicity it will be set to <i>link</i>.
+ *   - If <i>name</i> is not set explicitly it will be set to <i>link</i>.
  * 
- * @ingroup advanced
+ * @ingroup offscreen
  * @see Framebuffer
  * @see Attachment
  * @see Bind

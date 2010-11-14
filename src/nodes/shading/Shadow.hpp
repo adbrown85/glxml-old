@@ -20,7 +20,8 @@
 using namespace std;
 
 /** @brief Shadow map generated from a light and a group.
- * @ingroup advanced
+ * 
+ * @ingroup shading
  */
 class Shadow : public Texture, public SubsceneUser,
                public NodeListener {

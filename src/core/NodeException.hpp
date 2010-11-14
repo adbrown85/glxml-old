@@ -15,7 +15,7 @@ using namespace std;
  * 
  * Automatically initializes the exception's message to the tag's location.
  * 
- * @ingroup scene
+ * @ingroup core
  */
 class NodeException : public BasicException {
 public:

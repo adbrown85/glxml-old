@@ -12,7 +12,6 @@
 #define HALF_BOUNDING_BOX_DIAGONAL 0.866025404
 using namespace std;
 
-
 /* Enumeration of different calculations. */
 class Calculation {
 public:
@@ -20,7 +19,8 @@ public:
 };
 
 /** @brief Utility for calculating values from a set of shapes.
- * @ingroup basic
+ * 
+ * @ingroup geometry
  */
 class Calculator {
 public:

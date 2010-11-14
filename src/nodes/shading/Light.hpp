@@ -17,7 +17,8 @@
 using namespace std;
 
 /** @brief %Light that has intensities and can be transformed.
- * @ingroup basic
+ * 
+ * @ingroup shading
  */
 class Light : public SimpleDrawable, public Nameable {
 public:

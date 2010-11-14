@@ -10,7 +10,8 @@
 using namespace std;
 
 /** @brief Utility for retrieving resources.
- * @ingroup gui
+ * 
+ * @ingroup core
  */
 class Resources {
 public:

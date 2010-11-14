@@ -25,7 +25,7 @@ using namespace std;
  * isTangible() and updateAttributes().  Of course, make sure to pass the 
  * right number of vertices and all the attribute names in the constructor.
  * 
- * @ingroup advanced
+ * @ingroup geometry
  */
 class Boolean : public Hexahedron {
 public:

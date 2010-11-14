@@ -12,7 +12,8 @@
 using namespace std;
 
 /** @brief Collection of nodes.
- * @ingroup basic
+ * 
+ * @ingroup organize
  */
 class Group : public Node, public Nameable {
 public:

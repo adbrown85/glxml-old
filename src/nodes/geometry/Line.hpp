@@ -11,7 +11,8 @@
 using namespace std;
 
 /** @brief %Line between two points.
- * @ingroup basic
+ * 
+ * @ingroup geometry
  */
 class Line : public Shape {
 public:

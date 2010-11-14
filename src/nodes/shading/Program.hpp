@@ -16,7 +16,8 @@
 using namespace std;
 
 /** @brief GLSL program that %Shaders and %Uniform variables are connected to.
- * @ingroup basic
+ * 
+ * @ingroup shading
  */
 class Program : public Node, public Applicable {
 public:

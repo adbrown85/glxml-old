@@ -13,7 +13,8 @@
 using namespace std;
 
 /** @brief Smart instance of a group capable of making replacements.
- * @ingroup advanced
+ * 
+ * @ingroup organize
  */
 class Replica : public Clone {
 public:

@@ -11,9 +11,9 @@
 #include "Shape.hpp"                    // Base class
 using namespace std;
 
-
 /** @brief Tapered cylinder made from triangles.
- * @ingroup basic
+ * 
+ * @ingroup geometry
  */
 class Cone : public Shape {
 public:

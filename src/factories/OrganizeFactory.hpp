@@ -21,7 +21,7 @@ using namespace std;
 
 /** @brief %Factory for creating nodes that alter the structure of the scene.
  * 
- * @ingroup advanced
+ * @ingroup factories
  */
 class OrganizeFactory {
 public:

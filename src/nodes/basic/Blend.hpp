@@ -20,7 +20,7 @@ using namespace std;
  * <i>always</i> and a Sort node surrounding the Translate nodes of the shapes 
  * you want to be transparent.
  * 
- * @ingroup advanced
+ * @ingroup basic
  */
 class Blend : public Node, public Applicable {
 public:

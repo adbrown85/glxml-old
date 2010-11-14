@@ -63,7 +63,7 @@ using namespace std;
  *   &lt;/texture>
  * </pre>
  * 
- * @ingroup advanced
+ * @ingroup offscreen
  * @see Framebuffer
  * @see Attachment
  * @see Target

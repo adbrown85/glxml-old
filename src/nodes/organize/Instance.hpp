@@ -20,7 +20,7 @@ using namespace std;
  * @see Clone
  * @see Replica
  * 
- * @ingroup basic
+ * @ingroup organize
  */
 class Instance : public Node, public Applicable {
 public:

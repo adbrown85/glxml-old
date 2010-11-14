@@ -19,7 +19,8 @@
 using namespace std;
 
 /** @brief Basic element of the scene graph.
- * @ingroup scene
+ * 
+ * @ingroup core
  */
 class Node {
 public:

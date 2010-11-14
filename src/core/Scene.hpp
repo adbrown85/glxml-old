@@ -21,7 +21,8 @@
 using namespace std;
 
 /** @brief Collection of nodes opened from a file.
- * @ingroup scene
+ * 
+ * @ingroup core
  */
 class Scene {
 public:

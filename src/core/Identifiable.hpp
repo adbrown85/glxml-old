@@ -11,8 +11,8 @@
 using namespace std;
 
 /** @brief Interface for an object that has a unique ID number.
- * @interface Identifiable
- * @ingroup scene
+ * 
+ * @ingroup core
  */
 class Identifiable {
 public:

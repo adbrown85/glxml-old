@@ -11,7 +11,8 @@
 using namespace std;
 
 /** @brief Event originating from a node.
- * @ingroup scene
+ * 
+ * @ingroup core
  */
 class NodeEvent {
 public:
@@ -29,7 +30,8 @@ inline Node* NodeEvent::getSource() const {return source;}
 inline int NodeEvent::getType() const {return type;}
 
 /** @brief Object that is notified by a node.
- * @ingroup scene
+ * 
+ * @ingroup core
  * @interface NodeListener
  */
 class NodeListener {
@@ -38,7 +40,8 @@ public:
 };
 
 /** @brief Utility for notifying listeners of node events.
- * @ingroup scene
+ * 
+ * @ingroup core
  */
 class NodeNotifier {
 public:

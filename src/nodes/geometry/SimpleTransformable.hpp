@@ -15,7 +15,8 @@
 using namespace std;
 
 /** @brief Simple implementation of %Transformable.
- * @ingroup basic
+ * 
+ * @ingroup geometry
  */
 class SimpleTransformable : public Node,
                             public Transformable,

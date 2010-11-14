@@ -11,7 +11,8 @@
 using namespace std;
 
 /** @brief Four-sided, 2D shape with equal width and height.
- * @ingroup basic
+ * 
+ * @ingroup geometry
  */
 class Square : public Shape {
 public:

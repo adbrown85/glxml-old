@@ -36,7 +36,7 @@ using namespace std;
  *   +-------+        +------14        21-----20
  * </pre>
  * 
- * @ingroup basic
+ * @ingroup geometry
  */
 class Hexahedron : public Shape {
 public:

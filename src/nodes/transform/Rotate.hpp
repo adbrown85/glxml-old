@@ -14,7 +14,8 @@
 using namespace std;
 
 /** @brief %Node that reorients items in the scene.
- * @ingroup basic
+ * 
+ * @ingroup transform
  */
 class Rotate : public Transform {
 public:

@@ -12,7 +12,6 @@
 #define BOOLEAN_XOR_COUNT 336
 using namespace std;
 
-
 /** @brief Exclusive OR boolean operator for two shapes.
  * 
  * <b>Vertex Attributes</b>
@@ -20,7 +19,7 @@ using namespace std;
  *   - MCNormal
  *   - TexCoord0
  * 
- * @ingroup advanced
+ * @ingroup geometry
  */
 class BooleanXor : public Boolean {
 public:

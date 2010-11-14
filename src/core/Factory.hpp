@@ -19,7 +19,8 @@ using namespace std;
 typedef Node* (*creator_t)(const Tag &tag);
 
 /** @brief Creates nodes from XML tags.
- * @ingroup scene
+ * 
+ * @ingroup core
  */
 class Factory {
 public:

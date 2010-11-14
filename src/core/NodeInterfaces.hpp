@@ -15,8 +15,9 @@
 using namespace std;
 
 /** @brief %Node that can be applied, and then removed.
+ * 
  * @interface Applicable
- * @ingroup scene
+ * @ingroup core
  */
 class Applicable {
 public:
@@ -25,8 +26,9 @@ public:
 };
 
 /** @brief %Node that can be attached to another node.
+ * 
  * @interface Attachable
- * @ingroup scene
+ * @ingroup core
  */
 class Attachable : public Node {
 public:
@@ -43,8 +45,9 @@ struct Extent {
 };
 
 /** @brief %Node that can be positioned and sized.
+ * 
  * @interface Transformable
- * @ingroup scene
+ * @ingroup core
  */
 class Transformable {
 public:
@@ -55,8 +58,9 @@ public:
 };
 
 /** @brief %Node that can be drawn and identified on screen.
+ * 
  * @interface Drawable
- * @ingroup scene
+ * @ingroup core
  */
 class Drawable : public Identifiable {
 public:
@@ -73,8 +77,9 @@ public:
 };
 
 /** @brief %Node that can have its exceptions suppressed.
+ * 
  * @interface Suppressable
- * @ingroup scene
+ * @ingroup core
  */
 class Suppressable {
 public:
@@ -90,8 +95,9 @@ inline bool Suppressable::isSuppressed() const {return suppress;}
 inline void Suppressable::setSuppress(bool s) {suppress = true;}
 
 /** @brief %Node with a name.
+ * 
  * @interface Nameable
- * @ingroup scene
+ * @ingroup core
  */
 class Nameable {
 public:
@@ -109,8 +115,9 @@ inline bool Nameable::hasName() const {return !name.empty();}
 inline void Nameable::setName(const string &n) {name = n;}
 
 /** @brief %Node loaded from a file.
+ * 
  * @interface Fileable
- * @ingroup scene
+ * @ingroup core
  */
 class Fileable {
 public:

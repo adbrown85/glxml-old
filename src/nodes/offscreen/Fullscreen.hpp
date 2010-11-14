@@ -14,7 +14,7 @@
  * Automatically adds a uniform that sets the modelviewprojection matrix in 
  * the program to the identity matrix.
  * 
- * @ingroup advanced
+ * @ingroup offscreen
  */
 class Fullscreen : public Shape {
 public:

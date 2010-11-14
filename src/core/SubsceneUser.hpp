@@ -23,7 +23,7 @@ using namespace std;
  * %SubsceneUser automatically looks for the subscene in the resources 
  * directory using the Resources class.
  * 
- * @ingroup scene
+ * @ingroup core
  */
 class SubsceneUser {
 public:

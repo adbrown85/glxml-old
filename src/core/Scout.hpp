@@ -12,7 +12,8 @@
 using namespace std;
 
 /** @brief Utility for finding nodes in a scene.
- * @ingroup scene
+ * 
+ * @ingroup core
  */
 template <typename T>
 class Scout {

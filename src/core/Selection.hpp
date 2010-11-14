@@ -15,7 +15,8 @@
 using namespace std;
 
 /** @brief Collection of selected items.
- * @ingroup scene
+ * 
+ * @ingroup core
  */
 class Selection {
 public:

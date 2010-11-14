@@ -52,7 +52,7 @@ using namespace std;
  * 
  * @note Remember to use Clear if using a depth renderbuffer.
  * 
- * @ingroup advanced
+ * @ingroup offscreen
  * @see Framebuffer
  * @see Target
  * @see Clear
