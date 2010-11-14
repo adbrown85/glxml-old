@@ -12,9 +12,9 @@ void Sort::apply() {
 	
 	list<Translate*>::iterator it;
 	
-	rotation = getCamera()->getRotation();
+	view = State::getViewMatrix();
 	for (it=translates.begin(); it!=translates.end(); ++it) {
-		position = rotation * (*it)->getValue();
+		position = view * (*it)->getValue();
 		(*it)->setDepth(position.z);
 	}
 	sort(children.begin(), children.end(), Node::compare);
