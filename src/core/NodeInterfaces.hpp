@@ -77,22 +77,6 @@ public:
 	virtual void toggleVisible() = 0;
 };
 
-/** @brief %Node that depends on the camera to perform its operation.
- * @ingroup core
- */
-class CameraUser {
-public:
-	CameraUser();
-	virtual void setCamera(Camera *camera);
-protected:
-	Camera* getCamera() const;
-private:
-	Camera *camera;
-};
-inline CameraUser::CameraUser() {camera = NULL;}
-inline Camera* CameraUser::getCamera() const {return camera;}
-inline void CameraUser::setCamera(Camera *camera) {this->camera = camera;}
-
 /** @brief %Node that can have its exceptions suppressed.
  * @interface Suppressable
  * @ingroup scene
