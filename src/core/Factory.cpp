@@ -7,7 +7,6 @@
 #include "Factory.hpp"
 map<string,creator_t> Factory::creators;
 
-
 void Factory::check(const Tag &tag) {
 	
 	if (!isInstalled(tag.getName())) {
@@ -15,12 +14,10 @@ void Factory::check(const Tag &tag) {
 	}
 }
 
-
 void Factory::install(const string &name, creator_t creator) {
 	
 	creators[name] = creator;
 }
-
 
 /** Creates copy of @e node as if it were read at line number @e line. */
 Node* Factory::copy(Node *node, int line) {
@@ -34,7 +31,6 @@ Node* Factory::copy(Node *node, int line) {
 	// Finish
 	return create(tag);
 }
-
 
 Node* Factory::create(const Tag &tag, const string &xmlFilename) {
 	
@@ -51,12 +47,10 @@ Node* Factory::create(const Tag &tag, const string &xmlFilename) {
 	}
 }
 
-
 Node* Factory::create(const string &text, const string &xmlFilename) {
 	
 	return create(Parser::create(text), xmlFilename);
 }
-
 
 /** @throw NodeException if Factory could not find a creator function. */
 void Factory::error(const Tag &tag) {
@@ -67,7 +61,6 @@ void Factory::error(const Tag &tag) {
 	  << tag.getName() << "'.";
 	throw e;
 }
-
 
 Tag Factory::filter(Tag tag, const string &xmlFilename) {
 	
@@ -83,7 +76,6 @@ Tag Factory::filter(Tag tag, const string &xmlFilename) {
 	}
 	return tag;
 }
-
 
 bool Factory::isInstalled(const string &name) {
 	

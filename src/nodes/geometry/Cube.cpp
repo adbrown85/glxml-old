@@ -6,7 +6,6 @@
  */
 #include "Cube.hpp"
 
-
 /** Initializes the coordinates in the vertex buffer. */
 void Cube::updateBufferCoords() {
 	

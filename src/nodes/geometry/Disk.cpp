@@ -6,7 +6,6 @@
  */
 #include "Disk.hpp"
 
-
 ShapeTraits Disk::getTraits() {
 	
 	ShapeTraits traits;
@@ -19,13 +18,11 @@ ShapeTraits Disk::getTraits() {
 	return traits;
 }
 
-
 void Disk::updateBuffer() {
 	
 	updateBufferPoints();
 	updateBufferNormals();
 }
-
 
 void Disk::updateBufferPoints() {
 	
@@ -52,7 +49,6 @@ void Disk::updateBufferPoints() {
 	setBufferData("MCVertex", P);
 	delete[] P;
 }
-
 
 void Disk::updateBufferNormals() {
 	

@@ -6,7 +6,6 @@
  */
 #include "Clear.hpp"
 
-
 /** Initialize the three color components. */
 Clear::Clear(const Tag &tag) : Node(tag) {
 	
@@ -38,7 +37,6 @@ Clear::Clear(const Tag &tag) : Node(tag) {
 	}
 }
 
-
 /** Clears the current framebuffer with the node's color. */
 void Clear::apply() {
 	
@@ -48,7 +46,6 @@ void Clear::apply() {
 		glClearDepth(depth);
 	glClear(mask);
 }
-
 
 /** @return String comprised of the object's attributes. */
 string Clear::toString() const {

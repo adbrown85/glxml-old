@@ -6,7 +6,6 @@
  */
 #include "UniformFloatArray.hpp"
 
-
 /** Initialize attributes.
  * 
  * @throw NodeException if value for @e as attribute not recognized.
@@ -31,7 +30,6 @@ UniformFloatArray::UniformFloatArray(const Tag &tag) : Uniform(tag) {
 	}
 }
 
-
 /** Destroys the values array. */
 UniformFloatArray::~UniformFloatArray() {
 	
@@ -40,7 +38,6 @@ UniformFloatArray::~UniformFloatArray() {
 	if (calculator != NULL)
 		delete calculator;
 }
-
 
 /** Calculates and then sets the values in the program. */
 void UniformFloatArray::apply() {
@@ -54,7 +51,6 @@ void UniformFloatArray::apply() {
 	glUniform1fv(getLocation(), count, values);
 	fireEvent(NodeEvent(this, NodeEvent::MODIFY));
 }
-
 
 /** Makes connections to other nodes. */
 void UniformFloatArray::associate() {
@@ -71,7 +67,6 @@ void UniformFloatArray::associate() {
 	}
 }
 
-
 /** Finds the group named by @e of.
  * 
  * @throw NodeException if group cannot be found.
@@ -86,7 +81,6 @@ void UniformFloatArray::findGroup() {
 		throw e;
 	}
 }
-
 
 /** Finds all the shapes in the group. */
 void UniformFloatArray::findShapes() {
@@ -108,7 +102,6 @@ void UniformFloatArray::findShapes() {
 		Q.pop();
 	}
 }
-
 
 /** Allocates the values array.
  * 
@@ -140,7 +133,6 @@ void UniformFloatArray::finalize() {
 	values = new GLfloat[count];
 }
 
-
 /** Searches a subtree for UniformFloatArray nodes. */
 set<UniformFloatArray*> UniformFloatArray::search(Node *node) {
 	
@@ -162,7 +154,6 @@ set<UniformFloatArray*> UniformFloatArray::search(Node *node) {
 	return ufas;
 }
 
-
 /** @return String made from the node's attributes. */
 string UniformFloatArray::toString() const {
 	
@@ -179,4 +170,3 @@ string UniformFloatArray::toString() const {
 		stream << " values[" << i << "]='" << values[i] << "'";
 	return stream.str();
 }
-

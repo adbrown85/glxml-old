@@ -6,7 +6,6 @@
  */
 #include "Resources.hpp"
 
-
 string Resources::get(const string &filename) {
 	
 	ostringstream stream;

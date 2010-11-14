@@ -6,14 +6,12 @@
  */
 #include "SubsceneUser.hpp"
 
-
 /** Initializes attributes. */
 SubsceneUser::SubsceneUser() {
 	
 	traverser = NULL;
 	opened = false;
 }
-
 
 /** Destroys the traverser. */
 SubsceneUser::~SubsceneUser() {
@@ -23,7 +21,6 @@ SubsceneUser::~SubsceneUser() {
 		traverser = NULL;
 	}
 }
-
 
 /** Opens the subscene using @e filename from resources directory.
  * 

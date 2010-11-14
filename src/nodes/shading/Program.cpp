@@ -7,7 +7,6 @@
 #include "Program.hpp"
 Program *Program::current=NULL;
 
-
 /** Creates a new %Program from an XML tag. */
 Program::Program(const Tag& tag) : Node(tag) {
 	
@@ -15,13 +14,11 @@ Program::Program(const Tag& tag) : Node(tag) {
 	linked = 0;
 }
 
-
 /** Adds a listener to the program. */
 void Program::addListener(NodeListener *listener, int type) {
 	
 	notifier.addListener(listener, type);
 }
-
 
 /** Installs the program into the current context. */
 void Program::apply() {
@@ -29,7 +26,6 @@ void Program::apply() {
 	glUseProgram(handle);
 	current = this;
 }
-
 
 /** Creates the program and finds the previous program. */
 void Program::associate() {
@@ -40,7 +36,6 @@ void Program::associate() {
 	handle = glCreateProgram();
 	previous = Scout<Program>::locate(getParent());
 }
-
 
 /** Links the program once other nodes have associated with it.
  * 
@@ -69,7 +64,6 @@ void Program::finalize() {
 	}
 }
 
-
 /** Prints the log for this program. */
 void Program::log() const {
 	
@@ -89,7 +83,6 @@ void Program::log() const {
 	delete[] log;
 }
 
-
 /** Stop using this program and restore the previous one. */
 void Program::remove() {
 	
@@ -101,7 +94,6 @@ void Program::remove() {
 	}
 }
 
-
 /** Forms a string from the object's attributes. */
 string Program::toString() const {
 	
@@ -112,4 +104,3 @@ string Program::toString() const {
 	stream << " handle='" << handle << "'";
 	return stream.str();
 }
-

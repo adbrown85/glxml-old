@@ -8,7 +8,6 @@
 #include "Selection.hpp"
 #define NUMBER_OF_NODES 4
 
-
 class FakeDrawable : public Node, public Drawable {
 public:
 	FakeDrawable(const Tag &tag) : Node(tag) {}
@@ -24,7 +23,7 @@ public:
 	virtual void toggleVisible() {}
 };
 
-
+/** Unit test for %Selection. */
 class SelectionTest {
 public:
 	void setUp();
@@ -36,7 +35,6 @@ private:
 	Selection selection;
 	FakeDrawable *nodes[NUMBER_OF_NODES];
 };
-
 
 void SelectionTest::setUp() {
 	
@@ -52,7 +50,6 @@ void SelectionTest::setUp() {
 	}
 }
 
-
 void SelectionTest::tearDown() {
 	
 	// Delete nodes
@@ -62,7 +59,6 @@ void SelectionTest::tearDown() {
 	}
 }
 
-
 void SelectionTest::testAdd() {
 	
 	// Add to selection
@@ -70,7 +66,6 @@ void SelectionTest::testAdd() {
 	for (int i=0; i<NUMBER_OF_NODES; ++i)
 		selection.add(nodes[i]);
 }
-
 
 void SelectionTest::testIterator() {
 	
@@ -81,7 +76,6 @@ void SelectionTest::testIterator() {
 	for (si=selection.begin(); si!=selection.end(); ++si)
 		cout << "  " << (*si)->getID() << ": " << (*si)->isSelected() << endl;
 }
-
 
 void SelectionTest::testRemove() {
 	
@@ -95,31 +89,16 @@ void SelectionTest::testRemove() {
 	cout << "  " << node->getID() << ": " << node->isSelected() << endl;
 }
 
-
-/** Run unit test for Selection. */
-int main() {
+/* Run the test. */
+int main(int argc, char *argv[]) {
 	
 	SelectionTest test;
 	
-	// Start
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "Selection" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
-	
-	// Test
 	test.setUp();
 	test.testAdd();
 	test.testRemove();
 	test.testIterator();
 	test.tearDown();
-	
-	// Finish
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "Selection" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
+	return 0;
 }
 

@@ -51,7 +51,6 @@ public:
 	virtual bool areChildrenPrintable() const {return false;}
 };
 
-
 Node* create(const Tag &tag) {
 	
 	string name;
@@ -74,7 +73,6 @@ Node* create(const Tag &tag) {
 	}
 }
 
-
 class SceneTest {
 public:
 	void setUp();
@@ -86,16 +84,13 @@ private:
 	Scene *scene;
 };
 
-
 void SceneTest::setUp() {
 	scene = new Scene();
 }
 
-
 void SceneTest::tearDown() {
 	delete scene;
 }
-
 
 void SceneTest::testOpen() {
 	cout << "Opening..." << endl;
@@ -108,34 +103,21 @@ void SceneTest::testOpen() {
 	scene->open("Scene.xml");
 }
 
-
 void SceneTest::testPrepare() {
 	cout << "\nPreparing..." << endl;
 	scene->prepare();
 }
-
 
 void SceneTest::testPrint() {
 	cout << "\nPrinting..." << endl;
 	scene->print();
 }
 
-
-/**
- * Unit test for Scene.
- */
-int main() {
+/* Runs the test. */
+int main(int argc, char *argv[]) {
 	
 	SceneTest test;
 	
-	// Start
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "Scene" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
-	
-	// Test
 	try {
 		test.setUp();
 		test.testOpen();
@@ -146,13 +128,6 @@ int main() {
 		cerr << e.what() << endl;
 		exit(1);
 	}
-	
-	// Finish
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "Scene" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
 	return 0;
 }
 

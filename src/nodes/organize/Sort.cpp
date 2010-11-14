@@ -6,7 +6,6 @@
  */
 #include "Sort.hpp"
 
-
 /** Sorts the translate nodes. */
 void Sort::apply() {
 	
@@ -19,7 +18,6 @@ void Sort::apply() {
 	}
 	sort(children.begin(), children.end(), Node::compare);
 }
-
 
 /** Finds translate nodes. */
 void Sort::associate() {
@@ -35,4 +33,3 @@ void Sort::associate() {
 		}
 	}
 }
-

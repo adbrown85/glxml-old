@@ -6,7 +6,6 @@
  */
 #include "UniformMatrix.hpp"
 
-
 /** @throw NodeException if matrix type not supported. */
 UniformMatrix::UniformMatrix(const Tag &tag) : Uniform(tag) {
 	
@@ -22,7 +21,6 @@ UniformMatrix::UniformMatrix(const Tag &tag) : Uniform(tag) {
 	tag.get("of", of, false, false);
 }
 
-
 /** Finds the light. */
 void UniformMatrix::associate() {
 	
@@ -32,7 +30,6 @@ void UniformMatrix::associate() {
 		findLight();
 	}
 }
-
 
 /** @throw NodeException if light named @e of cannot be found. */
 void UniformMatrix::findLight() {
@@ -44,7 +41,6 @@ void UniformMatrix::findLight() {
 		throw e;
 	}
 }
-
 
 bool UniformMatrix::hasChild(Node *node, const string &name) {
 	
@@ -60,12 +56,10 @@ bool UniformMatrix::hasChild(Node *node, const string &name) {
 	return false;
 }
 
-
 bool UniformMatrix::isDefault(const string &name, GLenum type) {
 	
 	return isMatrixType(type) && isDefaultName(name);
 }
-
 
 /** @return True if @e name matches one of the default matrix names. */
 bool UniformMatrix::isDefaultName(const string &name) {
@@ -77,7 +71,6 @@ bool UniformMatrix::isDefaultName(const string &name) {
 	        || (name == DEFAULT_IDENTITY_MATRIX_NAME)
 	        || (name == DEFAULT_LIGHT_MATRIX_NAME));
 }
-
 
 /** @throw NodeException if @e as not supported. */
 void UniformMatrix::setTypeFromAs() {
@@ -102,7 +95,6 @@ void UniformMatrix::setTypeFromAs() {
 		throw e;
 	}
 }
-
 
 /** @throw NodeException if default name not supported. */
 void UniformMatrix::setTypeFromName() {
@@ -134,7 +126,6 @@ void UniformMatrix::setTypeFromName() {
 		throw e;
 	}
 }
-
 
 void UniformMatrix::apply() {
 	
@@ -179,7 +170,6 @@ void UniformMatrix::apply() {
 	}
 }
 
-
 string UniformMatrix::toString() const {
 	
 	ostringstream stream;
@@ -190,4 +180,3 @@ string UniformMatrix::toString() const {
 		stream << " of='" << of << "'";
 	return stream.str();
 }
-

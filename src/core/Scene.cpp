@@ -6,20 +6,17 @@
  */
 #include "Scene.hpp"
 
-
 /** Creates and initializes a new scene. */
 Scene::Scene() {
 	
 	this->root = new Node(Tag());
 }
 
-
 /** Destroys all the nodes in the scene. */
 Scene::~Scene() {
 	
 	Node::destroy(root);
 }
-
 
 /** Verify all the nodes in the scene. */
 void Scene::verify(Node *node) {
@@ -36,7 +33,6 @@ void Scene::verify(Node *node) {
 		verify(*it);
 }
 
-
 /** Associate all the nodes in the scene. */
 void Scene::associate(Node *node) {
 	
@@ -52,7 +48,6 @@ void Scene::associate(Node *node) {
 		associate(*it);
 	node->associateAfter();
 }
-
 
 /** Finalize all the nodes in the scene.
  * 
@@ -72,7 +67,6 @@ void Scene::finalize(Node *node) {
 		finalize(*it);
 	node->finalizeAfter();
 }
-
 
 /** Opens a scene from a file.
  * 
@@ -126,7 +120,6 @@ void Scene::open(string filename) {
 	}
 }
 
-
 /** Allows nodes in graph to associate and finalize themselves. */
 void Scene::prepare() {
 	
@@ -134,7 +127,6 @@ void Scene::prepare() {
 	associate(root);
 	finalize(root);
 }
-
 
 /** Prints all the nodes in the scene. */
 void Scene::print() {
@@ -162,7 +154,6 @@ void Scene::print() {
 		}
 	}
 }
-
 
 /** Replaces the root of the scene with a new node.
  * 

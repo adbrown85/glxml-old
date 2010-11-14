@@ -7,7 +7,6 @@
 #include "Shape.hpp"
 map<string,GLuint> Shape::buffers;
 
-
 /** Creates a shape from an XML tag.
  * 
  * @param tag XML tag with attributes for SimpleDrawable.
@@ -44,7 +43,6 @@ Shape::Shape(const Tag &tag, ShapeTraits traits) : SimpleDrawable(tag) {
 	}
 }
 
-
 /** Finds a program to bind the shape's vertex attributes to.
  * 
  * @throw NodeException if a program cannot be found.
@@ -61,7 +59,6 @@ void Shape::associate() {
 		throw e;
 	}
 }
-
 
 void Shape::checkForDefaultUniforms() {
 	
@@ -94,13 +91,11 @@ void Shape::checkForDefaultUniforms() {
 	}
 }
 
-
 /** Renders the entire shape. */
 void Shape::draw() const {
 	
 	draw(0, limit);
 }
-
 
 /** Renders part of the shape. */
 void Shape::draw(int first, int number) const {
@@ -129,7 +124,6 @@ void Shape::draw(int first, int number) const {
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
-
 /** Loads the vertex data into the vertex buffer so it's ready to render. */
 void Shape::finalize() {
 	
@@ -157,7 +151,6 @@ void Shape::finalize() {
 		checkForDefaultUniforms();
 	}
 }
-
 
 /** Generates the vertex buffer for the shape. */
 void Shape::generate() {
@@ -189,7 +182,6 @@ void Shape::generate() {
 	generated = true;
 }
 
-
 /** @return Number of bytes into the vertex buffer for a vertex attribute. */
 GLuint Shape::getOffset(const string &name) const {
 	
@@ -205,7 +197,6 @@ GLuint Shape::getOffset(const string &name) const {
 	}
 }
 
-
 /** Checks if a buffer already exists for a concrete shape. */
 bool Shape::isBufferStored(const string &className) {
 	
@@ -214,7 +205,6 @@ bool Shape::isBufferStored(const string &className) {
 	it = buffers.find(className);
 	return it != buffers.end();
 }
-
 
 /** Sets data in the buffer according to its vertex attribute name.
  * 
@@ -231,7 +221,6 @@ void Shape::setBufferData(const string &name, GLfloat data[][3]) {
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
-
 /** @return String comprised of the object's attributes. */
 string Shape::toString() const {
 	
@@ -244,4 +233,3 @@ string Shape::toString() const {
 	}
 	return stream.str();
 }
-

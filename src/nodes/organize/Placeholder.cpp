@@ -6,7 +6,6 @@
  */
 #include "Placeholder.hpp"
 
-
 /** Initializes attributes. */
 Placeholder::Placeholder(const Tag &tag) : Node(tag), Nameable(tag) {
 	
@@ -16,7 +15,6 @@ Placeholder::Placeholder(const Tag &tag) : Node(tag), Nameable(tag) {
 		throw e;
 	}
 }
-
 
 /** @throw NodeException if the placeholder has children.*/
 void Placeholder::check() {
@@ -28,7 +26,6 @@ void Placeholder::check() {
 	}
 }
 
-
 /** Copies the children of another node. */
 void Placeholder::mimic(Node *node) {
 	
@@ -39,7 +36,6 @@ void Placeholder::mimic(Node *node) {
 	}
 }
 
-
 /** @return String made of the node's attributes. */
 string Placeholder::toString() const {
 	
@@ -49,4 +45,3 @@ string Placeholder::toString() const {
 	stream << Nameable::toString();
 	return stream.str();
 }
-

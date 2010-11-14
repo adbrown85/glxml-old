@@ -7,7 +7,6 @@
 #include "Boolean.hpp"
 float Boolean::FLT_INF;
 
-
 /** Creates a new %Boolean node.
  * 
  * @throw Exception if @e of attribute not present
@@ -35,7 +34,6 @@ Boolean::Boolean(const Tag &tag, ShapeTraits traits) : Hexahedron(tag,traits) {
 	}
 }
 
-
 /** Deletes all the uniforms stored. */
 Boolean::~Boolean() {
 	
@@ -48,7 +46,6 @@ Boolean::~Boolean() {
 		}
 	}
 }
-
 
 /** Applies all the uniforms for all of the shapes. */
 void Boolean::applyUniforms() const {
@@ -63,7 +60,6 @@ void Boolean::applyUniforms() const {
 	}
 }
 
-
 /** Applies all the uniforms for one of the shapes. */
 void Boolean::applyUniforms(int i) const {
 	
@@ -74,7 +70,6 @@ void Boolean::applyUniforms(int i) const {
 		(*it)->apply();
 	}
 }
-
 
 /** Finds the group, shapes, transforms, and uniforms needed by the operation.
  * 
@@ -94,7 +89,6 @@ void Boolean::associate() {
 	associateUniforms();
 }
 
-
 /** Associates all the uniforms. */
 void Boolean::associateUniforms() {
 	
@@ -109,7 +103,6 @@ void Boolean::associateUniforms() {
 	}
 }
 
-
 /** Boolean shape is not correct and must be recalculated. */
 void Boolean::calculate() {
 	
@@ -117,7 +110,6 @@ void Boolean::calculate() {
 	calculateOverlap();
 	calculateTangible();
 }
-
 
 /** Traverse the group and calculate extents for each shape. */
 void Boolean::calculateExtents() {
@@ -134,7 +126,6 @@ void Boolean::calculateExtents() {
 	// Restore original matrix
 	State::pop();
 }
-
 
 /** Traverse a subtree and calculate extents for each shape. */
 void Boolean::calculateExtents(Node *node) {
@@ -171,7 +162,6 @@ void Boolean::calculateExtents(Node *node) {
 	}
 }
 
-
 /** Find where the shapes overlap. */
 void Boolean::calculateOverlap() {
 	
@@ -187,7 +177,6 @@ void Boolean::calculateOverlap() {
 	overlap.diagonal = overlap.upper - overlap.lower;
 }
 
-
 /** Only draw the boolean operation if its output is tangible. */
 void Boolean::draw() const {
 	
@@ -197,7 +186,6 @@ void Boolean::draw() const {
 	}
 }
 
-
 /** Creates the shape and finalizes all the uniforms. */
 void Boolean::finalize() {
 	
@@ -205,7 +193,6 @@ void Boolean::finalize() {
 	Hexahedron::finalize();
 	finalizeUniforms();
 }
-
 
 /** Suppresses then finalizes all the stored uniforms. */
 void Boolean::finalizeUniforms() {
@@ -228,7 +215,6 @@ void Boolean::finalizeUniforms() {
 	}
 }
 
-
 /** Finds the group the Boolean should look for shapes in. 
  * 
  * @throw NodeException if the group named by @e of cannot be found.
@@ -242,7 +228,6 @@ void Boolean::findGroup() {
 		throw e;
 	}
 }
-
 
 /** @throw NodeException if no shapes are in group. */
 void Boolean::findShapes() {
@@ -273,7 +258,6 @@ void Boolean::findShapes() {
 	}
 }
 
-
 /** Finds transforms in the group and listens for changes from them. */
 void Boolean::findTransforms() {
 	
@@ -294,7 +278,6 @@ void Boolean::findTransforms() {
 		q.pop();
 	}
 }
-
 
 /** Finds uniforms of the shapes, then copies and stores them. */
 void Boolean::findUniforms() {
@@ -317,14 +300,12 @@ void Boolean::findUniforms() {
 	}
 }
 
-
 /** Determines if the shapes intersect each other using overlap attribute. */
 bool Boolean::isOverlapped() const {
 	
 	return min(overlap.upper,overlap.lower) == overlap.lower
 	         && isSubstantial(overlap);
 }
-
 
 /** Determines if an extent is three dimensional. */
 bool Boolean::isSubstantial(const Extent &extent) {
@@ -334,14 +315,12 @@ bool Boolean::isSubstantial(const Extent &extent) {
 	         && fabs(extent.diagonal.z) > 0.01;
 }
 
-
 /** Redo the operation when a transform has changed. */
 void Boolean::onNodeEvent(NodeEvent &event) {
 	
 	calculate();
 	updateBuffer();
 }
-
 
 /** @return string representing the node. */
 string Boolean::toString() const {
@@ -353,7 +332,6 @@ string Boolean::toString() const {
 	       << " of='" << of << "'";
 	return stream.str();
 }
-
 
 /** Only initialize all the attributes if the boolean output is tangible. */
 void Boolean::updateBuffer() {

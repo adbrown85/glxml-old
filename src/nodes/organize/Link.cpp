@@ -6,13 +6,11 @@
  */
 #include "Link.hpp"
 
-
 /** Initialize attributes. */
 Link::Link(const Tag &tag) : Node(tag) {
 	
 	tag.get("to", to, true, true);
 }
-
 
 /** Finds the group and adds its children. 
  * 
@@ -36,7 +34,6 @@ void Link::establish() {
 	}
 }
 
-
 /** Sets the link as the parent of each of its children. */
 void Link::relink() {
 	
@@ -48,7 +45,6 @@ void Link::relink() {
 	}
 }
 
-
 /** @return Adds @e of attributes to description. */
 string Link::toString() const {
 	
@@ -59,4 +55,3 @@ string Link::toString() const {
 	       << " children='" << children.size() << "'";
 	return stream.str();
 }
-

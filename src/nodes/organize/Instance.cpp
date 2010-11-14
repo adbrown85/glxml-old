@@ -6,7 +6,6 @@
  */
 #include "Instance.hpp"
 
-
 /** Initialize attributes. */
 Instance::Instance(const Tag &tag) : Node(tag) {
 	
@@ -30,7 +29,6 @@ Instance::Instance(const Tag &tag) : Node(tag) {
 	addChild(link);
 }
 
-
 /** Excludes certain shapes. */
 void Instance::apply() {
 	
@@ -42,7 +40,6 @@ void Instance::apply() {
 	}
 }
 
-
 /** Establishes the link and finds exclusions. */
 void Instance::associate() {
 	
@@ -52,13 +49,11 @@ void Instance::associate() {
 	}
 }
 
-
 /** Relinks all the children of the link. */
 void Instance::finalize() {
 	
 	link->relink();
 }
-
 
 /** Looks for excluded shapes. */
 void Instance::findExclusions() {
@@ -84,7 +79,6 @@ void Instance::findExclusions() {
 	}
 }
 
-
 /** Removes exclusions from the shapes. */
 void Instance::remove() {
 	
@@ -95,7 +89,6 @@ void Instance::remove() {
 		(*it)->setExcluded(false);
 	}
 }
-
 
 /** @return String made from the node's attributes. */
 string Instance::toString() const {
@@ -109,4 +102,3 @@ string Instance::toString() const {
 		stream << " only='" << only << "'";
 	return stream.str();
 }
-

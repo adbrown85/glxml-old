@@ -6,7 +6,6 @@
  */
 #include "Renderbuffer.hpp"
 
-
 /** Initializes the @e type, @e format, and @e size of the renderbuffer.
  * 
  * @throw NodeException if @e type not recognized.
@@ -33,13 +32,11 @@ Renderbuffer::Renderbuffer(const Tag &tag) : Attachment(tag) {
 	}
 }
 
-
 /** Deletes the underlying OpenGL renderbuffer object. */
 Renderbuffer::~Renderbuffer() {
 	
 	glDeleteRenderbuffers(1, &handle);
 }
-
 
 /** Creates an underlying OpenGL renderbuffer object. */
 void Renderbuffer::associate() {
@@ -50,7 +47,6 @@ void Renderbuffer::associate() {
 	// Find framebuffer and enqueue
 	Attachment::associate();
 }
-
 
 /** Creates storage for the renderbuffer and attaches it to the framebuffer. */
 void Renderbuffer::attach() {
@@ -70,7 +66,6 @@ void Renderbuffer::attach() {
 	                          GL_RENDERBUFFER,            // renderbuffertarget
 	                          handle);                    // renderbuffer
 }
-
 
 /** Retrieves a value from the renderbuffer at @e x, @e y.*/
 Vec4 Renderbuffer::read(int x, int y) const {
@@ -94,7 +89,6 @@ Vec4 Renderbuffer::read(int x, int y) const {
 	return result;
 }
 
-
 /** Adds @e size to the node's description. */
 string Renderbuffer::toString() const {
 	
@@ -104,4 +98,3 @@ string Renderbuffer::toString() const {
 	stream << " size='" << size << "'";
 	return stream.str();
 }
-

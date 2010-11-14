@@ -21,7 +21,6 @@
 #include "TransformFactory.hpp"
 using namespace std;
 
-
 /** @brief Utility for testing nodes.
  * @ingroup scene
  */

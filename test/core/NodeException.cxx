@@ -6,7 +6,7 @@
  */
 #include "NodeException.hpp"
 
-
+/** @brief Unit test for NodeException. */
 class NodeExceptionTest {
 public:
 	void setUp();
@@ -15,13 +15,11 @@ private:
 	Tag tag;
 };
 
-
 void NodeExceptionTest::setUp() {
 	
 	tag.setFilename("NodeExceptionTest.xml");
 	tag.setLine(27);
 }
-
 
 void NodeExceptionTest::testThrow() {
 	
@@ -30,32 +28,17 @@ void NodeExceptionTest::testThrow() {
 	throw e;
 }
 
-
+/* Runs the test. */
 int main(int argc, char *argv[]) {
 	
 	NodeExceptionTest test;
 	
-	// Start
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "NodeException" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
-	
-	// Test
 	try {
 		test.setUp();
 		test.testThrow();
 	} catch (exception &e) {
 		cerr << e.what() << endl;
 	}
-	
-	// Finish
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "NodeException" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
 	return 0;
 }
 

@@ -6,7 +6,6 @@
  */
 #include "Fullscreen.hpp"
 
-
 /** Add uniform matrix child. */
 Fullscreen::Fullscreen(const Tag &tag) : Shape(tag,getTraits()) {
 	
@@ -17,7 +16,6 @@ Fullscreen::Fullscreen(const Tag &tag) : Shape(tag,getTraits()) {
 	node = Factory::create(text);
 	addChild(node);
 }
-
 
 ShapeTraits Fullscreen::getTraits() {
 	
@@ -32,14 +30,12 @@ ShapeTraits Fullscreen::getTraits() {
 	return traits;
 }
 
-
 void Fullscreen::updateBuffer() {
 	
 	updateBufferCoords();
 	updateBufferNormals();
 	updateBufferPoints();
 }
-
 
 /** Initializes the static points array of the class. */
 void Fullscreen::updateBufferPoints() {
@@ -52,7 +48,6 @@ void Fullscreen::updateBufferPoints() {
 	setBufferData("MCVertex", points);
 }
 
-
 /** Initializes the static indices array of the class. */
 void Fullscreen::updateBufferNormals() {
 	
@@ -64,7 +59,6 @@ void Fullscreen::updateBufferNormals() {
 	setBufferData("MCNormal", normals);
 }
 
-
 /** Initializes the static coordinates array of the class. */
 void Fullscreen::updateBufferCoords() {
 	
@@ -75,4 +69,3 @@ void Fullscreen::updateBufferCoords() {
 	
 	setBufferData("TexCoord0", coords);
 }
-

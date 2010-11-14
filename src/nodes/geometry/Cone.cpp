@@ -6,7 +6,6 @@
  */
 #include "Cone.hpp"
 
-
 ShapeTraits Cone::getTraits() {
 	
 	ShapeTraits traits;
@@ -19,13 +18,11 @@ ShapeTraits Cone::getTraits() {
 	return traits;
 }
 
-
 void Cone::updateBuffer() {
 	
 	updateBufferPoints();
 	updateBufferNormals();
 }
-
 
 void Cone::updateBufferPoints() {
 	
@@ -58,7 +55,6 @@ void Cone::updateBufferPoints() {
 	setBufferData("MCVertex", P);
 	delete[] P;
 }
-
 
 void Cone::updateBufferNormals() {
 	

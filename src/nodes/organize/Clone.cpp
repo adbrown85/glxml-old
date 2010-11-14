@@ -6,7 +6,6 @@
  */
 #include "Clone.hpp"
 
-
 /** Initializes attributes. */
 Clone::Clone(const Tag &tag) : Instance(tag) {
 	
@@ -16,7 +15,6 @@ Clone::Clone(const Tag &tag) : Instance(tag) {
 	}
 	suppressor.setEnabled(suppress);
 }
-
 
 /** Resets all the shapes and uniforms to be under this instance. */
 void Clone::apply() {
@@ -28,7 +26,6 @@ void Clone::apply() {
 	restoreUniforms();
 }
 
-
 /** Finds all shapes and uniforms. */
 void Clone::associate() {
 	
@@ -39,7 +36,6 @@ void Clone::associate() {
 	findUniforms();
 }
 
-
 /**  Saves the states of the shapes and uniforms. */
 void Clone::associateAfter() {
 	
@@ -49,7 +45,6 @@ void Clone::associateAfter() {
 	saveShapes();
 	saveUniforms();
 }
-
 
 /** Resets all the shapes and uniforms to be under this instance. */
 void Clone::finalize() {
@@ -63,7 +58,6 @@ void Clone::finalize() {
 	// Suppression
 	suppressor.start();
 }
-
 
 /** Stores the locations of the uniforms so they can be reset later. */
 void Clone::finalizeAfter() {
@@ -79,7 +73,6 @@ void Clone::finalizeAfter() {
 		suppressor.print(getTag());
 	}
 }
-
 
 /** Finds all the shapes in the group. */
 void Clone::findShapes() {
@@ -101,7 +94,6 @@ void Clone::findShapes() {
 		q.pop();
 	}
 }
-
 
 /** Finds all the uniforms in the group. */
 void Clone::findUniforms() {
@@ -126,7 +118,6 @@ void Clone::findUniforms() {
 	}
 }
 
-
 /** Resets the shapes to their stored snapshots. */
 void Clone::restoreShapes() {
 	
@@ -137,7 +128,6 @@ void Clone::restoreShapes() {
 		(it->first)->setAttributes((it->second).attributes);
 	}
 }
-
 
 /** Resets the uniforms to their stored snapshots. */
 void Clone::restoreUniforms() {
@@ -150,7 +140,6 @@ void Clone::restoreUniforms() {
 	}
 }
 
-
 /** Saves snapshots of the shapes. */
 void Clone::saveShapes() {
 	
@@ -161,7 +150,6 @@ void Clone::saveShapes() {
 		(it->second).attributes = (it->first)->getAttributes();
 	}
 }
-
 
 /** Saves snapshots of the uniforms. */
 void Clone::saveUniforms() {
@@ -175,7 +163,6 @@ void Clone::saveUniforms() {
 		(it->second).location = location;
 	}
 }
-
 
 /** Finds the first clone under @e node. */
 Clone* Clone::search(Node *node) {
@@ -197,7 +184,6 @@ Clone* Clone::search(Node *node) {
 	return NULL;
 }
 
-
 /** @return Adds @e suppress attribute to description. */
 string Clone::toString() const {
 	
@@ -209,4 +195,3 @@ string Clone::toString() const {
 	       << " uniforms='" << uniforms.size() << "'";
 	return stream.str();
 }
-

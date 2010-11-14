@@ -6,7 +6,6 @@
  */
 #include "Transform.hpp"
 
-
 /** Finds all the transforms above a node. */
 void Transform::findAll(Node *node, list<Transform*> &L) {
 	
@@ -21,7 +20,6 @@ void Transform::findAll(Node *node, list<Transform*> &L) {
 		node = node->getParent();
 	}
 }
-
 
 /** Finds all the transforms under a node. */
 void Transform::search(Node *node, list<Transform*> &L) {
@@ -41,4 +39,3 @@ void Transform::search(Node *node, list<Transform*> &L) {
 		Q.pop();
 	}
 }
-

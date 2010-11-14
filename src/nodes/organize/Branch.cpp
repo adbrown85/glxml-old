@@ -6,7 +6,6 @@
  */
 #include "Branch.hpp"
 
-
 /** Initializes attributes.
  * 
  * @throw NodeException if not given a name.
@@ -24,7 +23,6 @@ Branch::Branch(const Tag &tag) : Node(tag), Nameable(tag) {
 	}
 }
 
-
 /** @return String comprised of the node's attributes. */
 string Branch::toString() const {
 	
@@ -35,4 +33,3 @@ string Branch::toString() const {
 	stream << " follow='" << (follow?'T':'F') << "'";
 	return stream.str();
 }
-

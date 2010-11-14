@@ -6,19 +6,16 @@
  */
 #include "UniformFloat.hpp"
 
-
 UniformFloat::UniformFloat(const Tag &tag) : Uniform(tag) {
 	
 	tag.get("value", value, true);
 }
-
 
 void UniformFloat::apply() {
 	
 	if (hasLocation())
 		glUniform1f(getLocation(), value);
 }
-
 
 void UniformFloat::associate() {
 	
@@ -55,7 +52,6 @@ void UniformFloat::associate() {
 	this->value = atof(linkValue.c_str());
 }
 
-
 bool UniformFloat::setAttribute(pair<string,string> attrib) {
 	
 	if (Text::toLower(attrib.first) == "value") {
@@ -65,7 +61,6 @@ bool UniformFloat::setAttribute(pair<string,string> attrib) {
 	return false;
 }
 
-
 string UniformFloat::toString() const {
 	
 	ostringstream stream;
@@ -74,4 +69,3 @@ string UniformFloat::toString() const {
 	stream << " value='" << value << "'";
 	return stream.str();
 }
-

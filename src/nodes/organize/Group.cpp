@@ -6,7 +6,6 @@
  */
 #include "Group.hpp"
 
-
 /** Initializes attributes.
  * 
  * @throw NodeException if a name is not specified.
@@ -14,7 +13,6 @@
 Group::Group(const Tag &tag) : Node(tag), Nameable(tag) {
 	
 }
-
 
 /** Validates the node was created correctly. */
 void Group::verify() {
@@ -25,7 +23,6 @@ void Group::verify() {
 		throw e;
 	}
 }
-
 
 /** @return String comprised of the node's attributes. */
 string Group::toString() const {

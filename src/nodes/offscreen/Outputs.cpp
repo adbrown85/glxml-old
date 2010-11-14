@@ -6,14 +6,12 @@
  */
 #include "Outputs.hpp"
 
-
 /** Clears the @e locations array. */
 Outputs::Outputs(const Tag &tag) : Node(tag) {
 	
 	locations = NULL;
 	n = 0;
 }
-
 
 /** Deletes the @e locations array. */
 Outputs::~Outputs() {
@@ -22,7 +20,6 @@ Outputs::~Outputs() {
 		delete[] locations;
 	}
 }
-
 
 /** Adds an attachment so it will be available for output. 
  * 
@@ -47,13 +44,11 @@ GLint Outputs::addAttachment(Attachment *attachment) {
 	}
 }
 
-
 /** Directs OpenGL to use the attachments of the bound output variables. */
 void Outputs::apply() {
 	
 	glDrawBuffers(n, locations);
 }
-
 
 /** Makes sure there's a framebuffer.
  * 
@@ -69,7 +64,6 @@ void Outputs::associate() {
 		throw e;
 	}
 }
-
 
 /** Fills the @e locations array. */
 void Outputs::finalize() {
@@ -97,7 +91,6 @@ void Outputs::finalize() {
 		locations[i] = (*it)->getLocation();
 	}
 }
-
 
 /** @return String comprised of the object's attributes. */
 string Outputs::toString() const {

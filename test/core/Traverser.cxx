@@ -10,7 +10,6 @@
 #include "Traverser.hpp"
 #include "Factory.hpp"
 
-
 class FakeDrawable : public Node, public Drawable {
 public: 
 	FakeDrawable(const Tag &tag) : Node(tag) {name = tag.getName();}
@@ -43,7 +42,6 @@ public:
 	string name;
 };
 
-
 class FakeTraverser : public Traverser {
 public:
 	FakeTraverser(Scene *scene) : Traverser(scene) {};
@@ -61,7 +59,6 @@ void FakeTraverser::onDrawable(Node *node, Drawable *drawable) {
 	Traverser::onDrawable(node, drawable);
 }
 
-
 Node* create(const Tag &tag) {
 	
 	string name=tag.getName();
@@ -77,7 +74,7 @@ Node* create(const Tag &tag) {
 	}
 }
 
-
+/** Unit test for Traverser. */
 class TraverserTest {
 public:
 	void setUp();
@@ -87,7 +84,6 @@ private:
 	Scene *scene;
 	Traverser *traverser;
 };
-
 
 void TraverserTest::setUp() {
 	
@@ -106,7 +102,6 @@ void TraverserTest::setUp() {
 	traverser = new FakeTraverser(scene);
 }
 
-
 void TraverserTest::tearDown() {
 	
 	// Clean up
@@ -115,7 +110,6 @@ void TraverserTest::tearDown() {
 	delete scene;
 }
 
-
 void TraverserTest::testStart() {
 	
 	// Start
@@ -123,21 +117,11 @@ void TraverserTest::testStart() {
 	traverser->start();
 }
 
-
-
-int main(int argc,
-         char *argv[]) {
+/* Runs the test. */
+int main(int argc, char *argv[]) {
 	
 	TraverserTest test;
 	
-	// Start
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "Traverser" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
-	
-	// Test
 	try {
 		test.setUp();
 		test.testStart();
@@ -145,13 +129,6 @@ int main(int argc,
 	} catch (exception &e) {
 		cerr << e.what() << endl;
 	}
-	
-	// Finish
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "Traverser" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
 	return 0;
 }
 

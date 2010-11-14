@@ -6,7 +6,6 @@
  */
 #include "Texture.hpp"
 
-
 /** Creates a new texture from an XML tag.
  * 
  * @param [in] tag XML tag with "type", "name", and "filename" attributes.
@@ -24,14 +23,12 @@ Texture::Texture(const Tag &tag) : Node(tag), Nameable(tag), Fileable(tag) {
 	this->type = GL_TEXTURE_2D;
 }
 
-
 /** Enables the texture. */
 void Texture::apply() {
 	
 	activate();
 	bind();
 }
-
 
 /** Checks the size and format. */
 void Texture::verify() {
@@ -45,7 +42,6 @@ void Texture::verify() {
 		format = "rgba";
 }
 
-
 /** Finds out which texture unit to use and generates the texture object. */
 void Texture::associate() {
 	
@@ -56,7 +52,6 @@ void Texture::associate() {
 	if (texture != NULL)
 		unit = texture->getUnit() + 1;
 }
-
 
 /** Requests a texture from the factory. */
 void Texture::finalize() {
@@ -86,7 +81,6 @@ void Texture::finalize() {
 	compress  = invoice.compressed;
 }
 
-
 /** Creates an order for the texture factory. */
 TextureOrder Texture::makeOrder() const {
 	
@@ -102,7 +96,6 @@ TextureOrder Texture::makeOrder() const {
 	// Finish
 	return order;
 }
-
 
 /** Forms a string using the Texture's attributes. */
 string Texture::toString() const {
@@ -121,4 +114,3 @@ string Texture::toString() const {
 	       << " compress='" << compress << "'";
 	return stream.str();
 }
-

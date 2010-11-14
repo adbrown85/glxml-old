@@ -6,13 +6,11 @@
  */
 #include "Choose.hpp"
 
-
 /** Initializes attributes. */
 Choose::Choose(const Tag &tag) : Node(tag) {
 	
 	tag.get("choice", choice, false, false);
 }
-
 
 /** Finds and stores all the branches.
  * 
@@ -43,7 +41,6 @@ void Choose::associate() {
 	}
 }
 
-
 /** Activates a choice if it's been set explicitly. */
 void Choose::finalize() {
 	
@@ -51,7 +48,6 @@ void Choose::finalize() {
 	if (hasChoice())
 		setChoice(choice);
 }
-
 
 /** Set the choice using XML. */
 bool Choose::setAttribute(pair<string,string> attribute) {
@@ -70,7 +66,6 @@ bool Choose::setAttribute(pair<string,string> attribute) {
 	// Other
 	return false;
 }
-
 
 /** Follow the branch with the name equal to @e choice.
  *
@@ -103,7 +98,6 @@ void Choose::setChoice(const string &choice) {
 	fireEvent(NodeEvent(this, NodeEvent::MODIFY));
 }
 
-
 /** @return String comprised of the node's attributes. */
 string Choose::toString() const {
 	
@@ -114,4 +108,3 @@ string Choose::toString() const {
 		stream << " choice='" << choice << "'";
 	return stream.str();
 }
-

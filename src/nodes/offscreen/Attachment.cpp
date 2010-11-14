@@ -6,7 +6,6 @@
  */
 #include "Attachment.hpp"
 
-
 /** Initialize attributes.
  * 
  * @throw NodeException if @e type is not "color" or "depth".
@@ -29,7 +28,6 @@ Attachment::Attachment(const Tag &tag) : Attachable(tag), Nameable(tag) {
 	}
 }
 
-
 /** Finds the first framebuffer above this node and enqueue it.
  * 
  * @throw NodeException if framebuffer cannot be found.
@@ -45,7 +43,6 @@ void Attachment::associate() {
 	}
 	framebuffer->enqueue(type, this);
 }
-
 
 /** @return first attachment above another node with the correct name. */
 Attachment* Attachment::find(Node *node, const string &name) {
@@ -69,7 +66,6 @@ Attachment* Attachment::find(Node *node, const string &name) {
 	}
 	return NULL;
 }
-
 
 /** @return string comprised of the object's name and attributes. */
 string Attachment::toString() const {

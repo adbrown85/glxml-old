@@ -6,12 +6,10 @@
  */
 #include "Traverser.hpp"
 
-
 Traverser::Traverser(Scene *scene) {
 	
 	this->scene = scene;
 }
-
 
 void Traverser::onApplicable(Node *node, Applicable *applicable) {
 	
@@ -20,7 +18,6 @@ void Traverser::onApplicable(Node *node, Applicable *applicable) {
 	traverseChildren(node);
 	applicable->remove();
 }
-
 
 void Traverser::onDrawable(Node *node, Drawable *drawable) {
 	
@@ -35,12 +32,10 @@ void Traverser::onDrawable(Node *node, Drawable *drawable) {
 		drawable->draw();
 }
 
-
 void Traverser::start() {
 	
 	traverseNode(scene->getRoot());
 }
-
 
 /** Recursively traverses the children of a node.
  * 
@@ -63,7 +58,6 @@ void Traverser::traverseChildren(Node *node) {
 		traverseNode(*it);
 	}
 }
-
 
 /** Recursively traverses a node.
  * 

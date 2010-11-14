@@ -6,7 +6,6 @@
  */
 #include "Shader.hpp"
 
-
 /** Creates a new %Shader from an XML tag.
  * 
  * @param tag XML tag with "type" and "file" attributes.
@@ -98,4 +97,3 @@ string Shader::toString() const {
 	       << " handle='" << handle << "'";
 	return stream.str();
 }
-

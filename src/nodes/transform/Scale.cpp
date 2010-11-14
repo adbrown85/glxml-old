@@ -6,7 +6,6 @@
  */
 #include "Scale.hpp"
 
-
 /** Creates a new %Scale from an XML tag.
  * 
  * @param tag XML tag with "x", "y", and "z" values.
@@ -28,7 +27,6 @@ Scale::Scale(const Tag &tag) : Transform(tag) {
 	}
 }
 
-
 /** Adds a vector to this scale. */
 void Scale::add(const Vec4 &B) {
 	
@@ -39,14 +37,12 @@ void Scale::add(const Vec4 &B) {
 	fireEvent(NodeEvent(this, NodeEvent::MODIFY));
 }
 
-
 /** Performs the transformation. */
 void Scale::apply() {
 	
 	State::push();
 	State::apply(getMatrix());
 }
-
 
 void Scale::applyTo(Matrix &matrix) {
 	
@@ -58,13 +54,11 @@ void Scale::applyTo(Matrix &matrix) {
 	matrix = matrix * T;
 }
 
-
 /** Restores state before transformation was applied. */
 void Scale::remove() {
 	
 	State::pop();
 }
-
 
 /** Sets "x", "y", or "z". */
 bool Scale::setAttribute(pair<string,string> attribute) {
@@ -91,7 +85,6 @@ bool Scale::setAttribute(pair<string,string> attribute) {
 	}
 }
 
-
 /** Forms a string from the object's attributes. */
 string Scale::toString() const {
 	
@@ -104,4 +97,3 @@ string Scale::toString() const {
 	       << " z='" << z << "'";
 	return stream.str();
 }
-

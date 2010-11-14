@@ -6,12 +6,10 @@
  */
 #include "UniformSampler.hpp"
 
-
 /** Creates a new uniform sampler. */
 UniformSampler::UniformSampler(const Tag &tag) : Uniform(tag) {
 
 }
-
 
 /** Sets the value in the program. */
 void UniformSampler::apply() {
@@ -19,7 +17,6 @@ void UniformSampler::apply() {
 	if (hasLocation())
 		glUniform1i(getLocation(), value);
 }
-
 
 /** Finds the correct texture and then sets @e value to its unit. */
 void UniformSampler::associate() {
@@ -39,7 +36,6 @@ void UniformSampler::associate() {
 	value = texture->getUnit();
 }
 
-
 /** @return String comprised of the node's attributes. */
 string UniformSampler::toString() const {
 	
@@ -49,7 +45,6 @@ string UniformSampler::toString() const {
 	stream << " value='" << value << "'";
 	return stream.str();
 }
-
 
 /** @throw NodeException if @e link attribute is not specified. */
 void UniformSampler::verify() {

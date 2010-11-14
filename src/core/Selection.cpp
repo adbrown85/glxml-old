@@ -6,7 +6,6 @@
  */
 #include "Selection.hpp"
 
-
 /** Adds a single item to the selection. */
 void Selection::add(Node *node) {
 	
@@ -31,7 +30,6 @@ void Selection::add(Node *node) {
 	fireEvent();
 }
 
-
 /** Recursively adds all the children of a node.*/
 void Selection::addAll(Node *node) {
 	
@@ -45,12 +43,10 @@ void Selection::addAll(Node *node) {
 		addAll(*it);
 }
 
-
 void Selection::addListener(NodeListener *listener) {
 	
 	notifier.addListener(listener, NodeEvent::MODIFY);
 }
-
 
 /** Removes all the items from the selection. */
 void Selection::clear() {
@@ -63,12 +59,10 @@ void Selection::clear() {
 	items.clear();
 }
 
-
 void Selection::fireEvent() {
 	
 	notifier.fireEvent(NodeEvent(active, NodeEvent::MODIFY));
 }
-
 
 /** Removes a single item from the selection. */
 void Selection::remove(Node *node) {

@@ -6,13 +6,11 @@
  */
 #include "Screen.hpp"
 
-
 /** Clears the framebuffer pointer. */
 Screen::Screen(const Tag &tag) : Node(tag) {
 	
 	framebuffer = NULL;
 }
-
 
 /** Finds a Framebuffer ancestor.
  * 
@@ -28,17 +26,14 @@ void Screen::associate() {
 	}
 }
 
-
 /** Binds the default framebuffer. */
 void Screen::apply() {
 	
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-
 /** Restores the previous framebuffer. */
 void Screen::remove() {
 	
 	glBindFramebuffer(GL_FRAMEBUFFER, framebuffer->getHandle());
 }
-

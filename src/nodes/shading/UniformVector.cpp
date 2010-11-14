@@ -6,7 +6,6 @@
  */
 #include "UniformVector.hpp"
 
-
 /** Initializes the type and value (or link).
  * 
  * @throw NodeException if @e type is not supported.
@@ -38,7 +37,6 @@ UniformVector::UniformVector(const Tag &tag) : Uniform(tag) {
 	transformable = NULL;
 }
 
-
 void UniformVector::associate() {
 	
 	Uniform::associate();
@@ -55,7 +53,6 @@ void UniformVector::associate() {
 		throw e;
 	}
 }
-
 
 /** @throw NodeException if unexpected size is encountered. */
 void UniformVector::apply() {
@@ -80,7 +77,6 @@ void UniformVector::apply() {
 	}
 }
 
-
 string UniformVector::toString() const {
 	
 	ostringstream stream;
@@ -92,4 +88,3 @@ string UniformVector::toString() const {
 	stream << "'";
 	return stream.str();
 }
-

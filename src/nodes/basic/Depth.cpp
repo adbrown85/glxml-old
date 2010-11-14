@@ -6,7 +6,6 @@
  */
 #include "Depth.hpp"
 
-
 /** Initializes @e mode and @e clear. 
  * 
  * @throw NodeException if value for @e mode unrecognized.
@@ -39,20 +38,17 @@ Depth::Depth(const Tag &tag) : Node(tag) {
 	}
 }
 
-
 /** Changes the depth function to @e mode and clears the depth buffer. */
 void Depth::apply() {
 	
 	glDepthFunc(mode);
 }
 
-
 /** Restores the default depth function. */
 void Depth::remove() {
 	
 	glDepthFunc(GL_LESS);
 }
-
 
 /** Adds @e mode to the node description. */
 string Depth::toString() const {

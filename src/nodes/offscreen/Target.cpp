@@ -6,7 +6,6 @@
  */
 #include "Target.hpp"
 
-
 /** Initializes the @e link and @e name attributes. */
 Target::Target(const Tag &tag) : Attachment(tag) {
 	
@@ -23,7 +22,6 @@ Target::Target(const Tag &tag) : Attachment(tag) {
 		throw e;
 	}
 }
-
 
 /** Finds the framebuffer and texture to use.
  * 
@@ -44,7 +42,6 @@ void Target::associate() {
 	Attachment::associate();
 }
 
-
 /** Attaches the target's texture to the framebuffer.
  * 
  * @note Assumes the framebuffer is already bound.
@@ -58,7 +55,6 @@ void Target::attach() {
 	                       0);
 }
 
-
 /** @return String comprised of the object's name and attributes. */
 string Target::toString() const {
 	
@@ -70,4 +66,3 @@ string Target::toString() const {
 	       << " texture='" << texture->getHandle() << "'";
 	return stream.str();
 }
-

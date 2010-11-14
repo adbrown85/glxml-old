@@ -6,7 +6,6 @@
  */
 #include "Wireframe.hpp"
 
-
 Wireframe::Wireframe(const Tag &tag) : Node(tag) {
 	
 	if (!tag.get("faces", faces, false)) {
@@ -20,7 +19,6 @@ Wireframe::Wireframe(const Tag &tag) : Node(tag) {
 		mode = GL_BACK;
 	}
 }
-
 
 void Wireframe::apply() {
 	
@@ -38,12 +36,10 @@ void Wireframe::apply() {
 	glPolygonMode(mode, GL_LINE);
 }
 
-
 void Wireframe::remove() {
 	
 	glPopAttrib();
 }
-
 
 string Wireframe::toString() const {
 	

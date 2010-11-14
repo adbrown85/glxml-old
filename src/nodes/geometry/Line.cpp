@@ -6,13 +6,11 @@
  */
 #include "Line.hpp"
 
-
 Line::Line(const Tag &tag) : Shape(tag,getTraits()) {
 	
 	tag.get("from", from);
 	tag.get("to", to);
 }
-
 
 ShapeTraits Line::getTraits() {
 	
@@ -25,12 +23,10 @@ ShapeTraits Line::getTraits() {
 	return traits;
 }
 
-
 void Line::updateBuffer() {
 	
 	updateBufferPoints();
 }
-
 
 void Line::updateBufferPoints() {
 	

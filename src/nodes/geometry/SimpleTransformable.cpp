@@ -6,14 +6,10 @@
  */
 #include "SimpleTransformable.hpp"
 
-
-
 SimpleTransformable::SimpleTransformable(const Tag &tag) : Node(tag) {
 	
 	this->valid = false;
 }
-
-
 
 void SimpleTransformable::associate() {
 	
@@ -27,7 +23,6 @@ void SimpleTransformable::associate() {
 	}
 	updatePositionExtent();
 }
-
 
 /** @return Model-matrix position of the item in the scene.
  * 
@@ -49,7 +44,6 @@ Vec4 SimpleTransformable::getPosition() {
 	return position;
 }
 
-
 /** @return Model-matrix boundaries of the item in the scene.
  * 
  * @see getPosition()
@@ -62,7 +56,6 @@ Extent SimpleTransformable::getExtent() {
 	return extent;
 }
 
-
 /** @return %Transformation matrix. */
 Matrix SimpleTransformable::getTransformation() {
 	
@@ -71,7 +64,6 @@ Matrix SimpleTransformable::getTransformation() {
 	}
 	return transformation;
 }
-
 
 /** @return Inverse of transformation matrix. */
 Matrix SimpleTransformable::getTransformationInverse() {

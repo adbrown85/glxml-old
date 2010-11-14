@@ -6,12 +6,10 @@
  */
 #include "Replica.hpp"
 
-
 /** Initialize attributes. */
 Replica::Replica(const Tag &tag) : Clone(tag) {
 	
 }
-
 
 /** Substitute placeholders with replacements. */
 void Replica::apply() {
@@ -20,7 +18,6 @@ void Replica::apply() {
 	
 	applyReplacements();
 }
-
 
 /** Substitute placeholders with replacements. */
 void Replica::applyReplacements() {
@@ -32,7 +29,6 @@ void Replica::applyReplacements() {
 	}
 }
 
-
 /** Find and apply replacements before children associate. */
 void Replica::associate() {
 	
@@ -42,7 +38,6 @@ void Replica::associate() {
 	applyReplacements();
 }
 
-
 /** Remove replacements after children associate. */
 void Replica::associateAfter() {
 	
@@ -50,7 +45,6 @@ void Replica::associateAfter() {
 	
 	removeReplacements();
 }
-
 
 /** Apply replacements before children have been finalized. */
 void Replica::finalize() {
@@ -60,7 +54,6 @@ void Replica::finalize() {
 	applyReplacements();
 }
 
-
 /** Remove replacements after children have been finalized. */
 void Replica::finalizeAfter() {
 	
@@ -68,7 +61,6 @@ void Replica::finalizeAfter() {
 	
 	removeReplacements();
 }
-
 
 /** Look for replacements. */
 void Replica::findReplacements() {
@@ -109,7 +101,6 @@ void Replica::findReplacements() {
 	}
 }
 
-
 /** Reset all the placeholders. */
 void Replica::remove() {
 	
@@ -117,7 +108,6 @@ void Replica::remove() {
 	
 	removeReplacements();
 }
-
 
 /** Reset all the placeholders. */
 void Replica::removeReplacements() {
@@ -129,7 +119,6 @@ void Replica::removeReplacements() {
 	}
 }
 
-
 /** @return String made from the node's attributes. */
 string Replica::toString() const {
 	
@@ -139,4 +128,3 @@ string Replica::toString() const {
 	stream << " replacements='" << replacements.size() << "'";
 	return stream.str();
 }
-

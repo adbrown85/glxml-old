@@ -8,7 +8,6 @@
 bool Hexahedron::loaded=false;
 int Hexahedron::indices[8][3];
 
-
 Hexahedron::Hexahedron(const Tag &tag,
                        ShapeTraits traits) : Shape(tag,traits) {
 	
@@ -17,7 +16,6 @@ Hexahedron::Hexahedron(const Tag &tag,
 		loaded = true;
 	}
 };
-
 
 /** @return list of attributes used in the shape. */
 ShapeTraits Hexahedron::getTraits() {
@@ -32,7 +30,6 @@ ShapeTraits Hexahedron::getTraits() {
 	traits.attributes.push_back("TexCoord0");
 	return traits;
 }
-
 
 /** Maps vertex indices to points and texture coordinates. */
 void Hexahedron::load() {
@@ -53,7 +50,6 @@ void Hexahedron::load() {
 		}
 	}
 }
-
 
 /** Fills an array of points with values from two min and max bounds.
  * 
@@ -113,7 +109,6 @@ void Hexahedron::toNormals(GLfloat array[24][3]) {
 	}
 }
 
-
 /** Initializes the points, normals, and coordinates. */
 void Hexahedron::updateBuffer() {
 	
@@ -121,7 +116,6 @@ void Hexahedron::updateBuffer() {
 	updateBufferNormals();
 	updateBufferCoords();
 }
-
 
 /** Initializes the points in the vertex buffer.
  * 
@@ -142,7 +136,6 @@ void Hexahedron::updateBufferPoints() {
 	toArray(points, Vec4(-0.5,-0.5,-0.5),Vec4(+0.5,+0.5,+0.5));
 	setBufferData("MCVertex", points);
 }
-
 
 /** Initializes the normals in the vertex buffer. */
 void Hexahedron::updateBufferNormals() {

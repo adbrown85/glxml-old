@@ -6,7 +6,6 @@
  */
 #include "Square.hpp"
 
-
 ShapeTraits Square::getTraits() {
 	
 	ShapeTraits traits;
@@ -20,14 +19,12 @@ ShapeTraits Square::getTraits() {
 	return traits;
 }
 
-
 void Square::updateBuffer() {
 	
 	updateBufferPoints();
 	updateBufferNormals();
 	updateBufferCoords();
 }
-
 
 void Square::updateBufferPoints() {
 	
@@ -39,7 +36,6 @@ void Square::updateBufferPoints() {
 	setBufferData("MCVertex", points);
 }
 
-
 void Square::updateBufferNormals() {
 	
 	GLfloat normals[4][3] = {{0.0,0.0,+1.0},
@@ -49,7 +45,6 @@ void Square::updateBufferNormals() {
 	
 	setBufferData("MCNormal", normals);
 }
-
 
 void Square::updateBufferCoords() {
 	

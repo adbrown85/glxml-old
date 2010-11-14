@@ -6,7 +6,6 @@
  */
 #include "SimpleDrawable.hpp"
 
-
 /** Initializes the selected, visible, and selectable attributes. */
 SimpleDrawable::SimpleDrawable(const Tag &tag) : SimpleTransformable(tag) {
 	
@@ -17,7 +16,6 @@ SimpleDrawable::SimpleDrawable(const Tag &tag) : SimpleTransformable(tag) {
 	if (!tag.get("selectable", selectable, false))
 		selectable = true;
 }
-
 
 /** @return String comprised of the object's attributes. */
 string SimpleDrawable::toString() const {

@@ -6,7 +6,6 @@
  */
 #include "BooleanAnd.hpp"
 
-
 /** Calls base then renames the uniforms. */
 void BooleanAnd::associate() {
 	
@@ -14,13 +13,11 @@ void BooleanAnd::associate() {
 	renameUniforms();
 }
 
-
 /** Checks that the shape formed by the operation can be shown. */
 void BooleanAnd::calculateTangible() {
 	
 	tangible = isOverlapped();
 }
-
 
 /** Applies all the copied uniforms, then calls base. */
 void BooleanAnd::draw() const {
@@ -28,7 +25,6 @@ void BooleanAnd::draw() const {
 	applyUniforms();
 	Boolean::draw();
 }
-
 
 /** @return parameters to use for the shape. */
 ShapeTraits BooleanAnd::getTraits() {
@@ -44,7 +40,6 @@ ShapeTraits BooleanAnd::getTraits() {
 	traits.attributes.push_back("TexCoord1");
 	return traits;
 }
-
 
 /** Appends index number to each uniform so they can be used simultaneously. */
 void BooleanAnd::renameUniforms() {
@@ -63,7 +58,6 @@ void BooleanAnd::renameUniforms() {
 	}
 }
 
-
 /** Updates the points in the vertex buffer.
  * 
  * <pre>
@@ -81,7 +75,6 @@ void BooleanAnd::updateBufferPoints() {
 	toArray(points, overlap.lower, overlap.upper);
 	setBufferData("MCVertex", points);
 }
-
 
 /** Updates the texture coordinates in the vertex buffer. */
 void BooleanAnd::updateBufferCoords() {

@@ -6,7 +6,6 @@
  */
 #include "NodeEvent.hpp"
 
-
 void NodeNotifier::addListener(NodeListener *listener, int type) {
 	
 	list<NodeListener*> *subset;
@@ -22,7 +21,6 @@ void NodeNotifier::addListener(NodeListener *listener, int type) {
 	subset->push_back(listener);
 }
 
-
 list<NodeListener*>* NodeNotifier::getListenersFor(int type) {
 	
 	map<int, list<NodeListener*> >::iterator it;
@@ -33,7 +31,6 @@ list<NodeListener*>* NodeNotifier::getListenersFor(int type) {
 	else
 		return NULL;
 }
-
 
 void NodeNotifier::fireEvent(NodeEvent event) {
 	
@@ -49,7 +46,6 @@ void NodeNotifier::fireEvent(NodeEvent event) {
 		(*it)->onNodeEvent(event);
 	}
 }
-
 
 set<NodeNotifier*> NodeNotifier::search(Node *node) {
 	

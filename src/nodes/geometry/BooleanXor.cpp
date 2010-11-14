@@ -6,7 +6,6 @@
  */
 #include "BooleanXor.hpp"
 
-
 /** Sets the @e only attribute. */
 BooleanXor::BooleanXor(const Tag &tag) : Boolean(tag,getTraits()) {
 	
@@ -29,7 +28,6 @@ BooleanXor::BooleanXor(const Tag &tag) : Boolean(tag,getTraits()) {
 	}
 }
 
-
 /** Creates the pieces by knifing at the intersection point of each axis. */
 void BooleanXor::calculate() {
 	
@@ -42,7 +40,6 @@ void BooleanXor::calculate() {
 	explode(A, 0, pieces);
 	explode(B, 0, pieces);
 }
-
 
 /** Draw the pieces or one of the shapes according to overlap and depth. */
 void BooleanXor::draw() const {
@@ -57,7 +54,6 @@ void BooleanXor::draw() const {
 		drawWhenNotOverlapped(view);
 	}
 }
-
 
 /** Draws one of the shapes according to depth. */
 void BooleanXor::drawWhenNotOverlapped(Matrix &view) const {
@@ -77,7 +73,6 @@ void BooleanXor::drawWhenNotOverlapped(Matrix &view) const {
 	applyUniforms(i);
 	Shape::draw(i*24, 24);
 }
-
 
 /** Draw some of the pieces according to depth. */
 void BooleanXor::drawWhenOverlapped(Matrix &view) const {
@@ -109,7 +104,6 @@ void BooleanXor::drawWhenOverlapped(Matrix &view) const {
 	}
 }
 
-
 /** @return True if A should be drawn when compared to B. */
 bool BooleanXor::isDrawn(float aDepth, float bDepth) const {
 	
@@ -120,7 +114,6 @@ bool BooleanXor::isDrawn(float aDepth, float bDepth) const {
 	}
 }
 
-
 /** Adds @e piece to @e pieces only if it's substantial. */
 void BooleanXor::addPiece(list<Extent> &pieces, const Extent &piece) {
 	
@@ -128,7 +121,6 @@ void BooleanXor::addPiece(list<Extent> &pieces, const Extent &piece) {
 		pieces.push_back(piece);
 	}
 }
-
 
 /** Recursively splits a piece. */
 void BooleanXor::explode(const Extent &piece, int d, list<Extent> &pieces) {
@@ -161,7 +153,6 @@ void BooleanXor::explode(const Extent &piece, int d, list<Extent> &pieces) {
 	explode(result.second, d+1, pieces);
 }
 
-
 ShapeTraits BooleanXor::getTraits() {
 	
 	ShapeTraits traits;
@@ -174,7 +165,6 @@ ShapeTraits BooleanXor::getTraits() {
 	traits.attributes.push_back("TexCoord0");
 	return traits;
 }
-
 
 /** @return Two pieces of @e extent cut at @e at along the @e on axis. */
 pair<Extent,Extent> BooleanXor::knife(const Extent &extent, float at, int on) {
@@ -195,7 +185,6 @@ pair<Extent,Extent> BooleanXor::knife(const Extent &extent, float at, int on) {
 	return pair<Extent,Extent>(l,u);
 }
 
-
 string BooleanXor::toString() const {
 	
 	ostringstream stream;
@@ -208,7 +197,6 @@ string BooleanXor::toString() const {
 	}
 	return stream.str();
 }
-
 
 void BooleanXor::updateBufferPoints() {
 	
@@ -237,7 +225,6 @@ void BooleanXor::updateBufferPoints() {
 	setBufferData("MCVertex", points);
 }
 
-
 void BooleanXor::updateBufferNormals() {
 	
 	int i;
@@ -251,7 +238,6 @@ void BooleanXor::updateBufferNormals() {
 	// Send to buffer
 	setBufferData("MCNormal", normals);
 }
-
 
 void BooleanXor::updateBufferCoords() {
 	

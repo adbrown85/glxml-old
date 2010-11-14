@@ -6,7 +6,6 @@
  */
 #include "Box.hpp"
 
-
 /** Initializes the coordinates in the vertex buffer.
  * 
  * The following 2D texture coordinates are stored in an array as follows.

@@ -6,7 +6,6 @@
  */
 #include "Cull.hpp"
 
-
 /** Creates a new %Cull object from a tag.
  * 
  * @param tag XML tag containing "faces" attribute.
@@ -33,7 +32,6 @@ Cull::Cull(const Tag &tag) : Node(tag) {
 	}
 }
 
-
 /** Enables culling. */
 void Cull::apply() {
 	
@@ -45,14 +43,12 @@ void Cull::apply() {
 	}
 }
 
-
 /** Restores backface culling. */
 void Cull::remove() {
 	
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
 }
-
 
 /** Forms a string from the object's attributes. */
 string Cull::toString() const {

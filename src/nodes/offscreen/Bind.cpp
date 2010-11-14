@@ -6,14 +6,12 @@
  */
 #include "Bind.hpp"
 
-
 /** Initializes the @e name and @e to attributes. */
 Bind::Bind(const Tag &tag) : Node(tag) {
 	
 	tag.get("name", name, true, false);
 	tag.get("to", to, true, false);
 }
-
 
 /** Adds attachment to outputs and sets its index in outputs to program value.
  * 
@@ -38,7 +36,6 @@ void Bind::associate() {
 	glBindFragDataLocationGAN(program->getHandle(), index, name.c_str());
 }
 
-
 /** Checks that the variable's value was set successfully.
  * 
  * @throw NodeException if the value in the program does not match.
@@ -55,7 +52,6 @@ void Bind::finalize() {
 	}
 }
 
-
 /** @throw NodeException if Attachment named @e to could not be found. */
 void Bind::findAttachment() {
 	
@@ -66,7 +62,6 @@ void Bind::findAttachment() {
 		throw e;
 	}
 }
-
 
 /** @throw NodeException if could not find Outputs list. */
 void Bind::findOutputs() {
@@ -79,7 +74,6 @@ void Bind::findOutputs() {
 	}
 }
 
-
 /** @throw NodeException if could not find Program. */
 void Bind::findProgram() {
 	
@@ -90,7 +84,6 @@ void Bind::findProgram() {
 		throw e;
 	}
 }
-
 
 /** @return String comprised of the object's attributes. */
 string Bind::toString() const {

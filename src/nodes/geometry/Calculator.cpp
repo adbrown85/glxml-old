@@ -6,13 +6,11 @@
  */
 #include "Calculator.hpp"
 
-
 /** Initializes attributes. */
 Calculator::Calculator(set<Shape*> shapes) {
 	
 	this->shapes = shapes;
 }
-
 
 GLint Calculator::getCalculationFor(const string &name) {
 	
@@ -22,7 +20,6 @@ GLint Calculator::getCalculationFor(const string &name) {
 		return Calculation::NONE;
 	}
 }
-
 
 /** Performs a calculation based on an enumeration.
  * 

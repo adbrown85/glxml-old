@@ -6,7 +6,6 @@
  */
 #include "Framebuffer.hpp"
 
-
 /** Initializes the chains in the framebuffer. */
 Framebuffer::Framebuffer(const Tag &tag) : Node(tag) {
 	
@@ -25,13 +24,11 @@ Framebuffer::Framebuffer(const Tag &tag) : Node(tag) {
 	chains["depth"] = chain;
 }
 
-
 /** Deletes the underlying OpenGL framebuffer object. */
 Framebuffer::~Framebuffer() {
 	
 	glDeleteFramebuffers(1, &handle);
 }
-
 
 /** Binds the framebuffer object. */
 void Framebuffer::apply() {
@@ -39,13 +36,11 @@ void Framebuffer::apply() {
 	glBindFramebuffer(GL_FRAMEBUFFER, handle);
 }
 
-
 /** Generates the underlying OpenGL framebuffer object. */
 void Framebuffer::associate() {
 	
 	glGenFramebuffers(1, &handle);
 }
-
 
 /** Attaches each attachment in a chain of attachments. */
 void Framebuffer::attach(Chain &chain) {
@@ -61,7 +56,6 @@ void Framebuffer::attach(Chain &chain) {
 		++index;
 	}
 }
-
 
 /** Enqueues an attachable item to be attached.
  * 
@@ -85,7 +79,6 @@ void Framebuffer::enqueue(const string &type, Attachable *item) {
 		throw e;
 	}
 }
-
 
 /** Attaches all the attachments and checks if the framebuffer is complete.
  * 
@@ -114,7 +107,6 @@ void Framebuffer::finalize() {
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-
 /** @return Structure holding state for one type of attachment. 
  * 
  * @throw NodeException if type not supported.
@@ -133,13 +125,11 @@ Chain* Framebuffer::getChain(const string &name) {
 	}
 }
 
-
 /** Unbinds the %Framebuffer. */
 void Framebuffer::remove() {
 	
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
-
 
 /** Forms a string from the object's attributes. */
 string Framebuffer::toString() const {

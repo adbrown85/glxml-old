@@ -8,7 +8,6 @@
 Scene *Light::widget=NULL;
 bool Light::tried=false;
 
-
 /** Initializes attributes. */
 Light::Light(const Tag &tag) : SimpleDrawable(tag), Nameable(tag) {
 	
@@ -45,7 +44,6 @@ Light::Light(const Tag &tag) : SimpleDrawable(tag), Nameable(tag) {
 	}
 }
 
-
 /** Destroys the widget and traverser. */
 Light::~Light() {
 	
@@ -59,7 +57,6 @@ Light::~Light() {
 	}
 }
 
-
 /** Draws the widget representing the light. */
 void Light::draw() const {
 	
@@ -68,7 +65,6 @@ void Light::draw() const {
 	
 	traverser->start();
 }
-
 
 Matrix Light::getLightMatrix() {
 	
@@ -83,19 +79,16 @@ Matrix Light::getLightMatrix() {
 	         * State::getProjectionMatrix();
 }
 
-
 void Light::getLightMatrix(GLfloat array[16]) {
 	
 	getLightMatrix().toArray(array);
 }
-
 
 /** @return Position of the light in view space coordinates. */
 Vec4 Light::getPosition() {
 	
 	return State::getViewMatrix() * SimpleDrawable::getPosition();
 }
-
 
 string Light::toString() const {
 	
@@ -108,7 +101,6 @@ string Light::toString() const {
 	       << " specular='" << specular << "'";
 	return stream.str();
 }
-
 
 Light* Light::search(Node *node, const string &name) {
 	
@@ -128,4 +120,3 @@ Light* Light::search(Node *node, const string &name) {
 	}
 	return NULL;
 }
-

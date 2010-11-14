@@ -6,7 +6,6 @@
  */
 #include "Translate.hpp"
 
-
 /** Creates a new %Translate from an XML tag.
  * 
  * @param tag XML tag with "value", "x", "y", or "z" attributes.
@@ -27,7 +26,6 @@ Translate::Translate(const Tag &tag) : Transform(tag) {
 	value.w = 1.0;
 }
 
-
 /** Adds a vector to this translation. */
 void Translate::add(const Vec4 &B) {
 	
@@ -37,14 +35,12 @@ void Translate::add(const Vec4 &B) {
 	fireEvent(NodeEvent(this, NodeEvent::MODIFY));
 }
 
-
 /** Performs the translation. */
 void Translate::apply() {
 	
 	State::push();
 	State::apply(getMatrix());
 }
-
 
 /** Add the translate to the matrix before sorting. */
 void Translate::applyTo(Matrix &matrix) {
@@ -58,13 +54,11 @@ void Translate::applyTo(Matrix &matrix) {
 	matrix = matrix * T;
 }
 
-
 /** Restores transformation that was in effect before translate was applied. */
 void Translate::remove() {
 	
 	State::pop();
 }
-
 
 /** Sets "x", "y", or "z" in value. */
 bool Translate::setAttribute(pair<string,string> attribute) {
@@ -91,7 +85,6 @@ bool Translate::setAttribute(pair<string,string> attribute) {
 	}
 }
 
-
 /** Forms a string from the object's attributes. */
 string Translate::toString() const {
 	
@@ -104,4 +97,3 @@ string Translate::toString() const {
 	       << " z='" << value.z << "'";
 	return stream.str();
 }
-

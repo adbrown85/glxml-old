@@ -6,7 +6,6 @@
  */
 #include "Shadow.hpp"
 
-
 /** Initializes attributes.
  * 
  * @throw NodeException if cannot open subscene.
@@ -35,7 +34,6 @@ Shadow::Shadow(const Tag &tag) : Texture(tag) {
 	}
 }
 
-
 /** Finds the group, light, and transforms. */
 void Shadow::associate() {
 	
@@ -45,7 +43,6 @@ void Shadow::associate() {
 	findLight();
 	findTransforms();
 }
-
 
 /** Prepares the subscene and performs an initial render. */
 void Shadow::finalize() {
@@ -66,7 +63,6 @@ void Shadow::finalize() {
 	render();
 }
 
-
 /** Finds the group named by @e of. 
  * 
  * @throw NodeException if group not found.
@@ -80,7 +76,6 @@ void Shadow::findGroup() {
 		throw e;
 	}
 }
-
 
 /** Finds the light named by @e from.
  * 
@@ -96,7 +91,6 @@ void Shadow::findLight() {
 		throw e;
 	}
 }
-
 
 /** Finds the transforms above the light and group and adds listeners. */
 void Shadow::findTransforms() {
@@ -114,7 +108,6 @@ void Shadow::findTransforms() {
 	}
 }
 
-
 /** Opens the subscene required by shadow. */
 void Shadow::openSubscene() {
 	
@@ -131,7 +124,6 @@ void Shadow::openSubscene() {
 	clone->setOf(of);
 }
 
-
 /** Prepares the subscene required by shadow. */
 void Shadow::prepareSubscene() {
 	
@@ -140,7 +132,6 @@ void Shadow::prepareSubscene() {
 	SubsceneUser::prepareSubscene();
 	removeChild(getSubsceneRoot());
 }
-
 
 /** Renders the group into the shadow map. */
 void Shadow::render() {
@@ -164,7 +155,6 @@ void Shadow::render() {
 	State::pop();
 }
 
-
 /** @return String comprised of the node's attributes. */
 string Shadow::toString() const {
 	
@@ -175,4 +165,3 @@ string Shadow::toString() const {
 	       << " from='" << from << "'";
 	return stream.str();
 }
-

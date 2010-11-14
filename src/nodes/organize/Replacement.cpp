@@ -6,14 +6,12 @@
  */
 #include "Replacement.hpp"
 
-
 /** Initialize attributes. */
 Replacement::Replacement(const Tag &tag) : Node(tag) {
 	
 	// Retrieve from tag
 	tag.get("of", of, true, true);
 }
-
 
 /** @return String made from the node's attributes. */
 string Replacement::toString() const {
@@ -24,4 +22,3 @@ string Replacement::toString() const {
 	stream << " of='" << of << "'";
 	return stream.str();
 }
-

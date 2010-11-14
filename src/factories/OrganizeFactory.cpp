@@ -7,7 +7,6 @@
 #include "OrganizeFactory.hpp"
 bool OrganizeFactory::installed=false;
 
-
 void OrganizeFactory::install() {
 	
 	// Check if already called

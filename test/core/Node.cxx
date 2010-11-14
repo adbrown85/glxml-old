@@ -11,9 +11,7 @@
 #define NUMBER_OF_ITEMS 4
 using namespace std;
 
-
-void print(Node *node,
-           int level=0) {
+void print(Node *node, int level=0) {
 	
 	Node::iterator it;
 	
@@ -26,7 +24,6 @@ void print(Node *node,
 	}
 }
 
-
 class NodeTest {
 public:
 	void setUp();
@@ -37,7 +34,6 @@ public:
 private:
 	Node *nodes[NUMBER_OF_ITEMS], *root;
 };
-
 
 void NodeTest::setUp() {
 	
@@ -51,13 +47,11 @@ void NodeTest::setUp() {
 	}
 }
 
-
 void NodeTest::tearDown() {
 	
 	cout << "\nTearing down..." << endl;
 	Node::destroy(root);
 }
-
 
 void NodeTest::testAddChild() {
 	
@@ -68,7 +62,6 @@ void NodeTest::testAddChild() {
 		nodes[i]->addChild(nodes[i+1]);
 	print(root, 1);
 }
-
 
 void NodeTest::testFindRoot() {
 	
@@ -84,7 +77,6 @@ void NodeTest::testFindRoot() {
 	assert(result == root);
 }
 
-
 void NodeTest::testIterator() {
 	
 	Node::iterator it;
@@ -96,22 +88,11 @@ void NodeTest::testIterator() {
 	}
 }
 
-
-/**
- * Unit test for Node.
- */
+/* Run the test. */
 int main() {
 	
 	NodeTest test;
 	
-	// Start
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "Node" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
-	
-	// Test
 	try {
 		test.setUp();
 		test.testAddChild();
@@ -121,12 +102,5 @@ int main() {
 	} catch (exception &e) {
 		cerr << e.what() << endl;
 	}
-	
-	// Finish
-	cout << endl;
-	cout << "****************************************" << endl;
-	cout << "Node" << endl;
-	cout << "****************************************" << endl;
-	cout << endl;
 }
 

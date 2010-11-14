@@ -6,7 +6,6 @@
  */
 #include "Uniform.hpp"
 
-
 /** Initialize attributes.
  * 
  * @throw NodeException if name not specified.
@@ -22,7 +21,6 @@ Uniform::Uniform(const Tag &tag) : Node(tag), Nameable(tag) {
 	location = 0;
 }
 
-
 /** Validates the node was created correctly. */
 void Uniform::verify() {
 	
@@ -33,7 +31,6 @@ void Uniform::verify() {
 		throw e;
 	}
 }
-
 
 /** Finds a Program node that is an ancestor of this node.
  * 
@@ -49,7 +46,6 @@ void Uniform::associate() {
 		throw e;
 	}
 }
-
 
 /** Finds the variable's location in the program.
  * 
@@ -79,7 +75,6 @@ bool Uniform::isMatrixType(GLenum type) {
 	}
 }
 
-
 /** Forms a string from the object's attributes. */
 string Uniform::toString() const {
 	
@@ -95,10 +90,8 @@ string Uniform::toString() const {
 	return stream.str();
 }
 
-
 /** @return True if the uniform was suppressed. */
 bool Uniform::wasSuppressed() const {
 	
 	return (location == -1) && isSuppressed();
 }
-

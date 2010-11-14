@@ -6,14 +6,12 @@
  */
 #include "Factory.hpp"
 
-
 Node* createShape(const Tag &tag) {
 	
 	cout << "createShape()" << endl;
 	cout << tag << endl;
 	return new Node(tag);
 }
-
 
 Node* createTexture(const Tag &tag) {
 	
@@ -22,7 +20,6 @@ Node* createTexture(const Tag &tag) {
 	return new Node(tag);
 }
 
-
 Node* createTransform(const Tag &tag) {
 	
 	cout << "createTransform()" << endl;
@@ -30,9 +27,7 @@ Node* createTransform(const Tag &tag) {
 	return new Node(tag);
 }
 
-
-int main(int argc,
-         char *argv[]) {
+int main(int argc, char *argv[]) {
 	
 	Node *node;
 	
