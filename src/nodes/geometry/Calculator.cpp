@@ -11,16 +11,6 @@
 Calculator::Calculator(set<Shape*> shapes) {
 	
 	this->shapes = shapes;
-	this->camera = NULL;
-}
-
-
-/** @throw BasicException if camera has not been set. */
-void Calculator::checkCamera() {
-	
-	if (camera == NULL) {
-		throw BasicException("[Calculator] Calculation requires camera.");
-	}
 }
 
 
@@ -58,12 +48,8 @@ void Calculator::runDistributionZ(GLsizei count, float *values) {
 	
 	float depth, increment;
 	float minimum=+FLT_MAX, maximum=-FLT_MAX;
-	Matrix view;
+	Matrix view=State::getViewMatrix();
 	set<Shape*>::iterator it;
-	
-	// Get view matrix
-	checkCamera();
-	view = camera->getViewMatrix();
 	
 	// Find minimum and maximum
 	for (it=shapes.begin(); it!=shapes.end(); ++it) {

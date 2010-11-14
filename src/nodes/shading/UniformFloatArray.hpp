@@ -18,8 +18,7 @@ using namespace std;
 /** @brief Array of uniforms capable of calculating values.
  * @ingroup basic
  */
-class UniformFloatArray : public Uniform,
-                          public CameraUser, public NodeNotifier {
+class UniformFloatArray : public Uniform, public NodeNotifier {
 public:
 	UniformFloatArray(const Tag &tag);
 	virtual ~UniformFloatArray();

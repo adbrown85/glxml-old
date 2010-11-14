@@ -50,7 +50,6 @@ void UniformFloatArray::apply() {
 		return;
 	
 	// Set values in program
-	calculator->setCamera(getCamera());
 	calculator->run(calculation, count, values);
 	glUniform1fv(getLocation(), count, values);
 	fireEvent(NodeEvent(this, NodeEvent::MODIFY));
