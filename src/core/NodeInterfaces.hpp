@@ -77,24 +77,6 @@ public:
 	virtual void toggleVisible() = 0;
 };
 
-
-/** @brief %Node that depends on the view to perform its operation.
- * @interface Dependent
- * @ingroup scene
- */
-class Dependent {
-public:
-	Dependent();
-	virtual void setCanvas(Canvas *canvas);
-protected:
-	Canvas* getCanvas() const;
-private:
-	Canvas *canvas;
-};
-inline Dependent::Dependent() {canvas = NULL;}
-inline Canvas* Dependent::getCanvas() const {return canvas;}
-inline void Dependent::setCanvas(Canvas *c) {canvas = c;}
-
 /** @brief %Node that depends on the camera to perform its operation.
  * @ingroup core
  */
