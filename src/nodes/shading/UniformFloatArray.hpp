@@ -19,7 +19,7 @@ using namespace std;
  * @ingroup basic
  */
 class UniformFloatArray : public Uniform,
-                          public Dependent, public NodeNotifier {
+                          public CameraUser, public NodeNotifier {
 public:
 	UniformFloatArray(const Tag &tag);
 	virtual ~UniformFloatArray();

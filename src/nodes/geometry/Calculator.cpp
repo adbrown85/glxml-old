@@ -11,15 +11,15 @@
 Calculator::Calculator(set<Shape*> shapes) {
 	
 	this->shapes = shapes;
-	this->canvas = NULL;
+	this->camera = NULL;
 }
 
 
-/** @throw Exception if canvas has not been set. */
-void Calculator::checkCanvas() {
+/** @throw BasicException if camera has not been set. */
+void Calculator::checkCamera() {
 	
-	if (canvas == NULL) {
-		throw BasicException("[Calculator] Calculation requires canvas.");
+	if (camera == NULL) {
+		throw BasicException("[Calculator] Calculation requires camera.");
 	}
 }
 
@@ -61,24 +61,22 @@ void Calculator::runDistributionZ(GLsizei count, float *values) {
 	Matrix view;
 	set<Shape*>::iterator it;
 	
-	// FIXME: NEEDS CAMERA ROTATION!!!
+	// Get view matrix
+	checkCamera();
+	view = camera->getViewMatrix();
 	
-//	// Get view matrix
-//	checkCanvas();
-//	view = canvas->getCamera()->getViewMatrix();
-//	
-//	// Find minimum and maximum
-//	for (it=shapes.begin(); it!=shapes.end(); ++it) {
-//		depth = (view * (*it)->getPosition()).z;
-//		minimum = min(minimum, (float)(depth-HALF_BOUNDING_BOX_DIAGONAL));
-//		maximum = max(maximum, (float)(depth+HALF_BOUNDING_BOX_DIAGONAL));
-//	}
-//	
-//	// Compute values
-//	increment = (maximum - minimum) / (count - 1);
-//	values[0] = minimum;
-//	for (int i=1; i<count; ++i) {
-//		values[i] = values[i-1] + increment;
-//	}
+	// Find minimum and maximum
+	for (it=shapes.begin(); it!=shapes.end(); ++it) {
+		depth = (view * (*it)->getPosition()).z;
+		minimum = min(minimum, (float)(depth-HALF_BOUNDING_BOX_DIAGONAL));
+		maximum = max(maximum, (float)(depth+HALF_BOUNDING_BOX_DIAGONAL));
+	}
+	
+	// Compute values
+	increment = (maximum - minimum) / (count - 1);
+	values[0] = minimum;
+	for (int i=1; i<count; ++i) {
+		values[i] = values[i-1] + increment;
+	}
 }
 

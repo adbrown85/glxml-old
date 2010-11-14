@@ -26,17 +26,17 @@ public:
 	Calculator(set<Shape*> shapes);
 	static GLint getCalculationFor(const string &name);
 	void run(GLint calculation, GLsizei count, float *values);
-	void setCanvas(Canvas *canvas);
+	void setCamera(Camera *camera);
 protected:
-	void checkCanvas();
+	void checkCamera();
 	void runDistributionZ(GLsizei count, float *values);
 private:
-	Canvas *canvas;
+	Camera *camera;
 	set<Shape*> shapes;
 };
 
-/** Sets the canvas if it is required by the calculation. */
-inline void Calculator::setCanvas(Canvas *canvas) {this->canvas = canvas;}
+/** Sets the camera if it is required by the calculation. */
+inline void Calculator::setCamera(Camera *camera) {this->camera = camera;}
 
 
 #endif
