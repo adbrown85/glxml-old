@@ -4,6 +4,8 @@
 package      := @PACKAGE_NAME@
 version      := @PACKAGE_VERSION@
 tarname      := @PACKAGE_TARNAME@
+linkername   := lib$(tarname).so
+soname       := lib$(tarname).so.1
 
 # Directories
 prefix       := @prefix@
@@ -46,7 +48,7 @@ sources      := ${foreach m,$(moddirs) $(submoddirs),${wildcard $(m)/*.cpp}}
 objects      := ${subst .cpp,.o,$(sources)}
 headers      := ${subst .cpp,.hpp,$(sources)}
 mains        := ${foreach m,$(tmoddirs) $(tsubmoddirs),${wildcard $(m)/*.cxx}}
-archive      := lib$(tarname).a
+library      := lib$(tarname).so.1.0.1
 pkgcfgfile   := $(tarname).pc
 tests        := ${subst .cxx,,$(mains)}
 tarball      := $(tarname)-$(version)-src.tar.gz
@@ -58,9 +60,9 @@ tdepends     := ${subst .cxx,.t,$(mains)}
 
 # Phony targets
 doc_targets  := html install-html
-.PHONY: all $(modules) clean mostlyclean tests $(doctargets) dump
+.PHONY: all clean mostlyclean tests $(doctargets) dump
 .DEFAULT: all
-all: $(archive)
+all: $(library)
 clean: mostlyclean
 	@echo "  Removing dependencies..."
 	@$(RM) $(depends)
@@ -77,7 +79,6 @@ $(doc_targets):
 dump:
 	@echo "  mods    = $(mods)"
 	@echo "  submods = $(submods)"
-	@echo "  submoddirs = $(submoddirs)"
 	@echo "  sources = $(sources)"
 	@echo "  objects = $(objects)"
 	@echo "  mains   = $(mains)"
@@ -94,51 +95,56 @@ $${notdir $(1)}: $${subst cpp,o,$${wildcard $(1)/*.cpp}}
 endef
 ${foreach m,$(submoddirs),${eval ${call submodule,$(m)}}}
 
-# Objects and archive
+# Objects
 %.o: %.cpp %.hpp
 	@echo "  $<"
 	@$(CXX) $(CXXFLAGS) -o ${dir $<}${notdir $@} -c $<
-	@$(AR) $(ARFLAGS) $(archive) ${dir $<}${notdir $@}
-$(archive): ${notdir $(objects)}
+
+# Library
+$(library): ${notdir $(objects)}
+	@echo "  $@"
+	@$(CXX) -shared -Wl,-soname,$(soname) -o $(library) $(objects)
 
 # Tests
+tests: ${notdir $(tests)}
 %: %.cxx
 	@echo "  $<"
-	@$(CXX) $(CXXFLAGS) -o ${dir $<}${notdir $@} $< $(archive) $(LDFLAGS)
-tests: ${notdir $(tests)}
-${notdir $(tests)}:
+	@$(CXX) $(CXXFLAGS) -o ${dir $<}$@ $< ${filter %.o,$^} $(LDFLAGS)
 
 # Dependencies
 %.d: %.hpp
 	@echo "  Generating dependencies for $<..."
 	@$(CXX) $(CXXFLAGS) -MM $< > $@
-ifneq ($(findstring clean,$(MAKECMDGOALS)),clean)
-  -include $(depends)
-endif
 %.t: %.cxx
 	@echo "  Generating dependencies for $<..."
 	@$(CXX) $(CXXFLAGS) -MM $< -MT ${notdir ${subst .cxx,,$<}} \
         | sed 's/.hpp/.o/g' > $@;
-ifeq ($(findstring tests,$(MAKECMDGOALS)),tests)
+ifneq ($(findstring clean,$(MAKECMDGOALS)),clean)
+  -include $(depends)
   -include $(tdepends)
 endif
 
 # Installation
 .PHONY: install uninstall
 install:
-	@echo "  Installing archive in $(libdir)..."
+	@echo "  Installing library in $(libdir)..."
 	@$(INSTALL) -d $(libdir)
-	@$(INSTALL) -m 0644 $(archive) $(libdir)
+	@$(INSTALL) -m 0644 $(library) $(libdir)
+	@ln -s -f -T $(libdir)/$(library) $(libdir)/$(linkername)
+	@ldconfig $(libdir)
 	@echo "  Installing headers in $(includedir)/$(tarname)..."
 	@$(INSTALL) -d $(includedir)/$(tarname)
 	@$(INSTALL) -m 0644 config.h $(includedir)/$(tarname)
-	@$(INSTALL) -m 0644 src/common.h $(includedir)/$(tarname)
+	@$(INSTALL) -m 0644 src/glxml_common.h $(includedir)/$(tarname)
 	@$(INSTALL) -m 0644 src/*/*.hpp $(includedir)/$(tarname)
+	@$(INSTALL) -m 0644 src/*/*/*.hpp $(includedir)/$(tarname)
 	@echo "  Installing pkg-config file in $(pkgcfgdir)..."
 	@$(INSTALL) -m 0644 $(pkgcfgfile) $(pkgcfgdir)
 uninstall:
-	@echo "  Uninstalling archive from $(libdir)..."
-	@$(RM) $(libdir)/$(archive)
+	@echo "  Uninstalling library from $(libdir)..."
+	@$(RM) $(libdir)/$(library)
+	@$(RM) $(libdir)/$(linkername)
+	@ldconfig $(libdir)
 	@echo "  Uninstalling headers from $(includedir)/$(tarname)..."
 	@$(RM) -r $(includedir)/$(tarname)
 	@echo "  Uninstalling pkg-config file from $(pkgcfgdir)..."
@@ -172,13 +178,11 @@ $(distdir):
 	@echo "    src"
 	@mkdir $(distdir)/src
 	@cp src/Makefile.in $(distdir)/src
-	@cp src/common.h $(distdir)/src
-	@for i in $(modules); do \
+	@cp src/glxml_common.h $(distdir)/src
+	@for i in $(mods); do \
         echo "      $${i}"; \
         mkdir $(distdir)/src/$${i}; \
-        cp src/$${i}/*.cpp $(distdir)/src/$${i}; \
-        cp src/$${i}/*.hpp $(distdir)/src/$${i}; \
-        cp src/$${i}/*.d $(distdir)/src/$${i}; \
+        cp -R src/$${i} $(distdir)/src/$${i}; \
     done
 	@echo "    doc"
 	@mkdir $(distdir)/doc

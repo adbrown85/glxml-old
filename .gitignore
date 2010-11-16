@@ -8,6 +8,7 @@ config.status
 autom4te.cache/
 glxml.pc
 libglxml.a
+libglxml.so.*
 config.h
 config.in~
 aclocal.m4
