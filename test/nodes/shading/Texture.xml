@@ -6,13 +6,13 @@
 -->
 
 
-<texture name="crate" file="../../../textures/crate.jpg" >
-<texture name="stone" file="../../../textures/stone.jpg" >
+<texture name="crate" file="../../../textures/crate.bmp" >
+<texture name="stone" file="../../../textures/stone.bmp" >
 
 <program>
 	<shader file="../../../glsl/texture.vert" />
 	<shader file="../../../glsl/texture.frag" />
-	<uniform type="sampler2D" name="unit" link="stone" />
+	<uniform type="sampler2D" name="unit" link="crate" />
 	<box />
 </program>
 
