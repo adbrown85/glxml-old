@@ -5,7 +5,7 @@
  *     Andrew Brown <adb1413@rit.edu>
  */
 #include "Shape.hpp"
-map<string,GLuint> Shape::buffers;
+map<string,VertexBufferObject*> Shape::vbos;
 
 /** Creates a shape from an XML tag.
  * 
@@ -31,15 +31,23 @@ Shape::Shape(const Tag &tag, ShapeTraits traits) : SimpleDrawable(tag) {
 	
 	// Other attributes
 	this->generated = false;
+	this->vbo = NULL;
 	
 	// Store vertex attributes
-	block = count * 3 * sizeof(GLfloat);
 	for (it=traits.attributes.begin(); it!=traits.attributes.end(); ++it) {
 		va.setName(*it);
 		va.setNumber(distance(traits.attributes.begin(), it));
-		va.setOffset(va.getNumber() * block);
+		va.setComponents(3);
+		va.setOffset(0);
 		attributes.push_back(va);
-		offsets[va.getName()] = va.getOffset();
+	}
+}
+
+/** Destroys the shape. */
+Shape::~Shape() {
+	
+	if (vbo != NULL) {
+		delete vbo;
 	}
 }
 
@@ -101,16 +109,22 @@ void Shape::draw() const {
 void Shape::draw(int first, int number) const {
 	
 	list<VertexAttribute>::const_iterator it;
+	int loc, off, com;
+	int stride = vbo->getStride();
+	int size = vbo->getSize();
 	
 	// Enable buffer and attributes
-	glBindBuffer(GL_ARRAY_BUFFER, buffer);
+	vbo->bind();
 	for (it=attributes.begin(); it!=attributes.end(); ++it) {
+		com = it->getComponents();
+		loc = it->getLocation();
+		off = it->getOffset();
 		glEnableVertexAttribArray(it->getLocation());
 		glVertexAttribPointer(it->getLocation(),            // index
-		                      3,                            // size
+		                      it->getComponents(),          // size
 		                      GL_FLOAT,                     // type
 		                      false,                        // normalized
-		                      0,                            // stride
+		                      vbo->getStride(),             // stride
 		                      (void*)it->getOffset());      // pointer
 	}
 	
@@ -121,7 +135,7 @@ void Shape::draw(int first, int number) const {
 	for (it=attributes.begin(); it!=attributes.end(); ++it) {
 		glDisableVertexAttribArray(it->getLocation());
 	}
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	vbo->unbind();
 }
 
 /** Loads the vertex data into the vertex buffer so it's ready to render. */
@@ -131,7 +145,7 @@ void Shape::finalize() {
 	
 	// Initialize buffer
 	if (usage == GL_STATIC_DRAW && isBufferStored(getClassName())) {
-		buffer = buffers.find(getClassName())->second;
+		vbo = vbos.find(getClassName())->second;
 	} else {
 		generate();
 	}
@@ -146,6 +160,11 @@ void Shape::finalize() {
 			++it;
 	}
 	
+	// Store offsets
+	for (it=attributes.begin(); it!=attributes.end(); ++it) {
+		it->setOffset(vbo->getOffset(it->getName()));
+	}
+	
 	// Check for defaults
 	if (defaults) {
 		checkForDefaultUniforms();
@@ -155,55 +174,42 @@ void Shape::finalize() {
 /** Generates the vertex buffer for the shape. */
 void Shape::generate() {
 	
+	list<VertexAttribute>::iterator it;
+	
 	// Check if already generated
 	if (generated)
 		return;
 	
 	// Create and bind
-	glGenBuffers(1, &buffer);
-	glBindBuffer(GL_ARRAY_BUFFER, buffer);
+	vbo = new VertexBufferObject();
+	vbo->bind();
 	
 	// Allocate and fill
-	glBufferData(GL_ARRAY_BUFFER,                       // target
-	             block * attributes.size(),             // size
-	             NULL,                                  // data
-	             usage);                                // usage
+	for (it=attributes.begin(); it!=attributes.end(); ++it) {
+		vbo->addAttribute(it->getName(), it->getComponents());
+	}
+	vbo->allocate(usage, count);
 	updateBuffer();
 	
 	// Store for static shapes
 	if (usage == GL_STATIC_DRAW) {
-		buffers[getClassName()] = buffer;
+		vbos[getClassName()] = vbo;
 	}
 	
 	// Unbind
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	vbo->unbind();
 	
 	// Finish
 	generated = true;
 }
 
-/** @return Number of bytes into the vertex buffer for a vertex attribute. */
-GLuint Shape::getOffset(const string &name) const {
-	
-	map<string,GLuint>::const_iterator it;
-	
-	it = offsets.find(name);
-	if (it != offsets.end()) {
-		return it->second;
-	} else {
-		NodeException e(tag);
-		e << "[Shape] Unrecognized vertex attribute name '" << name << "'.";
-		throw e;
-	}
-}
-
 /** Checks if a buffer already exists for a concrete shape. */
 bool Shape::isBufferStored(const string &className) {
 	
-	map<string,GLuint>::iterator it;
+	map<string,VertexBufferObject*>::iterator it;
 	
-	it = buffers.find(className);
-	return it != buffers.end();
+	it = vbos.find(className);
+	return it != vbos.end();
 }
 
 /** Sets data in the buffer according to its vertex attribute name.
@@ -213,12 +219,14 @@ bool Shape::isBufferStored(const string &className) {
  */
 void Shape::setBufferData(const string &name, GLfloat data[][3]) {
 	
-	glBindBuffer(GL_ARRAY_BUFFER, buffer);
-	glBufferSubData(GL_ARRAY_BUFFER,                        // target
-	                getOffset(name),                        // offset
-	                block,                                  // size
-	                data);                                  // data
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	vbo->bind();
+	vbo->seek(name);
+	vbo->enableAutoStriding();
+	for (int i=0; i<count;  ++i) {
+		vbo->put(data[i][0], data[i][1], data[i][2]);
+	}
+	vbo->flush();
+	vbo->unbind();
 }
 
 /** @return String comprised of the object's attributes. */
@@ -227,9 +235,10 @@ string Shape::toString() const {
 	ostringstream stream;
 	
 	stream << SimpleDrawable::toString();
-	stream << " buffer='" << buffer << "'";
+	stream << " vbo='" << vbo->getHandle() << "'";
 	if (!name.empty()) {
 		stream << " name='" << name << "'";
 	}
 	return stream.str();
 }
+

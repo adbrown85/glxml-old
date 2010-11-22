@@ -10,6 +10,7 @@
 #include <gloop/Matrix.hpp>
 #include <gloop/VertexAttribute.hpp>
 #include <gloop/ProgramAnalyzer.hpp>
+#include <gloop/VertexBufferObject.hpp>
 #include "SimpleDrawable.hpp"
 #include "Program.hpp"
 #include "Transform.hpp"
@@ -52,6 +53,7 @@ struct ShapeTraits {
 class Shape : public SimpleDrawable {
 public:
 	Shape(const Tag &tag, ShapeTraits traits);
+	virtual ~Shape();
 	virtual string toString() const;
 // Preparation
 	virtual void associate();
@@ -67,10 +69,10 @@ public:
 	virtual string getName() const;
 	virtual Program* getProgram() const;
 	virtual void setProgram(Program *program);
+	virtual VertexBufferObject* getVBO() const;
 protected:
 	void checkForDefaultUniforms();
 	void generate();
-	virtual GLuint getOffset(const string &name) const;
 	static bool isBufferStored(const string &className);
 	void setBufferData(const string &name, GLfloat data[][3]);
 	virtual void setCount(GLuint count);
@@ -80,11 +82,11 @@ private:
 	bool defaults, generated;
 	list<VertexAttribute> attributes;
 	GLenum mode, usage;
-	GLuint block, buffer, count, limit;
-	static map<string,GLuint> buffers;
-	map<string,GLuint> offsets;
+	GLuint count, limit;
 	Program *program;
 	string name;
+	VertexBufferObject *vbo;
+	static map<string,VertexBufferObject*> vbos;
 };
 
 /** @return Attributes in use for this shape. */
@@ -101,6 +103,9 @@ inline string Shape::getName() const {return name;}
 
 /** @return Program the shape sends vertex attributes to. */
 inline Program* Shape::getProgram() const {return program;}
+
+/** @return Pointer to the shape's VertexBufferObject. */
+inline VertexBufferObject* Shape::getVBO() const {return vbo;}
 
 /** Set attributes in use for this shape. */
 inline void Shape::setAttributes(list<VertexAttribute> &a) {attributes = a;}
