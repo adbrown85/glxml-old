@@ -7,9 +7,7 @@
 
 
 <program>
-	<shader file="../../../glsl/coordinates.vert" />
-	<shader file="../../../glsl/coordinates.frag" />
-	<translate>
-		<square />
-	</translate>
+	<shader file="hello.vert" />
+	<shader file="hello.frag" />
+	<square defaults="false" />
 </program>
