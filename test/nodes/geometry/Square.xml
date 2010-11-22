@@ -9,5 +9,5 @@
 <program>
 	<shader file="hello.vert" />
 	<shader file="hello.frag" />
-	<square defaults="false" />
+	<square />
 </program>
